@@ -1,15 +1,8 @@
-# The Smart Café
+# System for Cocktail Bar Management - System Validation and Verification
 
 ## Overview
 
-The Smart Café project is focused on the validation and verification of software, particularly in terms of code coverage and unit testing. Initially, the project was developed as a comprehensive application for a cafe, with order management functionalities. For this purpose, we drew upon the codebase from the Object-Oriented Analysis and Design course, where we previously created the Smart Café application with complete order management capabilities. However, in this iteration, we are concentrating solely on statistical analysis and menu management. The application will allow users to view café statistics, adjust drink prices, and apply filters based on ingredients. The menu can also be sorted by price. 
-
-## Team Members
-
-- Emina Efendić
-- Amina Hromić
-- Hana Mahmutović
-- Tajra Selimović
+Our System for Cocktail Bar Management is focused on the validation and verification of the software, particularly in terms of code coverage and unit testing. Initially, the project was developed as a comprehensive application for a cafe, with order management functionalities. For this purpose, we drew upon the codebase from the Object-Oriented Analysis and Design course, where we previously created the Smart Café application with complete order management capabilities. However, in this iteration, we are concentrating solely on statistical analysis and menu management. The application will allow users to view café statistics, adjust drink prices, and apply filters based on ingredients. The menu can also be sorted by price. 
 
 ## Features
 
@@ -17,6 +10,13 @@ The Smart Café project is focused on the validation and verification of softwar
 - Adjust drink prices.
 - Filter drinks based on ingredients.
 - Sort drinks by price.
+
+## Team Members
+
+- [Emina Efendić](https://github.com/efendicemina)
+- [Amina Hromić](https://github.com/AHromic1)
+- [Hana Mahmutović](https://github.com/mahmutovichana)
+- [Tajra Selimović](https://github.com/selimovictajra)
 
 ## Powered by
 
