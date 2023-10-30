@@ -1,0 +1,4 @@
+.idea/        # JetBrains IntelliJ IDEA
+.vs/      # Visual Studio Code
+.project      # Eclipse project files
+
