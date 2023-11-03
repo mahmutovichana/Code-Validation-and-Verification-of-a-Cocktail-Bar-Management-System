@@ -1,0 +1,47 @@
+abstractBackground1.png
+abstractBackground2.png
+abstractBackground3.jpg
+amazonLogo.png
+bartenderMakingDrink.jpg
+bartenderServing.jpg
+bartenderSippin.jpg
+berrylicious.jpg
+Bloody Mary.jpg
+Blue Lagoon.jpg
+Blue Lemonade.jpg
+cafeAtmosphere.jpg
+Caipirinha Breeze.jpg
+celebratingWithDrinks.jpg
+Cherry Bomb.jpg
+Cider Sipper.jpg
+cocktailAward1.png
+cocktailAward2.png
+congratsWithCocktails.jpg
+Crushed Sunset.jpg
+Cucumber Cooler.jpg
+Daiquiri Deluxe.jpg
+facebookLogo.png
+filenames.txt
+friendsInCafe2.jpg
+googleLogo.png
+Grapefruit Spritz.jpg
+Kiwi Kiss.jpg
+lagoonLogoWhiteTransparent.png
+linkedinLogo.png
+loveInCafe.jpg
+Marakuja Paradise.jpg
+Minty Glacier.jpg
+Orange Blossom.jpg
+philipsLogo.png
+Pina Colada.jpg
+qr_code.png
+Red Velvet.jpg
+Rosy Chill.jpg
+Strawberry Mojito.jpg
+teamMember1.jpg
+teamMember2.jpg
+teamMember3.jpg
+teamMember4.jpg
+teamMember5.jpg
+teamMember6.jpg
+Watermelon Wave.jpg

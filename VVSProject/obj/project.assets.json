@@ -6426,11 +6426,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mahmu\\Desktop\\VVS\\VVSProject\\VVSProject.csproj",
+      "projectUniqueName": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVSProject\\VVSProject.csproj",
       "projectName": "VVSProject",
-      "projectPath": "C:\\Users\\mahmu\\Desktop\\VVS\\VVSProject\\VVSProject.csproj",
+      "projectPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVSProject\\VVSProject.csproj",
       "packagesPath": "C:\\Users\\mahmu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mahmu\\Desktop\\VVS\\VVSProject\\obj\\",
+      "outputPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVSProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mahmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
