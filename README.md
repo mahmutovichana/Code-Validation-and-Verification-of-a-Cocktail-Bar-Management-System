@@ -1,47 +1,37 @@
-# The Smart Café
+# System for Cocktail Bar Management - System Validation and Verification
 
 ## Overview
 
-Smart Café is a web application that allows customers to order drinks in a cafe through their phone. The orders are sent to the waiter who can accept or cancel them. The application uses QR code technology to identify the table and allow customers to place their orders.
-
-<div>
-<img src="https://user-images.githubusercontent.com/113919501/230730087-c304e52d-163e-4aed-8a10-953f5cdc4af0.png" align="right" width="400" alt="Smart Café">
-</div>
-
-## Actors
-
-- Customer: The person who is ordering the drinks using the Smart Café web application.
-- Waiter: The person who receives the drink orders at the bar, accepts or cancels them, and serves the drinks to the customers.
-- Administrator: The person who can view statistics for the cafe in general and the menu of drinks that the cafe provides
+Our System for Cocktail Bar Management is focused on the validation and verification of the software, particularly in terms of code coverage and unit testing. Initially, the project was developed as a comprehensive application for a cafe, with order management functionalities. For this purpose, we drew upon the codebase from the Object-Oriented Analysis and Design course, where we previously created the Smart Café application with complete order management capabilities. However, in this iteration, we are concentrating solely on statistical analysis and menu management. The application will allow users to view café statistics, adjust drink prices, and apply filters based on ingredients. The menu can also be sorted by price. 
 
 ## Features
 
-- Customers can scan the QR code on their table to open the application and order drinks.
-- Customers can modify or cancel their order within 5 minutes of placing it.
-- The waiter receives the order at the bar and accepts or cancels it if the drinks are available or not.
-- The drinks are then brought to the customer.
-- The administrator can manage the menu of drinks that the cafe provides and view statistics for the cafe in general.
+- Access statistics for the café.
+- Adjust drink prices.
+- Filter drinks based on ingredients.
+- Sort drinks by price.
+
+## Team Members
+
+- [Emina Efendić](https://github.com/efendicemina)
+- [Amina Hromić](https://github.com/AHromic1)
+- [Hana Mahmutović](https://github.com/mahmutovichana)
+- [Tajra Selimović](https://github.com/selimovictajra)
 
 ## Powered by
 
-We are proud to collaborate with our client, Lagoon Cocktail Bar, who helped us in testing and refining the application. Their valuable input and feedback played a crucial role in the development of Smart Café, and we are grateful for their support.
+We would like to express our gratitude to our client, Lagoon Cocktail Bar, for their collaboration and support during the testing and refinement phase of the application. Their valuable insights significantly contributed to the development of the Smart Café project.
 
-The Smart Café team is also grateful to the University of Sarajevo and the Faculty of Electrical Engineering for providing us with the opportunity to work on this project and for equipping us with the knowledge and skills needed to create a functional and user-friendly web application.
+The Smart Café team also extends its appreciation to the University of Sarajevo and the Faculty of Electrical Engineering for providing the necessary resources and guidance, enabling us to create this user-friendly web application.
 
-Finally, we would like to acknowledge the power of open-source software and libraries, which we utilized throughout the project. Without these resources, Smart Cafe would not have been possible.
+Lastly, we acknowledge the indispensable role of open-source software and libraries in the development process, without which the creation of Smart Café would not have been possible.
+
+## Conclusion
+
+The Smart Café application simplifies the process of managing a café, allowing for efficient statistical analysis and menu management. Our team is committed to delivering an intuitive and seamless experience for café owners and administrators.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/113919501/226108563-fa0607e9-2add-4a70-aeb1-b716541d1d42.png" width="150"/>
 <img src="https://user-images.githubusercontent.com/113919501/226107862-dd057e25-83da-484c-8471-37046320f2bf.png" width="150"/>
 <img src="https://user-images.githubusercontent.com/113919501/226105001-70a5c389-81bd-42cb-970a-e378fc5aed36.png" width="150"/>
 </p>
-
-## Conclusion
-
-The Smart Café is a convenient and easy-to-use application that makes ordering drinks in a cafe a breeze. The application is designed with the customer in mind, allowing for quick and easy modifications and cancellations of orders. We are excited to bring this innovative technology to cafes around the world.
-
-## Team Members
-
-- Emina Efendić
-- Hana Mahmutović
-- Tajra Selimović
