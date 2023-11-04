@@ -405,6 +405,21 @@
         color: #fff; /* Bijela boja za ime i prezime */
         margin-top: 5px;
     }
+
+    .search-container {
+        height: 100vh; 
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    #searchInputIngredient, #searchInputName{
+        display: block;
+        margin: 3% auto 2% auto;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 500px;
+        font-family: 'Montserrat', sans-serif;
+    }
 </style>
 
 <!DOCTYPE html>
@@ -472,6 +487,64 @@ animateValue(numCustomersValue, 0, 4185, 2000); // Trajanje animacije je 2000ms 
             <img src="@Url.Content("~/images/" + ViewBag.MostSoldCocktailName + ".jpg")" alt="Most Sold Cocktail" class="most-sold-cocktail-image" />
         </div>
     </div>
+
+    <div>
+        <input type="text" id="searchInputName" onkeyup="filterDrinks()" placeholder="Search for drinks..">
+    </div>
+
+    <script>
+        function filterDrinks() {
+            var input, filter, carousel, drinkItems, name, i, txtValue;
+            input = document.getElementById('searchInputName');
+            filter = input.value.toUpperCase();
+            carousel = document.getElementsByClassName('carousel')[0];
+            drinkItems = carousel.getElementsByClassName('carousel-item');
+            for (i = 0; i < drinkItems.length; i++) {
+                name = drinkItems[i].getElementsByTagName('h3')[0];
+                txtValue = name.textContent || name.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    drinkItems[i].style.display = '';
+                } else {
+                    drinkItems[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+    <div>
+        <input type="text" id="searchInputIngredient" onkeyup="filterDrinksByIngredients()" placeholder="Search for drinks by ingredients..">
+    </div>
+
+    <script>
+        function filterDrinksByIngredients() {
+            var input, filter, carousel, drinkItems, name, i, txtValue;
+            input = document.getElementById('searchInputIngredient');
+            filter = input.value.toUpperCase();
+            carousel = document.getElementsByClassName('carousel')[0];
+            drinkItems = carousel.getElementsByClassName('carousel-item');
+            for (i = 0; i < drinkItems.length; i++) {
+                name = drinkItems[i].getElementsByTagName('h3')[0];
+                txtValue = name.textContent || name.innerText;
+
+                // Show all drink items initially
+                drinkItems[i].style.display = '';
+
+                // Retrieve the list of drinks by making an AJAX request
+                fetch(`/AdminPanel/SearchDrinksByIngredient?searchTerm=${filter}`)
+                    .then(response => response.json())
+                    .then(drinks => {
+                        // Filter the drinks based on the entered ingredient
+                        drinks.forEach(drink => {
+                            if (!txtValue.toUpperCase().includes(drink.name.toUpperCase())) {
+                                drinkItems[i].style.display = 'none';
+                            }
+                        });
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        }
+    </script>
+
 
 
     <div class="carousel">

@@ -154,6 +154,17 @@ namespace SmartCafe.Controllers
         {
             return _context.Drinks.Any(e => e.id == id);
         }
-        
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Drink>> SearchDrinksByIngredient(string searchTerm)
+        {
+            var drinks = _context.DrinkIngredients
+                .Where(di => di.Ingredient.name.Contains(searchTerm))
+                .Select(di => di.Drink)
+                .Distinct()
+                .ToList();
+
+            return drinks;
+        }
     }
 }
