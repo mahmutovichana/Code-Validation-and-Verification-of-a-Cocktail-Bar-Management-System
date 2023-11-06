@@ -26,6 +26,22 @@ namespace SmartCafe.Controllers
         {
             // Retrieve the list of drinks from the database
             var drinks = _context.Drinks.ToList();
+            //sortiranje
+            // Bubble sort 
+            int n = drinks.Count;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (drinks[j].price > drinks[j + 1].price)
+                    {
+                        var temp = drinks[j];
+                        drinks[j] = drinks[j + 1];
+                        drinks[j + 1] = temp;
+                    }
+                }
+            }
+            ///
 
             return View(drinks);
         }
