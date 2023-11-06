@@ -21,12 +21,10 @@ namespace SmartCafe.Controllers
             _context = context;
         }
 
-        // GET: AdminPanel
-        public IActionResult Index()
+        //sort method (newly added)
+        
+        private List<Drink> bubbleSort(List<Drink> drinks)
         {
-            // Retrieve the list of drinks from the database
-            var drinks = _context.Drinks.ToList();
-            //sortiranje
             // Bubble sort 
             int n = drinks.Count;
             for (int i = 0; i < n - 1; i++)
@@ -41,6 +39,17 @@ namespace SmartCafe.Controllers
                     }
                 }
             }
+
+            return drinks;
+
+        }
+        // GET: AdminPanel
+        public IActionResult Index()
+        {
+            // Retrieve the list of drinks from the database
+            var drinks = _context.Drinks.ToList();
+            //sortiranje
+            bubbleSort(drinks);
             ///
 
             return View(drinks);
