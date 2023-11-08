@@ -461,44 +461,37 @@
 
     <script>
         function animateValue(element, start, end, duration) {
-  const range = end - start;
-  const increment = end > start ? 1 : -1;
-  const stepTime = Math.abs(Math.floor(duration / range));
-  const obj = element;
+          const range = end - start;
+          const increment = end > start ? 1 : -1;
+          const stepTime = Math.abs(Math.floor(duration / range));
+          const obj = element;
 
-  let current = start;
+          let current = start;
 
-  const timer = setInterval(() => {
-    current += increment;
-    obj.textContent = current;
-    if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
-      clearInterval(timer);
-      obj.textContent = end;
-    }
-  }, stepTime);
-}
+          const timer = setInterval(() => {
+            current += increment;
+            obj.textContent = current;
+            if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+              clearInterval(timer);
+              obj.textContent = end;
+            }
+          }, stepTime);
+        }
 
-const numWorkersValue = document.getElementById('numWorkersValue');
-animateValue(numWorkersValue, 0, 6, 2000); // Trajanje animacije je 2000ms (2 sekunde)
+        const numWorkersValue = document.getElementById('numWorkersValue');
+        animateValue(numWorkersValue, 0, 6, 2000); // Trajanje animacije je 2000ms (2 sekunde)
 
-const numCustomersValue = document.getElementById('numCustomersValue');
-animateValue(numCustomersValue, 0, 4185, 2000); // Trajanje animacije je 2000ms (2 sekunde)
+        const numCustomersValue = document.getElementById('numCustomersValue');
+        animateValue(numCustomersValue, 0, 4185, 2000); // Trajanje animacije je 2000ms (2 sekunde)
 
     </script>
 
-    <div class="most-sold-cocktail">
-        <span class="most-sold-cocktail-name"><strong>Most Sold Cocktail </strong><br /> @ViewBag.MostSoldCocktailName</span>
-        <div>
-            <img src="@Url.Content("~/images/" + ViewBag.MostSoldCocktailName + ".jpg")" alt="Most Sold Cocktail" class="most-sold-cocktail-image" />
-        </div>
-    </div>
-
     <div>
-        <input type="text" id="searchInputName" onkeyup="filterDrinks()" placeholder="Search for drinks..">
+        <input type="text" id="searchInputName" onkeyup="filterDrinksByName()" placeholder="Search for drinks by name..">
     </div>
 
     <script>
-        function filterDrinks() {
+        function filterDrinksByName() {
             var input, filter, carousel, drinkItems, name, i, txtValue;
             input = document.getElementById('searchInputName');
             filter = input.value.toUpperCase();
@@ -520,33 +513,42 @@ animateValue(numCustomersValue, 0, 4185, 2000); // Trajanje animacije je 2000ms 
         <input type="text" id="searchInputIngredient" onkeyup="filterDrinksByIngredients()" placeholder="Search for drinks by ingredients..">
     </div>
 
+    <ul id="searchResults"></ul>
+
     <script>
         function filterDrinksByIngredients() {
-            var input, filter, carousel, drinkItems, name, i, txtValue;
+            var input, filter, carousel, drinkItems, url;
             input = document.getElementById('searchInputIngredient');
             filter = input.value.toUpperCase();
             carousel = document.getElementsByClassName('carousel')[0];
             drinkItems = carousel.getElementsByClassName('carousel-item');
-            for (i = 0; i < drinkItems.length; i++) {
-                name = drinkItems[i].getElementsByTagName('h3')[0];
-                txtValue = name.textContent || name.innerText;
 
-                // Show all drink items initially
-                drinkItems[i].style.display = '';
+            var url = '@Url.Action("SearchDrinksByIngredient", "AdminPanel")';
+            fetch(`${url}?searchTerm=${filter}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Clear previous search results
+                    document.getElementById('searchResults').innerHTML = '';
 
-                // Retrieve the list of drinks by making an AJAX request
-                fetch(`/AdminPanel/SearchDrinksByIngredient?searchTerm=${filter}`)
-                    .then(response => response.json())
-                    .then(drinks => {
-                        // Filter the drinks based on the entered ingredient
-                        drinks.forEach(drink => {
-                            if (!txtValue.toUpperCase().includes(drink.name.toUpperCase())) {
-                                drinkItems[i].style.display = 'none';
-                            }
-                        });
-                    })
-                    .catch(error => console.error('Error:', error));
-            }
+                    // Populate the search results
+                    var ul = document.getElementById('searchResults');
+                    data.forEach(item => {
+                        var li = document.createElement('li');
+                        li.appendChild(document.createTextNode(item.name));
+                        ul.appendChild(li);
+                    });
+
+                    Array.from(drinkItems).forEach(item => {
+                        var name = item.getElementsByTagName('h3')[0];
+                        var txtValue = name.textContent || name.innerText;
+                        if (!txtValue.toUpperCase().includes(filter)) {
+                            item.style.display = 'none';
+                        } else {
+                            item.style.display = '';
+                        }
+                    });
+                })
+                .catch(error => console.error('Error:', error));
         }
     </script>
 
