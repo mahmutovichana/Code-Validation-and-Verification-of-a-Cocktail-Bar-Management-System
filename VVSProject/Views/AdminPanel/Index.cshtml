@@ -650,42 +650,5 @@ animateValue(numCustomersValue, 0, 4185, 2000); // Trajanje animacije je 2000ms 
             })(i);
         }
     </script>
-    <script>
-        function showPriceAlert(price) {
-            if (price < 2 || price > 50) {
-                document.getElementById("priceError").innerText = "Cijena mora biti između 2 i 50.";
-                document.getElementById("priceError").style.display = "block";
-            } else {
-                document.getElementById("priceError").innerText = "";
-                document.getElementById("priceError").style.display = "none";
-            }
-        }
-    </script>
-    <script>
-        var priceInput = document.getElementById('price');
-        var priceError = document.getElementById('priceError');
-
-        priceInput.addEventListener('input', function () {
-            var price = parseFloat(priceInput.value);
-            if (isNaN(price) || price < 2 || price > 50) {
-                priceError.textContent = 'Cijena mora biti između 2 i 50.';
-                priceError.style.display = 'block';
-            } else {
-                priceError.style.display = 'none';
-            }
-        });
-    </script>
-    <script>
-        function showPriceAlert(price) {
-            if (price < 2 || price > 50) {
-                document.getElementById("priceError").innerText = "Cijena mora biti između 2 i 50.";
-                document.getElementById("priceError").style.display = "block";
-            } else {
-                document.getElementById("priceError").innerText = "";
-                document.getElementById("priceError").style.display = "none";
-            }
-        }
-    </script>
-
 </body>
 </html>

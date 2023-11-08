@@ -148,8 +148,18 @@ namespace SmartCafe.Controllers
             {
                 try
                 {
-                    _context.Update(drink);
-                    await _context.SaveChangesAsync();
+                    if (drink.price >= 2 && drink.price <= 50)
+                    {
+                        _context.Update(drink);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                    else
+                    {
+                        TempData["ErrorMessage"] = "Cijena mora biti između 2 i 50.";
+                        return RedirectToAction(nameof(Index), new { id = drink.id });
+                    }
+
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -162,10 +172,10 @@ namespace SmartCafe.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
             return View(drink);
         }
+
 
         // GET: AdminPanel/Delete/5
         public async Task<IActionResult> Delete(int? id)
