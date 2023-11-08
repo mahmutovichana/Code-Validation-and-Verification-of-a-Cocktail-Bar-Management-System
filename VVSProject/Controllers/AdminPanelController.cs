@@ -43,9 +43,30 @@ namespace SmartCafe.Controllers
             return drinks;
 
         }
+        private List<Ingredient> insertionSort(List<Ingredient> ingredients)
+        {
+            int n = ingredients.Count;
+            for (int i = 1; i < n; i++)
+            {
+                Ingredient key = ingredients[i];
+                int j = i - 1;
+
+                while (j >= 0 && ingredients[j].quantity > key.quantity)
+                {
+                    ingredients[j + 1] = ingredients[j];
+                    j = j - 1;
+                }
+                ingredients[j + 1] = key;
+            }
+
+            return ingredients;
+        }
         // GET: AdminPanel
         public IActionResult Index()
         {
+            var ingredients = _context.Ingredients.ToList();
+            insertionSort(ingredients);
+            ViewBag.SortedIngredients = ingredients;
             // Retrieve the list of drinks from the database
             var drinks = _context.Drinks.ToList();
             //sortiranje

@@ -452,7 +452,12 @@
             <span class="statistics-value" id="numCustomersValue">4185</span>
         </div>
     </div>
-
+    <ul>
+        @foreach (var ingredient in ViewBag.SortedIngredients)
+        {
+            <li>@ingredient.name - @ingredient.quantity</li>
+        }
+    </ul>
 
     <script>
         function animateValue(element, start, end, duration) {
@@ -568,6 +573,8 @@ animateValue(numCustomersValue, 0, 4185, 2000); // Trajanje animacije je 2000ms 
                                 <label for="price">Price:</label>
                                 <input type="number" id="price" name="price" value="@drink.price" />
                             </div>
+
+
                             <div class="form-group">
                                 <input type="submit" value="Save" />
                             </div>
@@ -643,5 +650,42 @@ animateValue(numCustomersValue, 0, 4185, 2000); // Trajanje animacije je 2000ms 
             })(i);
         }
     </script>
+    <script>
+        function showPriceAlert(price) {
+            if (price < 2 || price > 50) {
+                document.getElementById("priceError").innerText = "Cijena mora biti između 2 i 50.";
+                document.getElementById("priceError").style.display = "block";
+            } else {
+                document.getElementById("priceError").innerText = "";
+                document.getElementById("priceError").style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        var priceInput = document.getElementById('price');
+        var priceError = document.getElementById('priceError');
+
+        priceInput.addEventListener('input', function () {
+            var price = parseFloat(priceInput.value);
+            if (isNaN(price) || price < 2 || price > 50) {
+                priceError.textContent = 'Cijena mora biti između 2 i 50.';
+                priceError.style.display = 'block';
+            } else {
+                priceError.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        function showPriceAlert(price) {
+            if (price < 2 || price > 50) {
+                document.getElementById("priceError").innerText = "Cijena mora biti između 2 i 50.";
+                document.getElementById("priceError").style.display = "block";
+            } else {
+                document.getElementById("priceError").innerText = "";
+                document.getElementById("priceError").style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 </html>
