@@ -212,6 +212,16 @@ namespace SmartCafe.Controllers
         }
 
         [HttpGet]
+        public ActionResult<IEnumerable<Drink>> SearchDrinksByName(string searchTerm)
+        {
+            var drinks = _context.Drinks
+                .Where(d => d.name.Contains(searchTerm))
+                .ToList();
+            return drinks;
+        }
+
+
+        [HttpGet]
         public ActionResult<IEnumerable<Drink>> SearchDrinksByIngredient(string searchTerm)
         {
             var drinks = _context.DrinkIngredients
@@ -219,8 +229,8 @@ namespace SmartCafe.Controllers
                 .Select(di => di.Drink)
                 .Distinct()
                 .ToList();
-
-            return drinks;
+            List<Drink> filteredDrinks = drinks;
+            return filteredDrinks;
         }
     }
 }
