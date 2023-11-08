@@ -61,12 +61,33 @@ namespace SmartCafe.Controllers
 
             return ingredients;
         }
+        private string isProfitOptimal(double realProfit = 250)
+        {
+            var drinks = _context.Drinks.ToList();
+            double optimalProfit = 0;
+            for (int i = 0; i < drinks.Count; i++)
+            {
+                optimalProfit += drinks[i].price;
+            }
+            if (realProfit < optimalProfit)
+            {
+                return "You are below optimal profit";
+            }
+            else if (realProfit == optimalProfit)
+            {
+                return "Your profit is optimal";
+            }
+            return "Your profit is above average";
+        }
+
         // GET: AdminPanel
         public IActionResult Index()
         {
             var ingredients = _context.Ingredients.ToList();
             insertionSort(ingredients);
             ViewBag.SortedIngredients = ingredients;
+            string optimalProfit = isProfitOptimal();
+            ViewBag.OptimalProfit = optimalProfit;
             // Retrieve the list of drinks from the database
             var drinks = _context.Drinks.ToList();
             //sortiranje
