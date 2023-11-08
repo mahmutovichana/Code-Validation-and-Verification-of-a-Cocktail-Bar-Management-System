@@ -458,6 +458,13 @@
             <li>@ingredient.name - @ingredient.quantity</li>
         }
     </ul>
+    <h3> Recommended drinks </h3>
+    <ul>
+        @foreach (var drink in ViewBag.WantedDrinks)
+{
+        <li>@drink.name</li>
+}
+    </ul>
 
     <script>
         function animateValue(element, start, end, duration) {

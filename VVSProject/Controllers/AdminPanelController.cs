@@ -80,6 +80,54 @@ namespace SmartCafe.Controllers
             return "Your profit is above average";
         }
 
+        // METHOD: recommended drinks based on ingredients
+        private List<Drink> recommendationBasedOnIngredients(List<Ingredient> ingredients)
+        {
+            // needed lists
+            List<DrinkIngredient> drinkIngredients = _context.DrinkIngredients.ToList();
+            List<Drink> drinks = _context.Drinks.ToList();
+            List<Drink> wantedDrinks = new List<Drink>();
+
+            int num = 1;
+            while (wantedDrinks.Count != 5)
+            {
+                Ingredient ingredient = ingredients[ingredients.Count - num];
+                Console.WriteLine("sastojak " + ingredient.name);
+                List<int> drinkIds = new List<int>();
+                Console.WriteLine(drinkIngredients.Count);
+                for (int i = 0; i < drinkIngredients.Count; i++)
+                {
+                    if (drinkIngredients[i].idIngredient == ingredient.id)
+                    {
+                        Console.WriteLine(" - id drinka: " + drinkIngredients[i].idDrink);
+                        drinkIds.Add(drinkIngredients[i].idDrink);
+                    }
+                }
+
+                for (int i = 0; i < drinkIds.Count; i++)
+                {
+                    for (int j = 0; j < drinks.Count; j++)
+                    {
+                        if (drinkIds[i] == drinks[j].id && !wantedDrinks.Contains(drinks[j]))
+                        {
+                            if (wantedDrinks.Count == 5)
+                            {
+                                break;
+                            }
+                            Console.WriteLine("ulazi: " + drinkIds[i]);
+                            wantedDrinks.Add(drinks[j]);
+                        }
+                    }
+                    if (wantedDrinks.Count == 5)
+                    {
+                        break;
+                    }
+                }
+                num++;
+            }
+            return wantedDrinks;
+        }
+
         // GET: AdminPanel
         public IActionResult Index()
         {
@@ -88,6 +136,9 @@ namespace SmartCafe.Controllers
             ViewBag.SortedIngredients = ingredients;
             string optimalProfit = optimalProfitMessage();
             ViewBag.OptimalProfit = optimalProfit;
+            // Recommended drinks on view
+            List<Drink> wantedDrinks = recommendationBasedOnIngredients(ingredients);
+            ViewBag.WantedDrinks = wantedDrinks;
             // Retrieve the list of drinks from the database
             var drinks = _context.Drinks.ToList();
             //sortiranje
