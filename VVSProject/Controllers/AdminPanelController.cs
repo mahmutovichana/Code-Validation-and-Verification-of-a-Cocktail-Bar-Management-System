@@ -61,7 +61,7 @@ namespace SmartCafe.Controllers
 
             return ingredients;
         }
-        private string isProfitOptimal(double realProfit = 250)
+        private string optimalProfitMessage(double realProfit = 250)
         {
             var drinks = _context.Drinks.ToList();
             double optimalProfit = 0;
@@ -86,7 +86,7 @@ namespace SmartCafe.Controllers
             var ingredients = _context.Ingredients.ToList();
             insertionSort(ingredients);
             ViewBag.SortedIngredients = ingredients;
-            string optimalProfit = isProfitOptimal();
+            string optimalProfit = optimalProfitMessage();
             ViewBag.OptimalProfit = optimalProfit;
             // Retrieve the list of drinks from the database
             var drinks = _context.Drinks.ToList();

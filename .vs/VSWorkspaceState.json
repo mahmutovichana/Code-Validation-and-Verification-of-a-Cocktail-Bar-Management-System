@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\VVSProject",
+    "\\VVSProject\\Views",
+    "\\VVSProject\\Views\\AdminPanel"
   ],
+  "SelectedNode": "\\VVSProject\\Views\\AdminPanel\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
