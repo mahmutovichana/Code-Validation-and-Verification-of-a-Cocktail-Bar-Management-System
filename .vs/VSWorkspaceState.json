@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\VVSProject",
+    "\\VVSProject\\Controllers",
     "\\VVSProject\\Views",
     "\\VVSProject\\Views\\AdminPanel"
   ],
-  "SelectedNode": "\\VVSProject\\Views\\AdminPanel\\Index.cshtml",
+  "SelectedNode": "\\VVSProject\\VVSProject.sln",
   "PreviewInSolutionExplorer": false
 }

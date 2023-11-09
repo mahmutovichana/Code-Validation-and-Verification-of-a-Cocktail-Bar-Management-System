@@ -128,6 +128,26 @@ namespace SmartCafe.Controllers
             return wantedDrinks;
         }
 
+        //METHOD: Number of drinks
+        private int numberOfDrinks (List<Drink> drinks)
+        {
+            return drinks.Count;
+        }
+
+        //METHOD: Cheapest drink
+        private Drink cheapestDrink(List<Drink> drinks)
+        {
+            Drink cheapestDrink = drinks[0];
+            for (int i = 1; i < drinks.Count; i++)
+            {
+                if (drinks[i].price < cheapestDrink.price)
+                {
+                    cheapestDrink = drinks[i];
+                }
+            }
+            return cheapestDrink;
+        }
+
         // GET: AdminPanel
         public IActionResult Index()
         {
@@ -142,7 +162,11 @@ namespace SmartCafe.Controllers
             var drinks = _context.Drinks.ToList();
             //sortiranje
             bubbleSort(drinks);
-            ///
+            // number of drinks
+            ViewBag.NumberOfDrinks = numberOfDrinks(drinks);
+            // cheapest drink
+            ViewBag.CheapestDrink = cheapestDrink(drinks);
+
 
             return View(drinks);
         }
