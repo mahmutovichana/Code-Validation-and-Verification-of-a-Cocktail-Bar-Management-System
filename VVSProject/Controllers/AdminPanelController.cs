@@ -187,62 +187,6 @@ namespace SmartCafe.Controllers
             return View(drinks);
         }
 
-        // GET: AdminPanel/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var drink = await _context.Drinks
-                .FirstOrDefaultAsync(m => m.id == id);
-            if (drink == null)
-            {
-                return NotFound();
-            }
-
-            return View(drink);
-        }
-
-        // GET: AdminPanel/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: AdminPanel/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name,price")] Drink drink)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(drink);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(drink);
-        }
-
-        // GET: AdminPanel/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var drink = await _context.Drinks.FindAsync(id);
-            if (drink == null)
-            {
-                return NotFound();
-            }
-            return View(drink);
-        }
-
         // POST: AdminPanel/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -285,36 +229,6 @@ namespace SmartCafe.Controllers
                 }
             }
             return View(drink);
-        }
-
-
-        // GET: AdminPanel/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var drink = await _context.Drinks
-                .FirstOrDefaultAsync(m => m.id == id);
-            if (drink == null)
-            {
-                return NotFound();
-            }
-
-            return View(drink);
-        }
-
-        // POST: AdminPanel/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var drink = await _context.Drinks.FindAsync(id);
-            _context.Drinks.Remove(drink);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
         }
 
         private bool DrinkExists(int id)
