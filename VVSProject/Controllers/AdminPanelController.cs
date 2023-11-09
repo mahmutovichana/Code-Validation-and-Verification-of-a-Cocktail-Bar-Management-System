@@ -148,6 +148,20 @@ namespace SmartCafe.Controllers
             return cheapestDrink;
         }
 
+        //METHOD: Most expensive drink
+        private Drink mostExpensiveDrink(List<Drink> drinks)
+        {
+            Drink expensiveDrink = drinks[0];
+            for (int i = 1; i < drinks.Count; i++)
+            {
+                if (drinks[i].price > expensiveDrink.price)
+                {
+                    expensiveDrink = drinks[i];
+                }
+            }
+            return expensiveDrink;
+        }
+
         // GET: AdminPanel
         public IActionResult Index()
         {
@@ -166,6 +180,8 @@ namespace SmartCafe.Controllers
             ViewBag.NumberOfDrinks = numberOfDrinks(drinks);
             // cheapest drink
             ViewBag.CheapestDrink = cheapestDrink(drinks);
+            // most expensive drink
+            ViewBag.MostExpensiveDrink = mostExpensiveDrink(drinks);
 
 
             return View(drinks);

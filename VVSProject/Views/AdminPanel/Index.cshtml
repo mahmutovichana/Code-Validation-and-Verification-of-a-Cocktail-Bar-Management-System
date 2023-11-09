@@ -9,6 +9,9 @@
 }
 
 <style>
+
+    @@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
     /* Stilovi za header */
     body {
         font-family: 'Montserrat', sans-serif;
@@ -446,16 +449,16 @@
             <p>Welcome to the Lagoon Bar Stats section, where you can check out some key metrics related to the performance of our bar.</p>
         </div>
         <div class="statistics-item">
-            <span class="statistics-label">Number of workers</span>
-            <span class="statistics-value" id="numWorkersValue">6</span>
+            <span class="statistics-label">Number of drinks</span>
+            <span class="statistics-value" id="numDrinksValue">@ViewBag.NumberOfDrinks</span>
         </div>
         <div class="statistics-item">
             <span class="statistics-label">Number of customers</span>
             <span class="statistics-value" id="numCustomersValue">4185</span>
         </div>
         <div class="statistics-item">
-            <span class="statistics-label">Number of drinks</span>
-            <span class="statistics-value" id="numDrinksValue">@ViewBag.NumberOfDrinks</span>
+            <span class="statistics-label">Most expensive drink</span>
+            <span class="statistics-value" id="mostExpensiveDrinkValue">@ViewBag.MostExpensiveDrink.name</span>
         </div>
         <div class="statistics-item">
             <span class="statistics-label">Cheapest drink</span>
@@ -599,8 +602,8 @@
           }, stepTime);
         }
 
-        const numWorkersValue = document.getElementById('numWorkersValue');
-        animateValue(numWorkersValue, 0, 6, 2000); // Trajanje animacije je 2000ms (2 sekunde)
+        const numDrinksValue = document.getElementById('numDrinksValue');
+        animateValue(numDrinksValue, 0, @ViewBag.NumberOfDrinks, 2000); // Trajanje animacije je 2000ms (2 sekunde)
 
         const numCustomersValue = document.getElementById('numCustomersValue');
         animateValue(numCustomersValue, 0, 4185, 2000); // Trajanje animacije je 2000ms (2 sekunde)
