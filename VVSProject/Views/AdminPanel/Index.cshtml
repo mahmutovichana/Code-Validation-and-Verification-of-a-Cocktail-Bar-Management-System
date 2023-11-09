@@ -262,12 +262,11 @@
     /* Team Members */
     .team-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 10px;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 7%;
     }
 
     .team-member {
@@ -315,13 +314,13 @@
     .member-job {
         font-size: 12px;
         margin-top: 2px;
-        color: #ffcc33; /* Tamnije žuta boja */
+        color: #ffcc33; 
     }
 
     .member-name {
         text-transform: uppercase;
         font-weight: bold;
-        color: #fff; /* Bijela boja za ime i prezime */
+        color: #fff; 
         margin-top: 5px;
     }
 
@@ -567,6 +566,14 @@
             margin-top: 0;
             margin-bottom: 40px;
         }
+
+        #recommendedDrinks {
+            color: white;
+            display: block;
+            margin-left: 42%;
+            font-weight: bold;
+            font-size: 28px;
+        }
     </style>
 
     <h3 id="recommendedDrinks"> Recommended drinks </h3>
@@ -658,22 +665,34 @@
                     // Populate the search results
                     var ul = document.getElementById('searchResults');
                     ul.innerHTML = '';
-                    data.forEach(item => {
-                        var li = document.createElement('li');
-                        li.appendChild(document.createTextNode(item.name));
-                        ul.appendChild(li);
-
-                        for (var i = 0; i < ul..length; i++) {
-                            name = drinkItems[i].getElementsByTagName('h3')[0];
-                            txtValue = name.textContent || name.innerText;
-                            if (txtValue.toUpperCase().includes(item.name.toUpperCase())) {
-                                drinkItems[i].style.display = '';
-                            }
+                    // Show all carousel items if the search input is empty
+                    if (filter === '') {
+                        for (var i = 0; i < drinkItems.length; i++) {
+                            drinkItems[i].style.display = 'block';
                         }
-                    });
+                    } else {
+                        // Hide all carousel items initially
+                        for (var i = 0; i < drinkItems.length; i++) {
+                            drinkItems[i].style.display = 'none';
+                        }
+
+                        // Populate the search results and show relevant carousel items
+                        data.forEach(item => {
+                            var li = document.createElement('li');
+                            li.appendChild(document.createTextNode(item.name));
+                            ul.appendChild(li);
+
+                            for (var i = 0; i < drinkItems.length; i++) {
+                                name = drinkItems[i].querySelector('h3');
+                                txtValue = name.textContent || name.innerText;
+                                if (txtValue.toUpperCase() === item.name.toUpperCase()) {
+                                    drinkItems[i].style.display = 'block';
+                                }
+                            }
+                        });
+                    }
                 })
                 .catch(error => console.error('Error:', error));
-
         }
     </script>
 
@@ -840,34 +859,20 @@
     <div class="team-heading">Team Members</div>
     <div class="team-grid">
     <div class="team-member">
-        <img src="@Url.Content("~/images/teamMember1.jpg")" alt="Uposlenik 1" />
-        <div class="member-name">Hanna Barker</div>
-        <div class="member-job">HR Manager</div>
+        <img src="@Url.Content("~/images/eminaEfendicProfilna.jpg")" alt="Uposlenik 1" />
+        <div class="member-name">Emina Efendić</div>
     </div>
     <div class="team-member">
-        <img src="@Url.Content("~/images/teamMember2.jpg")" alt="Uposlenik 2" />
-        <div class="member-name">Sam Miller</div>
-        <div class="member-job">Bartender</div>
+        <img src="@Url.Content("~/images/aminaHromicProfilna.jpg")" alt="Uposlenik 2" />
+        <div class="member-name">Amina Hromić</div>
     </div>
     <div class="team-member">
-        <img src="@Url.Content("~/images/teamMember3.jpg")" alt="Uposlenik 3" />
-        <div class="member-name">Clayton Lane</div>
-        <div class="member-job">Bartender</div>
+        <img src="@Url.Content("~/images/hanaMahmutovicProfilna.jpg")" alt="Uposlenik 3" />
+        <div class="member-name">Hana Mahmutović</div>
     </div>
     <div class="team-member">
-        <img src="@Url.Content("~/images/teamMember4.jpg")" alt="Uposlenik 4" />
-        <div class="member-name">Robert Barkfield</div>
-        <div class="member-job">Bartender</div>
-    </div>
-    <div class="team-member">
-        <img src="@Url.Content("~/images/teamMember5.jpg")" alt="Uposlenik 5" />
-        <div class="member-name">Margaret Jones</div>
-        <div class="member-job">Bartender</div>
-    </div>
-    <div class="team-member">
-        <img src="@Url.Content("~/images/teamMember6.jpg")" alt="Uposlenik 6" />
-        <div class="member-name">Jenny Francis</div>
-        <div class="member-job">Finance Manager</div>
+        <img src="@Url.Content("~/images/tajraSelimovicProfilna.jpg")" alt="Uposlenik 4" />
+        <div class="member-name">Tajra Selimović</div>
     </div>
     </div>
 
