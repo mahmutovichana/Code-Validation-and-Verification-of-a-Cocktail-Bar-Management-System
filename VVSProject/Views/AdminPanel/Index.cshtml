@@ -14,8 +14,9 @@
         font-family: 'Montserrat', sans-serif;
         margin: 0;
         padding: 0;
-        background-image: url('/images/abstractBackground2.png');
-        color: black;
+        background-color: #0C356A;
+        /*background-image: url('/images/abstractBackground2.png');*/
+        color: white;
     }
 
     .header {
@@ -25,7 +26,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-right: 20px; 
+        margin-right: 20px;
     }
 
     .nav {
@@ -121,43 +122,11 @@
             font-size: 16px;
         }
 
-
-    /* Stilovi za Most Sold Cocktail */
-    .most-sold-cocktail {
-        margin: 5% auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.5); /* Polu transparentna pozadina */
-        padding: 20px;
-        border-radius: 5px;
-        color: white;
-        width: fit-content;
-        max-width: 20%;
-    }
-
-        .most-sold-cocktail img {
-            max-width: 50%;
-            height: auto; 
-            margin-bottom: 10px;
-            border-radius: 20px;
-        }
-
-        .most-sold-cocktail:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-    .most-sold-cocktail-name {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
     /* Stilovi za carousel */
     .carousel {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-gap: 40px; 
+        grid-gap: 40px;
         margin: 15%;
         margin-top: 0;
         margin-bottom: 40px;
@@ -175,8 +144,8 @@
         border-radius: 5px;
         transition: background-color 0.3s;
         cursor: pointer;
-        text-decoration: none; 
-        color: black; 
+        text-decoration: none;
+        color: black;
     }
 
         .carousel-item:hover {
@@ -186,7 +155,7 @@
     .carousel-image {
         width: 200px;
         max-width: 100%;
-        height: 200px; 
+        height: 200px;
         object-fit: cover;
         border-radius: 5px;
     }
@@ -213,14 +182,14 @@
         max-width: 600px;
         border-radius: 5px;
         position: relative;
-        display: flex; 
+        display: flex;
     }
 
     .edit-image {
         max-width: 40%;
         height: auto;
         border-radius: 10px;
-        margin-right: 20px; 
+        margin-right: 20px;
     }
 
     .edit-details {
@@ -287,59 +256,6 @@
                 background-color: #45a049;
             }
 
-    .logout-button {
-        display: inline-block;
-        position: relative;
-        z-index: 1;
-        overflow: hidden;
-        text-decoration: none;
-        font-family: sans-serif;
-        font-weight: 600;
-        font-size: 2em;
-        padding: 0.75em 1em;
-        color: #FF5A5F;
-        border: 0.15em solid #FF5A5F;
-        border-radius: calc(0.75em + 0.5em + 0.15em);
-        transition: 3s;
-    }
-
-        .logout-button:before,
-        .logout-button:after {
-            content: '';
-            position: absolute;
-            top: -1.5em;
-            z-index: -1;
-            width: 200%;
-            aspect-ratio: 1;
-            border: none;
-            border-radius: 40%;
-            background-color: rgba(0, 0, 0, 0.7);
-            transition: 4s;
-        }
-
-        .logout-button:before {
-            left: -80%;
-            transform: translate3d(0, 5em, 0) rotate(-340deg);
-        }
-
-        .logout-button:after {
-            right: -80%;
-            transform: translate3d(0, 5em, 0) rotate(390deg);
-        }
-
-        .logout-button:hover,
-        .logout-button:focus {
-            color: #FFFFFF;
-        }
-
-            .logout-button:hover:before,
-            .logout-button:hover:after,
-            .logout-button:focus:before,
-            .logout-button:focus:after {
-                transform: none;
-                background-color: rgba(255, 90, 95, 0.75); /* Življa boja */
-            }
-
     /* Team Members */
     .team-grid {
         display: grid;
@@ -348,7 +264,7 @@
         gap: 10px;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
     }
 
     .team-member {
@@ -357,9 +273,9 @@
         justify-content: center;
         align-items: center;
         width: 150px;
-        margin: 0 auto; 
-        box-sizing: border-box; 
-        padding: 10px; 
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 10px;
     }
 
     .team-heading {
@@ -368,7 +284,7 @@
         margin-bottom: 10px;
         color: white;
         text-align: center;
-        margin-top: 0;
+        margin-top: 30px;
     }
 
     .team-member {
@@ -407,11 +323,11 @@
     }
 
     .search-container {
-        height: 100vh; 
+        height: 100vh;
         font-family: 'Montserrat', sans-serif;
     }
 
-    #searchInputIngredient, #searchInputName{
+    #searchInputIngredient, #searchInputName {
         display: block;
         margin: 3% auto 2% auto;
         padding: 10px;
@@ -419,6 +335,92 @@
         border: 1px solid #ccc;
         width: 500px;
         font-family: 'Montserrat', sans-serif;
+    }
+
+    .quantity {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+        .quantity button {
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border: none;
+            color: #000;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .quantity input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+
+    .dailyProfit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 5px;
+        color: white;
+        transition: background-color 0.3s;
+        width: fit-content;
+        margin-bottom: 30px;
+    }
+
+    #daily-profit-btn {
+        font-family: 'Montserrat';
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        #daily-profit-btn:hover {
+            background-color: #45a049;
+        }
+
+    #daily-profit-label {
+        display: none;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .daily-profit-value {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 </style>
 
@@ -452,19 +454,123 @@
             <span class="statistics-value" id="numCustomersValue">4185</span>
         </div>
     </div>
-    <ul>
+    <style>
+        .ingredient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .ingredient-item {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+            .ingredient-item img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+        .ingredient-name {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .ingredient-quantity {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .red-bg {
+            background-color: #FF8080;
+        }
+
+        .yellow-bg {
+            background-color: #FFCF96;
+        }
+
+        .green-bg {
+            background-color: #99B080;
+        }
+
+        h2 {
+            color: white;
+            margin: 7%;
+        }
+
+        #availableIngredients, #recommendedDrinks {
+            color: white;
+            margin: 5% 0 1% 5%;
+        }
+    </style>
+
+    <h3 id="availableIngredients">Available Ingredients</h3>
+    <div class="ingredient-grid">
         @foreach (var ingredient in ViewBag.SortedIngredients)
         {
-            <li>@ingredient.name - @ingredient.quantity</li>
+            <div class="ingredient-item @GetColor(ingredient.quantity)">
+                <img src="@Url.Content($"~/images/ingredients/{ingredient.name}.jpg")" alt="Ingredient Image">
+                <div class="ingredient-name">@ingredient.name</div>
+                <div class="ingredient-quantity">@ingredient.quantity</div>
+            </div>
         }
-    </ul>
-    <h3> Recommended drinks </h3>
-    <ul>
+    </div>
+
+    @functions {
+        public string GetColor(int quantity)
+        {
+            if (quantity < 5)
+            {
+                return "red-bg";
+            }
+            else if (quantity >= 5 && quantity <= 10)
+            {
+                return "yellow-bg";
+            }
+            else
+            {
+                return "green-bg";
+            }
+        }
+    }
+
+    <style>
+        .carouselRecommendedDrinks {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 5px;
+            padding: 20px;
+            align-items: center;
+            margin: 15%;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+    </style>
+
+    <h3 id="recommendedDrinks"> Recommended drinks </h3>
+    <div class="carouselRecommendedDrinks">
         @foreach (var drink in ViewBag.WantedDrinks)
-{
-        <li>@drink.name</li>
-}
-    </ul>
+        {
+            <div class="carousel-item">
+                <div class="image-container">
+                    <img src="@Url.Content("~/images/" + drink.name + ".jpg")" alt="@drink.name" class="carousel-image" />
+                </div>
+                <h3>@drink.name</h3>                
+            </div>
+        }
+    </div>
+
 
     <script>
         function animateValue(element, start, end, duration) {
@@ -520,11 +626,11 @@
         <input type="text" id="searchInputIngredient" onkeyup="filterDrinksByIngredients()" placeholder="Search for drinks by ingredients..">
     </div>
 
-    <ul id="searchResults"></ul>
+    <ul id="searchResults" hidden></ul>
 
     <script>
         function filterDrinksByIngredients() {
-            var input, filter, carousel, drinkItems, url;
+            var input, filter, carousel, drinkItems, url, name, txtValue;
             input = document.getElementById('searchInputIngredient');
             filter = input.value.toUpperCase();
             carousel = document.getElementsByClassName('carousel')[0];
@@ -535,27 +641,28 @@
                 .then(response => response.json())
                 .then(data => {
                     // Clear previous search results
-                    document.getElementById('searchResults').innerHTML = '';
+                    carousel = document.querySelector('.carousel');
+                    drinkItems = carousel.querySelectorAll('.carousel-item');
 
                     // Populate the search results
                     var ul = document.getElementById('searchResults');
+                    ul.innerHTML = '';
                     data.forEach(item => {
                         var li = document.createElement('li');
                         li.appendChild(document.createTextNode(item.name));
                         ul.appendChild(li);
-                    });
 
-                    Array.from(drinkItems).forEach(item => {
-                        var name = item.getElementsByTagName('h3')[0];
-                        var txtValue = name.textContent || name.innerText;
-                        if (!txtValue.toUpperCase().includes(filter)) {
-                            item.style.display = 'none';
-                        } else {
-                            item.style.display = '';
+                        for (var i = 0; i < ul..length; i++) {
+                            name = drinkItems[i].getElementsByTagName('h3')[0];
+                            txtValue = name.textContent || name.innerText;
+                            if (txtValue.toUpperCase().includes(item.name.toUpperCase())) {
+                                drinkItems[i].style.display = '';
+                            }
                         }
                     });
                 })
                 .catch(error => console.error('Error:', error));
+
         }
     </script>
 
@@ -563,14 +670,13 @@
         @foreach (var drink in Model)
         {
             <div class="carousel-item">
-                <h3>@drink.name</h3>
-                <p>Price: @drink.price</p>
-                <img src="@Url.Content("~/images/" + drink.name + ".jpg")" alt="@drink.name" class="carousel-image" />
-
+                <div class="image-container">
+                    <img src="@Url.Content("~/images/" + drink.name + ".jpg")" alt="@drink.name" class="carousel-image" />
+                </div>
                 <!-- Modalni prozor za uređivanje -->
                 <div id="modal-@drink.id" class="modal">
                     <div class="modal-content">
-                        
+
                         <h1>Edit Drink</h1>
                         <form method="post" asp-action="Edit" asp-route-id="@drink.id">
                             <img src="@Url.Content("~/images/" + drink.name + ".jpg")" alt="@drink.name" class="edit-image" />
@@ -590,10 +696,134 @@
                         </form>
                     </div>
                 </div>
+                <h3>@drink.name</h3>
+                <p>Price: @drink.price</p>
+                <div class="quantity" style="text-align: center;">
+                    <button class="minus-btn" data-drink-id="@drink.id">-</button>
+                    <input type="text" class="quantity-input" value="0" />
+                    <button class="plus-btn" data-drink-id="@drink.id">+</button>
+                </div>
             </div>
         }
     </div>
-    <br />
+    <script>
+        // JavaScript kod za modalni prozor
+        var modalItems = document.getElementsByClassName("image-container");
+        var modals = document.getElementsByClassName("modal");
+
+        // Prikazuje modalni prozor za određenu stavku
+        function showModal(itemIndex) {
+            modals[itemIndex].style.display = "block";
+        }
+
+        // Postavlja događaje za prikazivanje/skrivanje modalnih prozora
+        for (var i = 0; i < modalItems.length; i++) {
+            (function (index) {
+                modalItems[index].addEventListener("click", function () {
+                    showModal(index);
+                });
+
+                var closeButtons = modals[index].getElementsByClassName("close");
+                for (var j = 0; j < closeButtons.length; j++) {
+                    closeButtons[j].addEventListener("click", function () {
+                        hideModal(index);
+                    });
+                }
+
+                // Sakriva modalni prozor za određenu stavku
+                function hideModal(itemIndex) {
+                    modals[itemIndex].style.display = "none";
+                }
+            })(i);
+        }
+    </script>
+
+    <div class="dailyProfit">
+        <div class="box">
+            <div class="subtitle">Daily Profit</div>
+            <div id="daily-profit-label" class="daily-profit-value"></div>
+        </div>
+        <div id="optimal-profit-message" class="optimal-profit-message"></div>
+        <button id="daily-profit-btn" type="button" onclick="calculateDailyProfit()">Check Daily Profit</button>
+    </div>
+
+    <script>
+        function calculateDailyProfit() {
+            const selectedDrinks = [];
+            const quantityInputs = document.querySelectorAll('.quantity-input');
+
+            quantityInputs.forEach(function (input) {
+                const quantity = parseInt(input.value);
+                const drinkId = input.parentElement.querySelector('.minus-btn').getAttribute('data-drink-id');
+                if (quantity > 0) {
+                    selectedDrinks.push({ drinkId: parseInt(drinkId), quantity: quantity });
+                }
+            });
+
+            fetch('@Url.Action("CalculateDailyProfit", "AdminPanel")', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(selectedDrinks)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the daily profit on the page
+                    const dailyProfitLabel = document.getElementById('daily-profit-label');
+                    const optimalProfitMessageLabel = document.getElementById('optimal-profit-message');
+                    if (data.dailyProfit !== undefined) {
+                        dailyProfitLabel.innerText = `${data.dailyProfit}`;
+                        optimalProfitMessageLabel.innerText = data.message; // Display the optimal profit message
+                    } else {
+                        dailyProfitLabel.innerText = "0";
+                        optimalProfitMessageLabel.innerText = "";
+                    }
+                    dailyProfitLabel.style.display = 'block';
+                    optimalProfitMessageLabel.style.display = 'block';
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const quantityElements = document.querySelectorAll('.quantity');
+
+            quantityElements.forEach(function (element) {
+                const minusBtn = element.querySelector('.minus-btn');
+                const plusBtn = element.querySelector('.plus-btn');
+                const quantityInput = element.querySelector('input.quantity-input');
+
+                minusBtn.addEventListener('click', function () {
+                    updateQuantity(-1);
+                });
+
+                plusBtn.addEventListener('click', function () {
+                    updateQuantity(1);
+                });
+
+                function updateQuantity(change) {
+                    let quantity = parseInt(quantityInput.value);
+                    quantity += change;
+
+                    if (quantity < 0) {
+                        quantity = 0;
+                    }
+
+                    quantityInput.value = quantity;
+                }
+            });
+
+            function getDrinkNameById(drinkId) {
+                const drinks = @Html.Raw(Json.Serialize(Model));
+                const drink = drinks.find(d => d.id === drinkId);
+                return drink ? drink.name : 'Nepoznato';
+            }
+        });
+    </script>
+
     <h3>@ViewBag.OptimalProfit</h3>
     <br />
     <div class="team-heading">Team Members</div>
@@ -630,36 +860,5 @@
     </div>
     </div>
 
-    <script>
-        // JavaScript kod za modalni prozor
-        var modalItems = document.getElementsByClassName("carousel-item");
-        var modals = document.getElementsByClassName("modal");
-
-        // Prikazuje modalni prozor za određenu stavku
-        function showModal(itemIndex) {
-            modals[itemIndex].style.display = "block";
-        }
-
-        // Postavlja događaje za prikazivanje/skrivanje modalnih prozora
-        for (var i = 0; i < modalItems.length; i++) {
-            (function (index) {
-                modalItems[index].addEventListener("click", function () {
-                    showModal(index);
-                });
-
-                var closeButtons = modals[index].getElementsByClassName("close");
-                for (var j = 0; j < closeButtons.length; j++) {
-                    closeButtons[j].addEventListener("click", function () {
-                        hideModal(index);
-                    });
-                }
-
-                // Sakriva modalni prozor za određenu stavku
-                function hideModal(itemIndex) {
-                    modals[itemIndex].style.display = "none";
-                }
-            })(i);
-        }
-    </script>
 </body>
 </html>

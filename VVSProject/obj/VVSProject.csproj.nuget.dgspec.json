@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\efend\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj": {}
+    "C:\\Users\\mahmu\\OneDrive\\Desktop\\vvs projekat 2\\VVS\\VVSProject\\VVSProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\efend\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj": {
+    "C:\\Users\\mahmu\\OneDrive\\Desktop\\vvs projekat 2\\VVS\\VVSProject\\VVSProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\efend\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj",
+        "projectUniqueName": "C:\\Users\\mahmu\\OneDrive\\Desktop\\vvs projekat 2\\VVS\\VVSProject\\VVSProject.csproj",
         "projectName": "VVSProject",
-        "projectPath": "C:\\Users\\efend\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj",
-        "packagesPath": "C:\\Users\\efend\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\efend\\Desktop\\VVS\\VVS\\VVSProject\\obj\\",
+        "projectPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\vvs projekat 2\\VVS\\VVSProject\\VVSProject.csproj",
+        "packagesPath": "C:\\Users\\mahmu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\vvs projekat 2\\VVS\\VVSProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\efend\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mahmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

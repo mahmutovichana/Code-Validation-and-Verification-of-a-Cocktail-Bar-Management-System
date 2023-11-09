@@ -61,7 +61,7 @@ namespace SmartCafe.Controllers
 
             return ingredients;
         }
-        private string optimalProfitMessage(double realProfit = 250)
+        private string optimalProfitMessage(double realProfit)
         {
             var drinks = _context.Drinks.ToList();
             double optimalProfit = 0;
@@ -134,8 +134,7 @@ namespace SmartCafe.Controllers
             var ingredients = _context.Ingredients.ToList();
             insertionSort(ingredients);
             ViewBag.SortedIngredients = ingredients;
-            string optimalProfit = optimalProfitMessage();
-            ViewBag.OptimalProfit = optimalProfit;
+            List<DrinkQuantityPair> selectedDrinks = ViewBag.SelectedDrinks;
             // Recommended drinks on view
             List<Drink> wantedDrinks = recommendationBasedOnIngredients(ingredients);
             ViewBag.WantedDrinks = wantedDrinks;
@@ -303,6 +302,36 @@ namespace SmartCafe.Controllers
                 .ToList();
             List<Drink> filteredDrinks = drinks;
             return filteredDrinks;
+        }
+
+        [HttpPost]
+        public ActionResult CalculateDailyProfit([FromBody] List<DrinkQuantityPair> selectedDrinks)
+        {
+            ViewBag.SelectedDrinks = selectedDrinks;
+            Console.WriteLine(selectedDrinks.ToArray());
+            var drinkIds = selectedDrinks.Select(dq => dq.DrinkId).ToList();
+            var drinksFromDb = _context.Drinks.Where(d => drinkIds.Contains(d.id)).ToList();
+
+            var dailyProfit = 0.0;
+            foreach (var drinkQuantityPair in selectedDrinks)
+            {
+                var drink = drinksFromDb.FirstOrDefault(d => d.id == drinkQuantityPair.DrinkId);
+                if (drink != null)
+                {
+                    dailyProfit += drink.price * drinkQuantityPair.Quantity;
+                }
+            }
+
+            ViewBag.DailyProfit = dailyProfit;
+            Console.WriteLine(dailyProfit.ToString());
+            var message = optimalProfitMessage(dailyProfit); // Call the optimalProfitMessage function
+            return Json(new { dailyProfit = dailyProfit, message = message });
+        }
+
+        public class DrinkQuantityPair
+        {
+            public int DrinkId { get; set; }
+            public int Quantity { get; set; }
         }
     }
 }
