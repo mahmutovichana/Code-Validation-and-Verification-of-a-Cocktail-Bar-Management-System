@@ -697,7 +697,9 @@
     </script>
 
     <div class="carousel">
-        @foreach (var drink in Model)
+        @{
+            int i = 0;
+            foreach (var drink in Model)
         {
             <div class="carousel-item">
                 <div class="image-container">
@@ -728,12 +730,16 @@
                 </div>
                 <h3>@drink.name</h3>
                 <p>Price: @drink.price</p>
+                <p>Price with PDV: @ViewBag.PricesWithPDV[i] </p>
+                
                 <div class="quantity" style="text-align: center;">
                     <button class="minus-btn" data-drink-id="@drink.id">-</button>
                     <input type="text" class="quantity-input" value="0" />
                     <button class="plus-btn" data-drink-id="@drink.id">+</button>
                 </div>
             </div>
+                i++;
+        }
         }
     </div>
     <script>

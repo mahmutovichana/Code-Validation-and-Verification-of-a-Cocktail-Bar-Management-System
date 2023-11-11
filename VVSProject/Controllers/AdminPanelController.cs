@@ -162,6 +162,18 @@ namespace SmartCafe.Controllers
             return expensiveDrink;
         }
 
+        //METHOD: Price with PDV
+
+        private List<Double> priceWithPDV()
+        {
+            var PDVPrices = new List<Double>();
+            var drinks = _context.Drinks.ToList();
+            foreach(var drink in drinks)
+            {
+                PDVPrices.Add(Math.Round(drink.price - 0.17 * drink.price, 2));
+            }
+            return PDVPrices;
+        }
         // GET: AdminPanel
         public IActionResult Index()
         {
@@ -182,7 +194,8 @@ namespace SmartCafe.Controllers
             ViewBag.CheapestDrink = cheapestDrink(drinks);
             // most expensive drink
             ViewBag.MostExpensiveDrink = mostExpensiveDrink(drinks);
-
+            //prices with PDV
+            ViewBag.PricesWithPDV = priceWithPDV();
 
             return View(drinks);
         }
