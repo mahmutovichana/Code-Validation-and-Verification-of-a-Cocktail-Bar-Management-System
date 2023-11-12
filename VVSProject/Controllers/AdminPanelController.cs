@@ -167,7 +167,7 @@ namespace SmartCafe.Controllers
         private List<Double> priceWithPDV()
         {
             var PDVPrices = new List<Double>();
-            var drinks = _context.Drinks.ToList();
+            var drinks = bubbleSort(_context.Drinks.ToList());
             foreach(var drink in drinks)
             {
                 PDVPrices.Add(Math.Round(drink.price - 0.17 * drink.price, 2));
