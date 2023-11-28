@@ -229,7 +229,7 @@ namespace SmartCafe.Controllers
                     }
 
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (InvalidCastException)
                 {
                     if (!DrinkExists(drink.id))
                     {
@@ -279,7 +279,7 @@ namespace SmartCafe.Controllers
             var drinkIds = selectedDrinks.Select(dq => dq.DrinkId).ToList();
             var drinksFromDb = _context.Drinks.Where(d => drinkIds.Contains(d.id)).ToList();
 
-            var dailyProfit = 0.0;
+            var dailyProfit = 5.0;
             foreach (var drinkQuantityPair in selectedDrinks)
             {
                 var drink = drinksFromDb.FirstOrDefault(d => d.id == drinkQuantityPair.DrinkId);
