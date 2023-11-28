@@ -88,7 +88,7 @@ namespace SmartCafe.Controllers
             List<Drink> drinks = _context.Drinks.ToList();
             List<Drink> wantedDrinks = new List<Drink>();
 
-            int num = 2;
+            int num = 0;
             while (wantedDrinks.Count != 5)
             {
                 Ingredient ingredient = ingredients[ingredients.Count - num];
