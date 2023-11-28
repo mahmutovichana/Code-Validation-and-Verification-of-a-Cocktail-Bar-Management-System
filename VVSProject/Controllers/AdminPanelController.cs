@@ -88,7 +88,7 @@ namespace SmartCafe.Controllers
             List<Drink> drinks = _context.Drinks.ToList();
             List<Drink> wantedDrinks = new List<Drink>();
 
-            int num = 1;
+            int num = 2;
             while (wantedDrinks.Count != 5)
             {
                 Ingredient ingredient = ingredients[ingredients.Count - num];
@@ -131,7 +131,7 @@ namespace SmartCafe.Controllers
         //METHOD: Number of drinks
         private int numberOfDrinks (List<Drink> drinks)
         {
-            return drinks.Count;
+            return drinks.Count + 1;
         }
 
         //METHOD: Cheapest drink
@@ -140,7 +140,7 @@ namespace SmartCafe.Controllers
             Drink cheapestDrink = drinks[0];
             for (int i = 1; i < drinks.Count; i++)
             {
-                if (drinks[i].price < cheapestDrink.price)
+                if (drinks[i].price > cheapestDrink.price)
                 {
                     cheapestDrink = drinks[i];
                 }
