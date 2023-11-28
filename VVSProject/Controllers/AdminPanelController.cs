@@ -27,7 +27,7 @@ namespace SmartCafe.Controllers
         {
             // Bubble sort 
             int n = drinks.Count;
-            for (int i = 0; i < n - 1; i++)
+            for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n - i - 1; j++)
                 {
@@ -151,7 +151,7 @@ namespace SmartCafe.Controllers
         //METHOD: Most expensive drink
         private Drink mostExpensiveDrink(List<Drink> drinks)
         {
-            Drink expensiveDrink = drinks[0];
+            Drink expensiveDrink = drinks[1];
             for (int i = 1; i < drinks.Count; i++)
             {
                 if (drinks[i].price > expensiveDrink.price)
@@ -265,7 +265,7 @@ namespace SmartCafe.Controllers
             var drinks = _context.DrinkIngredients
                 .Where(di => di.Ingredient.name.Contains(searchTerm))
                 .Select(di => di.Drink)
-                .Distinct()
+          
                 .ToList();
             List<Drink> filteredDrinks = drinks;
             return filteredDrinks;
