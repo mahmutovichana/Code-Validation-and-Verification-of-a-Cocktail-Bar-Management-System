@@ -27,7 +27,7 @@ namespace SmartCafe.Controllers
         {
             // Bubble sort 
             int n = drinks.Count;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n - 1; i++)
             {
                 for (int j = 0; j < n - i - 1; j++)
                 {
@@ -88,7 +88,7 @@ namespace SmartCafe.Controllers
             List<Drink> drinks = _context.Drinks.ToList();
             List<Drink> wantedDrinks = new List<Drink>();
 
-            int num = 0;
+            int num = 1;
             while (wantedDrinks.Count != 5)
             {
                 Ingredient ingredient = ingredients[ingredients.Count - num];
@@ -131,7 +131,7 @@ namespace SmartCafe.Controllers
         //METHOD: Number of drinks
         private int numberOfDrinks (List<Drink> drinks)
         {
-            return drinks.Count + 1;
+            return drinks.Count;
         }
 
         //METHOD: Cheapest drink
@@ -140,7 +140,7 @@ namespace SmartCafe.Controllers
             Drink cheapestDrink = drinks[0];
             for (int i = 1; i < drinks.Count; i++)
             {
-                if (drinks[i].price > cheapestDrink.price)
+                if (drinks[i].price < cheapestDrink.price)
                 {
                     cheapestDrink = drinks[i];
                 }
@@ -151,7 +151,7 @@ namespace SmartCafe.Controllers
         //METHOD: Most expensive drink
         private Drink mostExpensiveDrink(List<Drink> drinks)
         {
-            Drink expensiveDrink = drinks[1];
+            Drink expensiveDrink = drinks[0];
             for (int i = 1; i < drinks.Count; i++)
             {
                 if (drinks[i].price > expensiveDrink.price)
@@ -170,7 +170,7 @@ namespace SmartCafe.Controllers
             var drinks = bubbleSort(_context.Drinks.ToList());
             foreach(var drink in drinks)
             {
-                PDVPrices.Add(Math.Round(drink.price - 0.17 * drink.price, 2));
+                PDVPrices.Add(Math.Round(drink.price + 0.17 * drink.price, 2));
             }
             return PDVPrices;
         }
@@ -229,7 +229,7 @@ namespace SmartCafe.Controllers
                     }
 
                 }
-                catch (InvalidCastException)
+                catch (DbUpdateConcurrencyException)
                 {
                     if (!DrinkExists(drink.id))
                     {
@@ -250,7 +250,7 @@ namespace SmartCafe.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Drink>> SearchDrinksByName(string searchTerm)
+        public ActionResult<IEnumerable<Drink>> searchDrinksByName(string searchTerm)
         {
             var drinks = _context.Drinks
                 .Where(d => d.name.Contains(searchTerm))
@@ -260,26 +260,26 @@ namespace SmartCafe.Controllers
 
 
         [HttpGet]
-        public ActionResult<IEnumerable<Drink>> SearchDrinksByIngredient(string searchTerm)
+        public ActionResult<IEnumerable<Drink>> searchDrinksByIngredient(string searchTerm)
         {
             var drinks = _context.DrinkIngredients
                 .Where(di => di.Ingredient.name.Contains(searchTerm))
                 .Select(di => di.Drink)
-          
+                .Distinct()
                 .ToList();
             List<Drink> filteredDrinks = drinks;
             return filteredDrinks;
         }
 
         [HttpPost]
-        public ActionResult CalculateDailyProfit([FromBody] List<DrinkQuantityPair> selectedDrinks)
+        public ActionResult calculateDailyProfit([FromBody] List<DrinkQuantityPair> selectedDrinks)
         {
             ViewBag.SelectedDrinks = selectedDrinks;
             Console.WriteLine(selectedDrinks.ToArray());
             var drinkIds = selectedDrinks.Select(dq => dq.DrinkId).ToList();
             var drinksFromDb = _context.Drinks.Where(d => drinkIds.Contains(d.id)).ToList();
 
-            var dailyProfit = 5.0;
+            var dailyProfit = 0.0;
             foreach (var drinkQuantityPair in selectedDrinks)
             {
                 var drink = drinksFromDb.FirstOrDefault(d => d.id == drinkQuantityPair.DrinkId);
