@@ -23,7 +23,7 @@ namespace SmartCafe.Controllers
 
         //sort method (newly added)
         
-        private List<Drink> bubbleSort(List<Drink> drinks)
+        private List<Drink> BubbleSort(List<Drink> drinks)
         {
             // Bubble sort 
             int n = drinks.Count;
@@ -167,7 +167,7 @@ namespace SmartCafe.Controllers
         private List<Double> priceWithPDV()
         {
             var PDVPrices = new List<Double>();
-            var drinks = bubbleSort(_context.Drinks.ToList());
+            var drinks = BubbleSort(_context.Drinks.ToList());
             foreach(var drink in drinks)
             {
                 PDVPrices.Add(Math.Round(drink.price + 0.17 * drink.price, 2));
@@ -187,7 +187,7 @@ namespace SmartCafe.Controllers
             // Retrieve the list of drinks from the database
             var drinks = _context.Drinks.ToList();
             //sortiranje
-            bubbleSort(drinks);
+            BubbleSort(drinks);
             // number of drinks
             ViewBag.NumberOfDrinks = numberOfDrinks(drinks);
             // cheapest drink
