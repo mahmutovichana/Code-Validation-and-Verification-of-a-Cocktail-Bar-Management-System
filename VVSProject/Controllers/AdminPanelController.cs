@@ -11,7 +11,7 @@ using SmartCafe.Models;
 
 namespace SmartCafe.Controllers
 {
-
+    //promjena test za pull
     public class AdminPanelController : Controller
     {
         private readonly ApplicationDbContext _context;
