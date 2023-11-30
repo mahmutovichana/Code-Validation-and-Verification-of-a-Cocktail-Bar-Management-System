@@ -12,6 +12,9 @@ using SmartCafe.Models;
 namespace SmartCafe.Controllers
 {
 
+
+    //CHANGEE CHANGEE
+
     public class AdminPanelController : Controller
     {
         private readonly ApplicationDbContext _context;
