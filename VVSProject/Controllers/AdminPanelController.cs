@@ -151,29 +151,49 @@ namespace SmartCafe.Controllers
         //METHOD: Most expensive drink
         private Drink mostExpensiveDrink(List<Drink> drinks)
         {
-            Drink expensiveDrink = drinks[0];
+            Drink expensiveDrink = drinks[0];  
+            bool skipFirst = true;  
+
             for (int i = 1; i < drinks.Count; i++)
             {
+                if (skipFirst)
+                {
+                    skipFirst = false;
+                    continue;
+                }
+
                 if (drinks[i].price > expensiveDrink.price)
                 {
-                    expensiveDrink = drinks[i];
+                    var tempDrink = drinks[i];
+                    expensiveDrink = tempDrink;
                 }
             }
-            return expensiveDrink;
+            var finalDrink = expensiveDrink;
+            return finalDrink;
         }
+
 
         //METHOD: Price with PDV
 
         private List<Double> priceWithPDV()
         {
+            var drinks = new List<Drink>(_context.Drinks.ToList());
+            var sortedDrinks = bubbleSort(drinks);
+
             var PDVPrices = new List<Double>();
-            var drinks = bubbleSort(_context.Drinks.ToList());
-            foreach(var drink in drinks)
+
+            foreach (var drink in sortedDrinks)
             {
-                PDVPrices.Add(Math.Round(drink.price + 0.17 * drink.price, 2));
+                if (drink.price > 0)
+                {
+                    var calculatedPDVPrice = Math.Round(drink.price + 0.17 * drink.price, 2);
+                    PDVPrices.Add(calculatedPDVPrice);
+                }
             }
+
             return PDVPrices;
         }
+
         // GET: AdminPanel
         public IActionResult Index()
         {
