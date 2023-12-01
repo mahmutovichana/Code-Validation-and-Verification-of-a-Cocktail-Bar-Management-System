@@ -46,10 +46,11 @@ namespace SmartCafe.Controllers
         private List<Ingredient> insertionSort(List<Ingredient> ingredients)
         {
             int n = ingredients.Count;
+            int j;
             for (int i = 1; i < n; i++)
             {
                 Ingredient key = ingredients[i];
-                int j = i - 1;
+                j = i - 1;
 
                 while (j >= 0 && ingredients[j].quantity > key.quantity)
                 {
@@ -152,16 +153,9 @@ namespace SmartCafe.Controllers
         private Drink mostExpensiveDrink(List<Drink> drinks)
         {
             Drink expensiveDrink = drinks[0];  
-            bool skipFirst = true;  
 
             for (int i = 1; i < drinks.Count; i++)
             {
-                if (skipFirst)
-                {
-                    skipFirst = false;
-                    continue;
-                }
-
                 if (drinks[i].price > expensiveDrink.price)
                 {
                     var tempDrink = drinks[i];
@@ -184,11 +178,8 @@ namespace SmartCafe.Controllers
 
             foreach (var drink in sortedDrinks)
             {
-                if (drink.price > 0)
-                {
                     var calculatedPDVPrice = Math.Round(drink.price + 0.17 * drink.price, 2);
                     PDVPrices.Add(calculatedPDVPrice);
-                }
             }
 
             return PDVPrices;
