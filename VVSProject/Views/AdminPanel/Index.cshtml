@@ -700,48 +700,102 @@
         @{
             int i = 0;
             foreach (var drink in Model)
-        {
-            <div class="carousel-item">
-                <div class="image-container">
-                    <img src="@Url.Content("~/images/" + drink.name + ".jpg")" alt="@drink.name" class="carousel-image" />
-                </div>
-                <!-- Modalni prozor za uređivanje -->
-                <div id="modal-@drink.id" class="modal">
-                    <div class="modal-content">
+            {
+                <div class="carousel-item">
+                    <div class="image-container">
+                        <img src="@Url.Content("~/images/" + drink.name + ".jpg")" alt="@drink.name" class="carousel-image" />
+                    </div>
+                    <!-- Modalni prozor za uređivanje -->
+                    <div id="modal-@drink.id" class="modal">
+                        <div class="modal-content">
+                            <h1>Edit Drink</h1>
+                            <form method="post" asp-action="Edit" asp-route-id="@drink.id">
+                                <img src="@Url.Content("~/images/" + drink.name + ".jpg")" alt="@drink.name" class="edit-image" />
+                                <div class="form-group">
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="name" value="@drink.name" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Price:</label>
+                                    <!-- Promijenjeno na type="text" kako bismo omogućili unos bilo koje vrijednosti -->
+                                    <input type="text" id="price" name="price" value="@drink.price" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Save" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <h3>@drink.name</h3>
+                    <p>Price: @drink.price</p>
+                    <p>Price with PDV: @ViewBag.PricesWithPDV[i] </p>
 
-                        <h1>Edit Drink</h1>
-                        <form method="post" asp-action="Edit" asp-route-id="@drink.id">
-                            <img src="@Url.Content("~/images/" + drink.name + ".jpg")" alt="@drink.name" class="edit-image" />
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" value="@drink.name" />
-                            </div>
-                            <div class="form-group">
-                                <label for="price">Price:</label>
-                                <input type="number" id="price" name="price" value="@drink.price" />
-                            </div>
-
-
-                            <div class="form-group">
-                                <input type="submit" value="Save" />
-                            </div>
-                        </form>
+                    <div class="quantity" style="text-align: center;">
+                        <button class="minus-btn" data-drink-id="@drink.id">-</button>
+                        <!-- Dodan pattern attribut kako bi se ograničilo na unos samo decimalnih brojeva -->
+                        <input type="text" class="quantity-input" value="0" pattern="\d+(\.\d{1,2})?" />
+                        <button class="plus-btn" data-drink-id="@drink.id">+</button>
                     </div>
                 </div>
-                <h3>@drink.name</h3>
-                <p>Price: @drink.price</p>
-                <p>Price with PDV: @ViewBag.PricesWithPDV[i] </p>
-                
-                <div class="quantity" style="text-align: center;">
-                    <button class="minus-btn" data-drink-id="@drink.id">-</button>
-                    <input type="text" class="quantity-input" value="0" />
-                    <button class="plus-btn" data-drink-id="@drink.id">+</button>
-                </div>
-            </div>
                 i++;
-        }
+            }
         }
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const quantityElements = document.querySelectorAll('.quantity');
+
+            quantityElements.forEach(function (element) {
+                const minusBtn = element.querySelector('.minus-btn');
+                const plusBtn = element.querySelector('.plus-btn');
+                const quantityInput = element.querySelector('input.quantity-input');
+
+                minusBtn.addEventListener('click', function () {
+                    updateQuantity(0);
+                });
+
+                plusBtn.addEventListener('click', function () {
+                    updateQuantity(0.5); 
+                });
+
+                function updateQuantity(change) {
+                    let quantity = parseFloat(quantityInput.value);
+                    quantity += change;
+
+                    if (quantity < 0) {
+                        quantity = 0;
+                    }
+
+                    quantityInput.value = quantity.toFixed(2);
+                }
+            });
+
+            function getDrinkNameById(drinkId) {
+                const drinks = @Html.Raw(Json.Serialize(Model));
+                const drink = drinks.find(d => d.id === drinkId);
+                return drink ? drink.name : 'Nepoznato';
+            }
+
+            // Dodano za postavljanje event listenera za sve forme
+            document.querySelectorAll('form').forEach(form => {
+                form.addEventListener('submit', function (e) {
+                    const priceInput = form.querySelector('#price');
+                    const priceValue = parseFloat(priceInput.value);
+
+                    if (priceValue < 2 || priceValue > 50) {
+                        e.preventDefault(); // Spriječava podnošenje forme
+                        alert('Upozorenje: Cijena mora biti između 2 i 50');
+                    } else {
+                        // Slanje forme na server ako je unos ispravan
+                        form.submit();
+                    }
+                });
+            });
+        });
+    </script>
+
+
     <script>
         // JavaScript kod za modalni prozor
         var modalItems = document.getElementsByClassName("image-container");
