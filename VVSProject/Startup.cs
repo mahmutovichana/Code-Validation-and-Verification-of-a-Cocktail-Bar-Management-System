@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VVSProject.Interfaces;
 
 namespace SmartCafe
 {
@@ -46,6 +47,10 @@ namespace SmartCafe
 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.AddSession();
+
+            //services.AddTransient<ApplicationDbContext, ApplicationDbContext>();
+            services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+
 
         }
 

@@ -8,23 +8,28 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SmartCafe.Data;
 using SmartCafe.Models;
+using VVSProject.Interfaces;
 
 namespace SmartCafe.Controllers
 {
 
     public class AdminPanelController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IApplicationDbContext _context;
 
-        public AdminPanelController(ApplicationDbContext context)
+        public AdminPanelController(IApplicationDbContext context)
         {
             _context = context;
         }
 
         //sort method (newly added)
-        
-        private List<Drink> bubbleSort(List<Drink> drinks)
+
+        public List<Drink> BubbleSort(List<Drink> drinks)
         {
+            foreach(Drink drink in drinks)
+            {
+                if (drink.price <= 0) throw new ArgumentException("Price of a drink must be greater than zero!");
+            }
             // Bubble sort 
             int n = drinks.Count;
             for (int i = 0; i < n - 1; i++)
@@ -45,11 +50,11 @@ namespace SmartCafe.Controllers
         }
         private List<Ingredient> insertionSort(List<Ingredient> ingredients)
         {
-            int n = ingredients.Count;
+            int n = ingredients.Count, j;
             for (int i = 1; i < n; i++)
             {
                 Ingredient key = ingredients[i];
-                int j = i - 1;
+                j = i - 1;
 
                 while (j >= 0 && ingredients[j].quantity > key.quantity)
                 {
@@ -63,17 +68,18 @@ namespace SmartCafe.Controllers
         }
         private string optimalProfitMessage(double realProfit)
         {
+            var EPSILON = 0.0001;
             var drinks = _context.Drinks.ToList();
             double optimalProfit = 0;
             for (int i = 0; i < drinks.Count; i++)
             {
                 optimalProfit += drinks[i].price;
             }
-            if (realProfit < optimalProfit)
+            if (optimalProfit - realProfit > EPSILON) //realProfit < optimalProfit
             {
                 return "You are below optimal profit";
             }
-            else if (realProfit == optimalProfit)
+            else if (Math.Abs(realProfit - optimalProfit) < EPSILON) //realProfit == optimalProfit
             {
                 return "Your profit is optimal";
             }
@@ -149,8 +155,12 @@ namespace SmartCafe.Controllers
         }
 
         //METHOD: Most expensive drink
-        private Drink mostExpensiveDrink(List<Drink> drinks)
+        public Drink MostExpensiveDrink(List<Drink> drinks)
         {
+            foreach (Drink drink in drinks)
+            {
+                if (drink.price <= 0) throw new ArgumentException("Price of a drink must be greater than zero!");
+            }
             Drink expensiveDrink = drinks[0];
             for (int i = 1; i < drinks.Count; i++)
             {
@@ -164,10 +174,10 @@ namespace SmartCafe.Controllers
 
         //METHOD: Price with PDV
 
-        private List<Double> priceWithPDV()
+        public List<Double> PriceWithPDV()
         {
             var PDVPrices = new List<Double>();
-            var drinks = bubbleSort(_context.Drinks.ToList());
+            var drinks = BubbleSort(_context.Drinks.ToList());
             foreach(var drink in drinks)
             {
                 PDVPrices.Add(Math.Round(drink.price + 0.17 * drink.price, 2));
@@ -187,15 +197,15 @@ namespace SmartCafe.Controllers
             // Retrieve the list of drinks from the database
             var drinks = _context.Drinks.ToList();
             //sortiranje
-            bubbleSort(drinks);
+            BubbleSort(drinks);
             // number of drinks
             ViewBag.NumberOfDrinks = numberOfDrinks(drinks);
             // cheapest drink
             ViewBag.CheapestDrink = cheapestDrink(drinks);
             // most expensive drink
-            ViewBag.MostExpensiveDrink = mostExpensiveDrink(drinks);
+            ViewBag.MostExpensiveDrink = MostExpensiveDrink(drinks);
             //prices with PDV
-            ViewBag.PricesWithPDV = priceWithPDV();
+            ViewBag.PricesWithPDV = PriceWithPDV();
 
             return View(drinks);
         }
@@ -218,7 +228,9 @@ namespace SmartCafe.Controllers
                 {
                     if (drink.price >= 2 && drink.price <= 50)
                     {
-                        _context.Update(drink);
+                        // Mark the entity as modified
+                        _context.Entry(drink).State = EntityState.Modified;
+
                         await _context.SaveChangesAsync();
                         return RedirectToAction(nameof(Index));
                     }
