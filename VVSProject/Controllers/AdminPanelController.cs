@@ -71,6 +71,7 @@ namespace SmartCafe.Controllers
             var EPSILON = 0.0001;
             var drinks = _context.Drinks.ToList();
             double optimalProfit = 0;
+
             for (int i = 0; i < drinks.Count; i++)
             {
                 optimalProfit += drinks[i].price;
