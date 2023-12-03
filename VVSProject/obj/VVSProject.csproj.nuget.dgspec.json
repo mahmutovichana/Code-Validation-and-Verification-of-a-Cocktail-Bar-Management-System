@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj": {}
+    "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj": {
+    "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj",
+        "projectUniqueName": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj",
         "projectName": "VVSProject",
-        "projectPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj",
-        "packagesPath": "C:\\Users\\mahmu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\obj\\",
+        "projectPath": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj",
+        "packagesPath": "C:\\Users\\Amina\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mahmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Amina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -59,6 +59,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[5.0.17, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
             }
           },
           "imports": [
@@ -72,6 +76,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -80,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

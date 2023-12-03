@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\VVSProject",
-    "\\VVSProject\\Controllers",
-    "\\VVSProject\\Views",
-    "\\VVSProject\\Views\\AdminPanel"
+    "\\VVSProject"
   ],
   "SelectedNode": "\\VVSProject\\VVSProject.sln",
   "PreviewInSolutionExplorer": false

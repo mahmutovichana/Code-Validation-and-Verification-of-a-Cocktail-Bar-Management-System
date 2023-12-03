@@ -799,3 +799,5 @@ c:\Users\mahmu\OneDrive\Desktop\VVS\VVS\VVSProject\obj\Debug\net5.0\refint\VVSPr
 c:\Users\mahmu\OneDrive\Desktop\VVS\VVS\VVSProject\obj\Debug\net5.0\VVSProject.pdb
 c:\Users\mahmu\OneDrive\Desktop\VVS\VVS\VVSProject\obj\Debug\net5.0\VVSProject.genruntimeconfig.cache
 c:\Users\mahmu\OneDrive\Desktop\VVS\VVS\VVSProject\obj\Debug\net5.0\ref\VVSProject.dll
+C:\Users\Amina\Source\Repos\mahmutovichana\VVS\VVSProject\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\Amina\Source\Repos\mahmutovichana\VVS\VVSProject\bin\Debug\net5.0\Moq.dll
