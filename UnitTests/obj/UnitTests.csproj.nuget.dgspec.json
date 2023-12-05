@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\UnitTests\\UnitTests.csproj": {}
+    "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\UnitTests\\UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\UnitTests\\UnitTests.csproj": {
+    "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\UnitTests\\UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\UnitTests\\UnitTests.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\UnitTests\\UnitTests.csproj",
         "projectName": "UnitTests",
-        "projectPath": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\UnitTests\\UnitTests.csproj",
-        "packagesPath": "C:\\Users\\Amina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\UnitTests\\obj\\",
+        "projectPath": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\UnitTests\\UnitTests.csproj",
+        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Amina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj": {
-                "projectPath": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj"
+              "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\VVSProject\\VVSProject.csproj": {
+                "projectPath": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\VVSProject\\VVSProject.csproj"
               }
             }
           }
@@ -81,17 +81,17 @@
         }
       }
     },
-    "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj": {
+    "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\VVSProject\\VVSProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\VVSProject\\VVSProject.csproj",
         "projectName": "VVSProject",
-        "projectPath": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj",
-        "packagesPath": "C:\\Users\\Amina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\obj\\",
+        "projectPath": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\VVSProject\\VVSProject.csproj",
+        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\VVSProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Amina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -153,24 +153,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.17, 5.0.17]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
