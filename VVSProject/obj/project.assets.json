@@ -6550,19 +6550,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mahmu\\.nuget\\packages\\": {}
+    "C:\\Users\\Korisnik\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj",
+      "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\VVSProject\\VVSProject.csproj",
       "projectName": "VVSProject",
-      "projectPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj",
-      "packagesPath": "C:\\Users\\mahmu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\obj\\",
+      "projectPath": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\VVSProject\\VVSProject.csproj",
+      "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Korisnik\\Desktop\\Tajra\\PWS\\VVS\\VVSProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mahmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6632,7 +6632,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -88,7 +88,7 @@ namespace SmartCafe.Controllers
         }
 
         // METHOD: recommended drinks based on ingredients
-        private List<Drink> recommendationBasedOnIngredients(List<Ingredient> ingredients)
+        public List<Drink> recommendationBasedOnIngredients(List<Ingredient> ingredients)
         {
             // needed lists
             List<DrinkIngredient> drinkIngredients = _context.DrinkIngredients.ToList();
@@ -136,13 +136,13 @@ namespace SmartCafe.Controllers
         }
 
         //METHOD: Number of drinks
-        private int numberOfDrinks (List<Drink> drinks)
+        public int numberOfDrinks (List<Drink> drinks)
         {
             return drinks.Count;
         }
 
         //METHOD: Cheapest drink
-        private Drink cheapestDrink(List<Drink> drinks)
+        public Drink cheapestDrink(List<Drink> drinks)
         {
             Drink cheapestDrink = drinks[0];
             for (int i = 1; i < drinks.Count; i++)

@@ -801,3 +801,5 @@ c:\Users\mahmu\OneDrive\Desktop\VVS\VVS\VVSProject\obj\Debug\net5.0\VVSProject.g
 c:\Users\mahmu\OneDrive\Desktop\VVS\VVS\VVSProject\obj\Debug\net5.0\ref\VVSProject.dll
 C:\Users\Amina\Source\Repos\mahmutovichana\VVS\VVSProject\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\Amina\Source\Repos\mahmutovichana\VVS\VVSProject\bin\Debug\net5.0\Moq.dll
+C:\Users\Korisnik\Desktop\Tajra\PWS\VVS\VVSProject\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\Korisnik\Desktop\Tajra\PWS\VVS\VVSProject\bin\Debug\net5.0\Moq.dll
