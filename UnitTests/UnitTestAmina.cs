@@ -15,7 +15,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 namespace UnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class UnittestAmina
     {
         private AdminPanelController controller;
         private Mock<IApplicationDbContext>  mockDbContext;

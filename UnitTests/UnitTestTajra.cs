@@ -15,7 +15,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 namespace UnitTestTajra
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestTajra
     {
         private AdminPanelController controller;
         private Mock<IApplicationDbContext> mockDbContext;
