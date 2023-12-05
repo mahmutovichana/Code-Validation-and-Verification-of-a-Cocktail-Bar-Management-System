@@ -95,7 +95,7 @@ namespace SmartCafe.Controllers
             List<Drink> drinks = _context.Drinks.ToList();
             List<Drink> wantedDrinks = new List<Drink>();
 
-            int num = 0;
+            int num = 1;
             while (wantedDrinks.Count != 5)
             {
                 Ingredient ingredient = ingredients[ingredients.Count - num];
@@ -292,7 +292,7 @@ namespace SmartCafe.Controllers
             var drinkIds = selectedDrinks.Select(dq => dq.DrinkId).ToList();
             var drinksFromDb = _context.Drinks.Where(d => drinkIds.Contains(d.id)).ToList();
 
-            var dailyProfit = 5.0;
+            var dailyProfit = 0.0;
             foreach (var drinkQuantityPair in selectedDrinks)
             {
                 var drink = drinksFromDb.FirstOrDefault(d => d.id == drinkQuantityPair.DrinkId);
