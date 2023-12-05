@@ -10,5 +10,11 @@ namespace SmartCafe.Models
         public int quantity { get; set; }
 
         public Ingredient() { }
+        public Ingredient(int id, string name, int quantity)
+        {
+            this.id = id;
+            this.name = name;
+            this.quantity = quantity;
+        }
     }
 }

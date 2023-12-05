@@ -17,5 +17,11 @@ namespace SmartCafe.Models
         public Ingredient Ingredient { get; set; }
 
         public DrinkIngredient() { }
+        public DrinkIngredient(int id, int idDrink, int idIngredient)
+        {
+            this.id = id;
+            this.idDrink = idDrink;
+            this.idIngredient = idIngredient;
+        }
     }
 }

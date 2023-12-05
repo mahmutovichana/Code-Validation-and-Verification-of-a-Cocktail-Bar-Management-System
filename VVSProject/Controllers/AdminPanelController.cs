@@ -144,6 +144,13 @@ namespace SmartCafe.Controllers
         //METHOD: Cheapest drink
         public Drink cheapestDrink(List<Drink> drinks)
         {
+            for (int i = 0; i < drinks.Count; i++)
+            {
+                if (drinks[i].price < 0)
+                {
+                    throw new ArgumentException("Price of a drink must be greater than zero!");
+                }
+            }
             Drink cheapestDrink = drinks[0];
             for (int i = 1; i < drinks.Count; i++)
             {
