@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.555" branch-rate="0.2027" version="1.9" timestamp="1701875968" lines-covered="338" lines-valid="609" branches-covered="45" branches-valid="222">
+<coverage line-rate="0.555" branch-rate="0.2027" version="1.9" timestamp="1701876603" lines-covered="338" lines-valid="609" branches-covered="45" branches-valid="222">
   <sources>
     <source>C:\Users\Korisnik\</source>
   </sources>
@@ -298,7 +298,7 @@
             <line number="202" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTests.UnittestAmina" filename="Desktop\Tajra\PWS\VVS\UnitTests\UnitTestAmina.cs" line-rate="0.9647" branch-rate="1" complexity="10">
+        <class name="UnitTestAmina.UnitTestAmina" filename="Desktop\Tajra\PWS\VVS\UnitTests\UnitTestAmina.cs" line-rate="0.9647" branch-rate="1" complexity="10">
           <methods>
             <method name="MockDbSet" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>

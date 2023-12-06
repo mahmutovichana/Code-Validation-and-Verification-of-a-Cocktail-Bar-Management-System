@@ -12,10 +12,10 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 
-namespace UnitTests
+namespace UnitTestAmina
 {
     [TestClass]
-    public class UnittestAmina
+    public class UnitTestAmina
     {
         private AdminPanelController controller;
         private Mock<IApplicationDbContext>  mockDbContext;
