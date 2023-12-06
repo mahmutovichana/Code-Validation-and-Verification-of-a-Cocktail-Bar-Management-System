@@ -140,23 +140,14 @@ namespace UnitTestTajra
             controller = new AdminPanelController(mockDbContext.Object);
 
             var result = controller.recommendationBasedOnIngredients(ingredients);
-            var expectedResult = new List<Drink>()
-            {
-                new Drink(3, "Watermelon Wave", 11.99),
-                new Drink(4, "Blue Lemonade", 5.99),
-                new Drink(6, "Orange Blossom", 4.99),
-                new Drink(7, "Kiwi Kiss", 3.99),
-                new Drink(1, "Berrylicious", 7.99)
-            };
 
-            Console.WriteLine("Rezultat");
-            foreach (var drink in result) Console.WriteLine(drink.id + " " + drink.name + " " + drink.price);
-
-            Console.WriteLine("Ocekivani rezultat");
-            foreach (var drink in expectedResult) Console.WriteLine(drink.id + " " + drink.name + " " + drink.price);
-
+            // Right order of drink ids: 3, 4, 6, 7, 1
             Assert.IsNotNull(result);
-            Assert.AreEqual(expectedResult[0], result[0]);
+            Assert.AreEqual(3, result[0].id);
+            Assert.AreEqual(4, result[1].id);
+            Assert.AreEqual(6, result[2].id);
+            Assert.AreEqual(7, result[3].id);
+            Assert.AreEqual(1, result[4].id);
         }
 
 
