@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using SmartCafe.Data;
 using SmartCafe.Models;
 using VVSProject.Interfaces;
@@ -278,24 +279,25 @@ namespace SmartCafe.Controllers
             return drinks;
         }
 
-
         [HttpGet]
         public ActionResult<IEnumerable<Drink>> searchDrinksByIngredient(string searchTerm)
         {
             var drinks = _context.DrinkIngredients
-                .Where(di => di.Ingredient.name.Contains(searchTerm))
+                .Where(di => di.Ingredient != null && di.Ingredient.name.Contains(searchTerm))
                 .Select(di => di.Drink)
                 .Distinct()
                 .ToList();
-            List<Drink> filteredDrinks = drinks;
-            return filteredDrinks;
+            return drinks;
         }
 
-        [HttpPost]
-        public ActionResult calculateDailyProfit([FromBody] List<DrinkQuantityPair> selectedDrinks)
+        public class DrinkQuantityPair
         {
-            ViewBag.SelectedDrinks = selectedDrinks;
-            Console.WriteLine(selectedDrinks.ToArray());
+            public int DrinkId { get; set; }
+            public int Quantity { get; set; }
+        }
+
+        public Tuple<double, string> CalculateDailyProfit(List<DrinkQuantityPair> selectedDrinks)
+        {
             var drinkIds = selectedDrinks.Select(dq => dq.DrinkId).ToList();
             var drinksFromDb = _context.Drinks.Where(d => drinkIds.Contains(d.id)).ToList();
 
@@ -309,16 +311,9 @@ namespace SmartCafe.Controllers
                 }
             }
 
-            ViewBag.DailyProfit = dailyProfit;
-            Console.WriteLine(dailyProfit.ToString());
-            var message = optimalProfitMessage(dailyProfit); // Call the optimalProfitMessage function
-            return Json(new { dailyProfit = dailyProfit, message = message });
-        }
+            var message = optimalProfitMessage(dailyProfit);
 
-        public class DrinkQuantityPair
-        {
-            public int DrinkId { get; set; }
-            public int Quantity { get; set; }
+            return Tuple.Create(dailyProfit, message);
         }
     }
 }
