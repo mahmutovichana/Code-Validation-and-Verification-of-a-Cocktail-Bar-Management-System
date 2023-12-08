@@ -118,10 +118,6 @@ namespace SmartCafe.Controllers
                     {
                         if (drinkIds[i] == drinks[j].id && !wantedDrinks.Contains(drinks[j]))
                         {
-                            if (wantedDrinks.Count == 5)
-                            {
-                                break;
-                            }
                             Console.WriteLine("ulazi: " + drinkIds[i]);
                             wantedDrinks.Add(drinks[j]);
                         }
