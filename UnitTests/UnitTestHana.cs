@@ -14,6 +14,7 @@ using static SmartCafe.Controllers.AdminPanelController;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Web.Helpers;
+using System.Xml.Linq;
 
 namespace UnitTestHana
 {
@@ -50,10 +51,10 @@ namespace UnitTestHana
             var searchTerm = "Kiwi";
             // setting up mock behavior for Drinks property
             var drinksMocked = new List<Drink>
-            { 
-                new Drink(1, "Grapefruit Spritz", 4.99), 
+            {
+                new Drink(1, "Grapefruit Spritz", 4.99),
                 new Drink(2, "Cucumber Cooler", 2.99),
-                new Drink(3, "Orange Blossom", 2.99), 
+                new Drink(3, "Orange Blossom", 2.99),
                 new Drink(4, "Kiwi Kiss", 6.99)
             };
             mockDbContext.Setup(m => m.Drinks).Returns(MockDbSet(drinksMocked));
@@ -211,6 +212,77 @@ namespace UnitTestHana
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual(0.0, result.Item1);
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(GetCalculateProfitXmlTestData), DynamicDataSourceType.Method)]
+        public void CalculateDailyProfit_ReturnsCorrectResultFromXml(int drink1Quantity, int drink2Quantity, int drink3Quantity, double expectedProfit, string expectedMessage)
+        {
+            // Arrange
+            var selectedDrinks = new List<DrinkQuantityPair>
+            {
+                new DrinkQuantityPair { DrinkId = 1, Quantity = drink1Quantity },
+                new DrinkQuantityPair { DrinkId = 2, Quantity = drink2Quantity },
+                new DrinkQuantityPair { DrinkId = 3, Quantity = drink3Quantity }
+            };
+
+            var mockDrinks = new List<Drink>
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 },
+                new Drink { id = 2, name = "Drink2", price = 15 },
+                new Drink { id = 3, name = "Drink3", price = 8 }
+            };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            // injecting the mockDbContext into the controller
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsInstanceOfType(result, typeof(Tuple<double, string>));
+            Assert.IsNotNull(result);
+
+            double dailyProfit = result.Item1;
+            string message = result.Item2;
+
+            Assert.AreEqual(expectedProfit, dailyProfit, 0.01);
+            Assert.AreEqual(expectedMessage, message);
+        }
+
+        public static IEnumerable<object[]> GetCalculateProfitXmlTestData()
+        {
+            var xmlTestData = @"
+            <TestData>
+                <TestEntry>
+                    <Drink1Quantity>2</Drink1Quantity>
+                    <Drink2Quantity>3</Drink2Quantity>
+                    <Drink3Quantity>1</Drink3Quantity>
+                    <ExpectedProfit>73.0</ExpectedProfit>
+                    <ExpectedMessage>Your profit is above average</ExpectedMessage>
+                </TestEntry>
+            </TestData>";
+
+            var xmlDoc = XDocument.Parse(xmlTestData);
+            var testData = xmlDoc.Descendants("TestEntry")
+                .Select(entry => new
+                {
+                    Drink1Quantity = int.Parse(entry.Element("Drink1Quantity").Value),
+                    Drink2Quantity = int.Parse(entry.Element("Drink2Quantity").Value),
+                    Drink3Quantity = int.Parse(entry.Element("Drink3Quantity").Value),
+                    ExpectedProfit = double.Parse(entry.Element("ExpectedProfit").Value),
+                    ExpectedMessage = entry.Element("ExpectedMessage").Value
+                });
+
+            return testData.Select(data => new object[] { data.Drink1Quantity, data.Drink2Quantity, data.Drink3Quantity, data.ExpectedProfit, data.ExpectedMessage });
+        }
+
+        public class TestDataModel
+        {
+            public string SearchTerm { get; set; }
+            public int ExpectedCount { get; set; }
         }
     }
 }
