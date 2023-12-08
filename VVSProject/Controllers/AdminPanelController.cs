@@ -49,7 +49,7 @@ namespace SmartCafe.Controllers
             return drinks;
 
         }
-        private List<Ingredient> insertionSort(List<Ingredient> ingredients)
+        public List<Ingredient> insertionSort(List<Ingredient> ingredients)
         {
             int n = ingredients.Count, j;
             for (int i = 1; i < n; i++)
@@ -67,7 +67,7 @@ namespace SmartCafe.Controllers
 
             return ingredients;
         }
-        private string optimalProfitMessage(double realProfit)
+        public string optimalProfitMessage(double realProfit)
         {
             var EPSILON = 0.0001;
             var drinks = _context.Drinks.ToList();
@@ -224,49 +224,60 @@ namespace SmartCafe.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,name,price")] Drink drink)
+        public async Task<IActionResult> Edit(int id, [Bind("id,name,price")] Drink updatedDrink)
         {
-            if (id != drink.id)
+            if (id != updatedDrink.id)
             {
+                return NotFound();
+            }
+
+            var existingDrink = await _context.Drinks.FindAsync(id);
+
+            if (existingDrink == null)
+            {
+                Console.WriteLine(9);
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    if (drink.price >= 2 && drink.price <= 50)
-                    {
-                        // Mark the entity as modified
-                        _context.Entry(drink).State = EntityState.Modified;
 
+                if (updatedDrink.price >= 2 && updatedDrink.price <= 50)
+                {
+                    // Update properties manually
+                    existingDrink.name = updatedDrink.name;
+                    existingDrink.price = updatedDrink.price;
+                    try
+                    {
                         await _context.SaveChangesAsync();
-                        return RedirectToAction(nameof(Index));
                     }
-                    else
+                    catch (DbUpdateConcurrencyException)
                     {
-                        TempData["ErrorMessage"] = "Cijena mora biti između 2 i 50.";
-                        return RedirectToAction(nameof(Index), new { id = drink.id });
-                    }
+                        if (!DrinkExists(updatedDrink.id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
 
+                    }
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!DrinkExists(drink.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    return RedirectToAction(nameof(Index), new { id = updatedDrink.id });
                 }
             }
-            return View(drink);
+
+            return View(updatedDrink);
         }
 
-        private bool DrinkExists(int id)
+
+        public bool DrinkExists(int id)
         {
+            Console.WriteLine($"Drink exists {id}");
             return _context.Drinks.Any(e => e.id == id);
         }
 
