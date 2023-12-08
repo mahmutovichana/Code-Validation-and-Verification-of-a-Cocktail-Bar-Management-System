@@ -260,7 +260,7 @@ namespace UnitTestHana
                     <Drink1Quantity>2</Drink1Quantity>
                     <Drink2Quantity>3</Drink2Quantity>
                     <Drink3Quantity>1</Drink3Quantity>
-                    <ExpectedProfit>73.0</ExpectedProfit>
+                    <ExpectedProfit>73</ExpectedProfit>
                     <ExpectedMessage>Your profit is above average</ExpectedMessage>
                 </TestEntry>
             </TestData>";

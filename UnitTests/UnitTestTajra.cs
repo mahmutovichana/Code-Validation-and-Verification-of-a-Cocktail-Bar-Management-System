@@ -208,20 +208,20 @@ namespace UnitTestTajra
         public static IEnumerable<object[]> CheapestDrinkXmlData()
         {
             var xmlTestData = @"
-                <TestData>
-                    <TestEntry>
-                        <DrinkList>
-                            <Drink id='1' name='Watermelon Wave' price='3.99' />
-                            <Drink id='2' name='Minty Glacier' price='5.99' />
-                            <Drink id='3' name='Rosy Chill' price='7.99' />
-                        </DrinkList>
-                        <ExpectedDrink>
-                            <Id>1</Id>
-                            <Name>Watermelon Wave</Name>
-                            <Price>3.99</Price>
-                        </ExpectedDrink>
-                    </TestEntry>
-                </TestData>";
+            <TestData>
+                <TestEntry>
+                    <DrinkList>
+                        <Drink id='1' name='Watermelon Wave' price='3.99' />
+                        <Drink id='2' name='Minty Glacier' price='5.99' />
+                        <Drink id='3' name='Rosy Chill' price='7.99' />
+                    </DrinkList>
+                    <ExpectedDrink>
+                        <Id>1</Id>
+                        <Name>Watermelon Wave</Name>
+                        <Price>3.99</Price>
+                    </ExpectedDrink>
+                </TestEntry>
+            </TestData>";
 
             var xmlDoc = XDocument.Parse(xmlTestData);
             var testEntries = xmlDoc.Descendants("TestEntry");
