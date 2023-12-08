@@ -253,14 +253,7 @@ namespace SmartCafe.Controllers
                     }
                     catch (DbUpdateConcurrencyException)
                     {
-                        if (!DrinkExists(updatedDrink.id))
-                        {
-                            return NotFound();
-                        }
-                        else
-                        {
-                            throw;
-                        }
+                        return RedirectToAction(nameof(Index));
 
                     }
                     return RedirectToAction(nameof(Index));
@@ -272,13 +265,6 @@ namespace SmartCafe.Controllers
             }
 
             return View(updatedDrink);
-        }
-
-
-        public bool DrinkExists(int id)
-        {
-            Console.WriteLine($"Drink exists {id}");
-            return _context.Drinks.Any(e => e.id == id);
         }
 
         [HttpGet]

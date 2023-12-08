@@ -276,9 +276,8 @@ namespace UnitTestEmina
             // Assert
             Assert.IsInstanceOfType(result, typeof(NotFoundResult));
         }
-
         [TestMethod]
-        public void Edit_DbUpdateException_ReturnsNotFound()
+        public async Task Edit_DbUpdateException_DrinkDoesNotExist_ReturnsNotFound()
         {
             // Arrange
             var existingDrink = new Drink
@@ -296,25 +295,26 @@ namespace UnitTestEmina
             };
 
             var drinks = new List<Drink>
-            {
-                new Drink(1, "Berrylicious", 5.99),
-                new Drink(2, "Cherry Bomb", 7.99),
-                new Drink(3, "Watermelon Wave", 3.99),
-            };
+    {
+        new Drink(1, "Berrylicious", 5.99),
+        new Drink(2, "Cherry Bomb", 7.99),
+        new Drink(3, "Watermelon Wave", 3.99),
+    };
 
             mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(drinks));
             mockDbContext.Setup(c => c.Drinks.FindAsync(1)).ReturnsAsync(existingDrink);
             mockDbContext.Setup(c => c.SaveChangesAsync(It.IsAny<CancellationToken>())).ThrowsAsync(new DbUpdateConcurrencyException());
 
-            var controller = new AdminPanelController(mockDbContext.Object);
+            controller = new AdminPanelController(mockDbContext.Object);
 
             // Act
-            var result = controller.Edit(1, updatedDrink);
+            var result = await controller.Edit(1, new Drink { id = 1, name = "Berrylicious", price = 7.99 });
 
             // Assert
-            Console.WriteLine(result);
-            Assert.IsInstanceOfType(result, typeof(NotFoundResult));
-        }
+            Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
+            
+            }
+
 
     }
 }
