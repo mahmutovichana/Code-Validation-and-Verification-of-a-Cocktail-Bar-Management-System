@@ -10,6 +10,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.IO;
+using System.Xml.Linq;
+
 
 
 namespace UnitTestTajra
@@ -200,6 +203,65 @@ namespace UnitTestTajra
             Assert.IsNotNull(result);
             Assert.AreEqual(5, result.Count);
         }
+
+
+        public static IEnumerable<object[]> CheapestDrinkXmlData()
+        {
+            var xmlTestData = @"
+                <TestData>
+                    <TestEntry>
+                        <DrinkList>
+                            <Drink id='1' name='Watermelon Wave' price='3.99' />
+                            <Drink id='2' name='Minty Glacier' price='5.99' />
+                            <Drink id='3' name='Rosy Chill' price='7.99' />
+                        </DrinkList>
+                        <ExpectedDrink>
+                            <Id>1</Id>
+                            <Name>Watermelon Wave</Name>
+                            <Price>3.99</Price>
+                        </ExpectedDrink>
+                    </TestEntry>
+                </TestData>";
+
+            var xmlDoc = XDocument.Parse(xmlTestData);
+            var testEntries = xmlDoc.Descendants("TestEntry");
+
+            foreach (var entry in testEntries)
+            {
+                var expectedDrinkElement = entry.Element("ExpectedDrink");
+                var expectedId = int.Parse(expectedDrinkElement.Element("Id").Value);
+                var expectedName = expectedDrinkElement.Element("Name").Value;
+                var expectedPrice = double.Parse(expectedDrinkElement.Element("Price").Value);
+
+                var drinksElement = entry.Element("DrinkList");
+                var drinks = new List<Drink>();
+                foreach (var drinkElement in drinksElement.Elements("Drink"))
+                {
+                    var id = int.Parse(drinkElement.Attribute("id").Value);
+                    var name = drinkElement.Attribute("name").Value;
+                    var price = double.Parse(drinkElement.Attribute("price").Value);
+                    drinks.Add(new Drink { id = id, name = name, price = price });
+                }
+
+                yield return new object[] { expectedId, expectedName, expectedPrice, drinks };
+            }
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(CheapestDrinkXmlData), DynamicDataSourceType.Method)]
+        public void CheapestDrink_ReturnsCheapestDrinkUsingXMLData(int expectedId, string expectedName, double expectedPrice, List<Drink> drinks)
+        {
+            // Act
+            var result = controller.cheapestDrink(drinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(expectedId, result.id);
+            Assert.AreEqual(expectedName, result.name);
+            Assert.AreEqual(expectedPrice, result.price);
+        }
+
+
 
 
     }
