@@ -312,7 +312,16 @@ namespace SmartCafe.Controllers
             Console.WriteLine(Tuple.Create(dailyProfit, message));
             return Tuple.Create(dailyProfit, message);
         }
+        public bool isAlcoholic(Drink drink)
+        {
+            List<int> alcoholicIngredientId = new List<int> { 21, 27, 29, 33, 42, 54 };
 
+            var drinkIngredients = _context.DrinkIngredients
+                .Where(di => di.idDrink == drink.id && alcoholicIngredientId.Contains(di.idIngredient))
+                .ToList();
+
+            return drinkIngredients.Any();
+        }
 
         public bool AreAllDrinksAlcoholic(List<Drink> drinks)
         {
