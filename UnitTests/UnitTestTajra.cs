@@ -261,7 +261,34 @@ namespace UnitTestTajra
             Assert.AreEqual(expectedPrice, result.price);
         }
 
+        [TestMethod]
+        public void AreAllDrinksAlcoholic_AllDrinksDoNotContainAlcoholicIngredients_ReturnsFalse()
+        {
+            // Arrange
+            var drinkIngredients = new List<DrinkIngredient>
+            {
+                new DrinkIngredient(1, 1, 21),
+                new DrinkIngredient(2, 1, 23),
+                new DrinkIngredient(3, 1, 29),
+            };
 
+            var mockDbContext = new Mock<IApplicationDbContext>();
+            mockDbContext.Setup(c => c.DrinkIngredients).Returns(MockDbSet(drinkIngredients));
+
+            controller = new AdminPanelController(mockDbContext.Object);
+
+            var drinks = new List<Drink>
+            {
+                new Drink { id = 1, name = "AlcoholicDrink1", price = 8.99 },
+                new Drink { id = 2, name = "AlcoholicDrink2", price = 7.99 },
+            };
+
+            // Act
+            var result = controller.AreAllDrinksAlcoholic(drinks);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
 
 
     }
