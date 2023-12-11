@@ -320,11 +320,11 @@ namespace UnitTestEmina
             };
 
             var drinks = new List<Drink>
-    {
-        new Drink(1, "Berrylicious", 5.99),
-        new Drink(2, "Cherry Bomb", 7.99),
-        new Drink(3, "Watermelon Wave", 3.99),
-    };
+            {
+                new Drink(1, "Berrylicious", 5.99),
+                new Drink(2, "Cherry Bomb", 7.99),
+                new Drink(3, "Watermelon Wave", 3.99),
+            };
 
             mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(drinks));
             mockDbContext.Setup(c => c.Drinks.FindAsync(1)).ReturnsAsync(existingDrink);
@@ -338,8 +338,35 @@ namespace UnitTestEmina
             // Assert
             Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
             
-            }
+         }
+        [TestMethod]
+        public void AreAllDrinksAlcoholic_AllDrinksAlcoholic_ReturnsTrue()
+        {
+            var drinks = new List<Drink>
+            {
+                new Drink(2, "Boody Mary", 6.49),
+                new Drink(3, "Blue Lagoon", 7.99),
+                new Drink(4, "Blue Lemonade", 7.88)
+            };
+
+            var mockDbContext = new Mock<IApplicationDbContext>();
+
+            controller = new AdminPanelController(mockDbContext.Object);
+
+            var drinkIngredientsData = new List<DrinkIngredient>
+            {
+                new DrinkIngredient { id = 1, idDrink = 2, idIngredient = 21 },
+                new DrinkIngredient { id = 2, idDrink = 3, idIngredient = 27 },
+                new DrinkIngredient { id = 3, idDrink = 4, idIngredient = 29 }
+            };
+
+            mockDbContext.Setup(c => c.DrinkIngredients).Returns(MockDbSet(drinkIngredientsData));
+            var result = controller.AreAllDrinksAlcoholic(drinks);
+
+            Assert.IsTrue(result);
+        }
 
 
     }
+
 }
