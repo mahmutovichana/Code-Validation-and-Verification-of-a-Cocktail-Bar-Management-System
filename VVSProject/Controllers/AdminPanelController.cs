@@ -288,6 +288,7 @@ namespace SmartCafe.Controllers
             public int DrinkId { get; set; }
             public int Quantity { get; set; }
         }
+
         [HttpPost]
         public Tuple<double, string> CalculateDailyProfit([FromBody] List<DrinkQuantityPair> selectedDrinks)
         {
@@ -310,6 +311,22 @@ namespace SmartCafe.Controllers
             var message = optimalProfitMessage(dailyProfit);
             Console.WriteLine(Tuple.Create(dailyProfit, message));
             return Tuple.Create(dailyProfit, message);
+        }
+
+
+        public bool AreAllDrinksAlcoholic(List<Drink> drinks)
+        {
+            foreach (var drink in drinks)
+            {
+                Console.WriteLine("drink 1");
+                if (!isAlcoholic(drink))
+                {
+                    Console.WriteLine("nije ok");
+                    return false;
+                }
+            }
+            Console.WriteLine("ok");
+            return true;
         }
     }
 }
