@@ -73,6 +73,62 @@ namespace UnitTestEmina
             Assert.AreEqual(5, sortedIngredients[4].id);
         }
 
+        public static IEnumerable<object[]> IngredientListXmlData()
+        {
+            var xmlTestData = @"
+        <TestData>
+            <TestEntry>
+                <IngredientList>
+                    <Ingredient id='1' name='Watermelon' quantity='50' />
+                    <Ingredient id='2' name='Lime' quantity='20' />
+                    <Ingredient id='3' name='Ice' quantity='79' />
+                </IngredientList>
+                <ExpectedSortedIngredients>
+                    <Ingredient id='2' name='Lime' quantity='20' />
+                    <Ingredient id='1' name='Watermelon' quantity='50' />
+                    <Ingredient id='3' name='Ice' quantity='79' />
+                </ExpectedSortedIngredients>
+            </TestEntry>
+        </TestData>";
+
+            var xmlDoc = XDocument.Parse(xmlTestData);
+            var testEntries = xmlDoc.Descendants("TestEntry");
+
+            foreach (var entry in testEntries)
+            {
+                var expectedIngredientsElement = entry.Element("ExpectedSortedIngredients");
+                var expectedIngredients = expectedIngredientsElement.Elements("Ingredient")
+                    .Select(e => new Ingredient { quantity = int.Parse(e.Attribute("quantity").Value) })
+                    .ToList();
+
+                var ingredientsElement = entry.Element("IngredientList");
+                var ingredients = ingredientsElement.Elements("Ingredient")
+                    .Select(e => new Ingredient { quantity = int.Parse(e.Attribute("quantity").Value) })
+                    .ToList();
+
+                yield return new object[] { expectedIngredients, ingredients };
+            }
+        }
+        [TestMethod]
+        [DynamicData(nameof(IngredientListXmlData), DynamicDataSourceType.Method)]
+        public void InsertionSort_ReturnsSortedIngredientsList(List<Ingredient> expectedIngredients, List<Ingredient> ingredients)
+        {
+            // Act
+            var sortedIngredients = controller.insertionSort(ingredients);
+
+            // Assert
+            Assert.IsNotNull(sortedIngredients);
+            for (int i = 0; i < expectedIngredients.Count; i++)
+            {
+                Assert.AreEqual(expectedIngredients[i].quantity, sortedIngredients[i].quantity);
+            }
+        }
+
+
+
+
+
+
         [TestMethod]
         public void OptimalProfitMessage_RealProfitBelowOptimal_ReturnsBelowOptimalMessage()
         {
@@ -137,37 +193,6 @@ namespace UnitTestEmina
             // Assert
             Assert.IsInstanceOfType(result, typeof(NotFoundResult));
         }
-        /*  [TestMethod]
-          public async Task Edit_InvalidModelState_ReturnsViewWithModel()
-          {
-              // Arrange
-              var existingDrink = new Drink
-              {
-                  id = 1,
-                  name = "ExistingDrink",
-                  price = 15.0
-              };
-
-              mockDbContext.Setup(c => c.Drinks.FindAsync(1)).ReturnsAsync(existingDrink);
-
-              controller = new AdminPanelController(mockDbContext.Object);
-
-              // Dodajte model error, kako biste simulirali nevalidan ModelState
-              controller.ModelState.AddModelError("price", "Price isn't correct.");
-
-              // Act
-              var result = await controller.Edit(1, new Drink { id = 1, name = "Berrylicious", price = 7.99 });
-
-              // Assert
-              Assert.IsInstanceOfType(result, typeof(ViewResult));
-
-              var viewResult = (ViewResult)result;
-              Assert.AreEqual("Berrylicious", ((Drink)viewResult.Model).name); // Provera da li se model vraća
-
-              // Ensure that FindAsync was called to get the existing drink
-              mockDbContext.Verify(x => x.Drinks.FindAsync(1), Times.Once);
-          }
-        */
 
         [TestMethod]
         public async Task Edit_ValidModelState_ReturnsRedirectToAction()
