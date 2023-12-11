@@ -260,7 +260,7 @@ namespace UnitTestHana
                     <Drink1Quantity>2</Drink1Quantity>
                     <Drink2Quantity>3</Drink2Quantity>
                     <Drink3Quantity>1</Drink3Quantity>
-                    <ExpectedProfit>73</ExpectedProfit>
+                    <ExpectedProfit>73.0</ExpectedProfit>
                     <ExpectedMessage>Your profit is above average</ExpectedMessage>
                 </TestEntry>
             </TestData>";
@@ -279,10 +279,80 @@ namespace UnitTestHana
             return testData.Select(data => new object[] { data.Drink1Quantity, data.Drink2Quantity, data.Drink3Quantity, data.ExpectedProfit, data.ExpectedMessage });
         }
 
-        public class TestDataModel
+        [TestMethod]
+        [DynamicData(nameof(GetCalculateProfitCsvTestData), DynamicDataSourceType.Method)]
+        public void CalculateDailyProfit_ReturnsCorrectResultFromCsv(int drink1Quantity, int drink2Quantity, int drink3Quantity, double expectedProfit, string expectedMessage)
         {
-            public string SearchTerm { get; set; }
-            public int ExpectedCount { get; set; }
+            // Arrange
+            var selectedDrinks = new List<DrinkQuantityPair>
+    {
+        new DrinkQuantityPair { DrinkId = 1, Quantity = drink1Quantity },
+        new DrinkQuantityPair { DrinkId = 2, Quantity = drink2Quantity },
+        new DrinkQuantityPair { DrinkId = 3, Quantity = drink3Quantity }
+    };
+
+            var mockDrinks = new List<Drink>
+    {
+        new Drink { id = 1, name = "Drink1", price = 10 },
+        new Drink { id = 2, name = "Drink2", price = 15 },
+        new Drink { id = 3, name = "Drink3", price = 8 }
+    };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            // injecting the mockDbContext into the controller
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsInstanceOfType(result, typeof(Tuple<double, string>));
+            Assert.IsNotNull(result);
+
+            double dailyProfit = result.Item1;
+            string message = result.Item2;
+
+            Assert.AreEqual(expectedProfit, dailyProfit, 0.01);
+            Assert.AreEqual(expectedMessage, message);
         }
+
+        public static List<object[]> GetCalculateProfitCsvTestData()
+        {
+            var csvTestData = @"2,3,1,73.0,Your profit is above average,1,-2,3,0.0,";
+
+
+            var lines = csvTestData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var testDataList = new List<object[]>();
+
+            foreach (var line in lines)
+            {
+                try
+                {
+                    var values = line.Split(',');
+                    int drink1Quantity = int.Parse(values[0]);
+                    int drink2Quantity = int.Parse(values[1]);
+                    int drink3Quantity = int.Parse(values[2]);
+                    double expectedProfit = double.Parse(values[3]);
+                    string expectedMessage = values.Length > 4 ? values[4] : ""; // Ensure expectedMessage is not null
+
+                    // Print all values in the 'values' array
+                    Console.WriteLine("Values in line: " + string.Join(", ", values));
+
+                    Console.WriteLine(drink1Quantity +" "+ drink2Quantity+" "+ drink3Quantity+" "+ expectedProfit+" "+ expectedMessage);
+
+                    testDataList.Add(new object[] { drink1Quantity, drink2Quantity, drink3Quantity, expectedProfit, expectedMessage });
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error parsing line: {line}. Error details: {ex.Message}");
+                    throw; // Rethrow the exception for test failure
+                }
+            }
+
+            return testDataList;
+        }
+
+
     }
 }

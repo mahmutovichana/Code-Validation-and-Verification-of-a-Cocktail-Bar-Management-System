@@ -27,7 +27,7 @@ namespace SmartCafe.Controllers
 
         public List<Drink> BubbleSort(List<Drink> drinks)
         {
-            foreach(Drink drink in drinks)
+            foreach (Drink drink in drinks)
             {
                 if (drink.price <= 0) throw new ArgumentException("Price of a drink must be greater than zero!");
             }
@@ -133,7 +133,7 @@ namespace SmartCafe.Controllers
         }
 
         //METHOD: Number of drinks
-        public int numberOfDrinks (List<Drink> drinks)
+        public int numberOfDrinks(List<Drink> drinks)
         {
             return drinks.Count;
         }
@@ -183,7 +183,7 @@ namespace SmartCafe.Controllers
         {
             var PDVPrices = new List<Double>();
             var drinks = BubbleSort(_context.Drinks.ToList());
-            foreach(var drink in drinks)
+            foreach (var drink in drinks)
             {
                 PDVPrices.Add(Math.Round(drink.price + 0.17 * drink.price, 2));
             }
@@ -288,12 +288,15 @@ namespace SmartCafe.Controllers
             public int DrinkId { get; set; }
             public int Quantity { get; set; }
         }
-
-        public Tuple<double, string> CalculateDailyProfit(List<DrinkQuantityPair> selectedDrinks)
+        [HttpPost]
+        public Tuple<double, string> CalculateDailyProfit([FromBody] List<DrinkQuantityPair> selectedDrinks)
         {
+            ViewBag.SelectedDrinks = selectedDrinks;
+            Console.WriteLine(selectedDrinks.ToArray());
             var drinkIds = selectedDrinks.Select(dq => dq.DrinkId).ToList();
+            Console.WriteLine(drinkIds.Count);
             var drinksFromDb = _context.Drinks.Where(d => drinkIds.Contains(d.id)).ToList();
-
+            Console.WriteLine(drinksFromDb.Count);
             var dailyProfit = 0.0;
             foreach (var drinkQuantityPair in selectedDrinks)
             {
@@ -305,7 +308,7 @@ namespace SmartCafe.Controllers
             }
 
             var message = optimalProfitMessage(dailyProfit);
-
+            Console.WriteLine(Tuple.Create(dailyProfit, message));
             return Tuple.Create(dailyProfit, message);
         }
     }

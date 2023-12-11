@@ -314,13 +314,13 @@
     .member-job {
         font-size: 12px;
         margin-top: 2px;
-        color: #ffcc33; 
+        color: #ffcc33;
     }
 
     .member-name {
         text-transform: uppercase;
         font-weight: bold;
-        color: #fff; 
+        color: #fff;
         margin-top: 5px;
     }
 
@@ -584,7 +584,7 @@
                 <div class="image-container-recommended">
                     <img src="@Url.Content("~/images/" + drink.name + ".jpg")" alt="@drink.name" class="carousel-image" />
                 </div>
-                <h3>@drink.name</h3>                
+                <h3>@drink.name</h3>
             </div>
         }
     </div>
@@ -756,7 +756,7 @@
                 });
 
                 plusBtn.addEventListener('click', function () {
-                    updateQuantity(0.5); 
+                    updateQuantity(0.5);
                 });
 
                 function updateQuantity(change) {
@@ -859,16 +859,23 @@
             })
                 .then(response => response.json())
                 .then(data => {
+                    console.log('Parsed values:', data.item1, data.item2); // Log the parsed values for debugging
+
                     // Display the daily profit on the page
                     const dailyProfitLabel = document.getElementById('daily-profit-label');
                     const optimalProfitMessageLabel = document.getElementById('optimal-profit-message');
-                    if (data.dailyProfit !== undefined) {
-                        dailyProfitLabel.innerText = `${data.dailyProfit}`;
-                        optimalProfitMessageLabel.innerText = data.message; // Display the optimal profit message
+
+                    if (data.item1 !== undefined && data.item2 !== undefined) {
+                        const dailyProfit = parseFloat(data.item1);
+                        const message = data.item2;
+
+                        dailyProfitLabel.innerText = `${dailyProfit}`;
+                        optimalProfitMessageLabel.innerText = message; // Display the optimal profit message
                     } else {
                         dailyProfitLabel.innerText = "0";
                         optimalProfitMessageLabel.innerText = "";
                     }
+
                     dailyProfitLabel.style.display = 'block';
                     optimalProfitMessageLabel.style.display = 'block';
                 })
@@ -918,22 +925,22 @@
     <br />
     <div class="team-heading">Team Members</div>
     <div class="team-grid">
-    <div class="team-member">
-        <img src="@Url.Content("~/images/eminaEfendicProfilna.jpg")" alt="Uposlenik 1" />
-        <div class="member-name">Emina Efendić</div>
-    </div>
-    <div class="team-member">
-        <img src="@Url.Content("~/images/aminaHromicProfilna.jpg")" alt="Uposlenik 2" />
-        <div class="member-name">Amina Hromić</div>
-    </div>
-    <div class="team-member">
-        <img src="@Url.Content("~/images/hanaMahmutovicProfilna.jpg")" alt="Uposlenik 3" />
-        <div class="member-name">Hana Mahmutović</div>
-    </div>
-    <div class="team-member">
-        <img src="@Url.Content("~/images/tajraSelimovicProfilna.jpg")" alt="Uposlenik 4" />
-        <div class="member-name">Tajra Selimović</div>
-    </div>
+        <div class="team-member">
+            <img src="@Url.Content("~/images/eminaEfendicProfilna.jpg")" alt="Uposlenik 1" />
+            <div class="member-name">Emina Efendić</div>
+        </div>
+        <div class="team-member">
+            <img src="@Url.Content("~/images/aminaHromicProfilna.jpg")" alt="Uposlenik 2" />
+            <div class="member-name">Amina Hromić</div>
+        </div>
+        <div class="team-member">
+            <img src="@Url.Content("~/images/hanaMahmutovicProfilna.jpg")" alt="Uposlenik 3" />
+            <div class="member-name">Hana Mahmutović</div>
+        </div>
+        <div class="team-member">
+            <img src="@Url.Content("~/images/tajraSelimovicProfilna.jpg")" alt="Uposlenik 4" />
+            <div class="member-name">Tajra Selimović</div>
+        </div>
     </div>
 
 </body>
