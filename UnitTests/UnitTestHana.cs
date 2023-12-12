@@ -260,7 +260,7 @@ namespace UnitTestHana
                     <Drink1Quantity>2</Drink1Quantity>
                     <Drink2Quantity>3</Drink2Quantity>
                     <Drink3Quantity>1</Drink3Quantity>
-                    <ExpectedProfit>73.0</ExpectedProfit>
+                    <ExpectedProfit>73</ExpectedProfit>
                     <ExpectedMessage>Your profit is above average</ExpectedMessage>
                 </TestEntry>
             </TestData>";
@@ -285,18 +285,18 @@ namespace UnitTestHana
         {
             // Arrange
             var selectedDrinks = new List<DrinkQuantityPair>
-    {
-        new DrinkQuantityPair { DrinkId = 1, Quantity = drink1Quantity },
-        new DrinkQuantityPair { DrinkId = 2, Quantity = drink2Quantity },
-        new DrinkQuantityPair { DrinkId = 3, Quantity = drink3Quantity }
-    };
+            {
+                new DrinkQuantityPair { DrinkId = 1, Quantity = drink1Quantity },
+                new DrinkQuantityPair { DrinkId = 2, Quantity = drink2Quantity },
+                new DrinkQuantityPair { DrinkId = 3, Quantity = drink3Quantity }
+            };
 
             var mockDrinks = new List<Drink>
-    {
-        new Drink { id = 1, name = "Drink1", price = 10 },
-        new Drink { id = 2, name = "Drink2", price = 15 },
-        new Drink { id = 3, name = "Drink3", price = 8 }
-    };
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 },
+                new Drink { id = 2, name = "Drink2", price = 15 },
+                new Drink { id = 3, name = "Drink3", price = 8 }
+            };
 
             mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
 

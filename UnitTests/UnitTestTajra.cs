@@ -249,7 +249,7 @@ namespace UnitTestTajra
 
         [TestMethod]
         [DynamicData(nameof(CheapestDrinkXmlData), DynamicDataSourceType.Method)]
-        public void CheapestDrink_ReturnsCheapestDrinkUsingXMLData(int expectedId, string expectedName, double expectedPrice, List<Drink> drinks)
+        public void CheapestDrink_XMLData_ReturnsCheapestDrink(int expectedId, string expectedName, double expectedPrice, List<Drink> drinks)
         {
             // Act
             var result = controller.cheapestDrink(drinks);

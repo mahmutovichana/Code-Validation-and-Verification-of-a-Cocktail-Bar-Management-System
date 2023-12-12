@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.8537" branch-rate="0.3975" version="1.9" timestamp="1702380129" lines-covered="1092" lines-valid="1279" branches-covered="97" branches-valid="244">
+<coverage line-rate="0.8537" branch-rate="0.3975" version="1.9" timestamp="1702381370" lines-covered="1092" lines-valid="1279" branches-covered="97" branches-valid="244">
   <sources>
-    <source>C:\Users\efend\</source>
+    <source>C:\Users\Korisnik\</source>
   </sources>
   <packages>
     <package name="UnitTests" line-rate="0.9756999999999999" branch-rate="0.9545" complexity="70">
@@ -18,7 +18,7 @@
             <line number="4" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestTajra.UnitTestTajra" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestTajra.cs" line-rate="0.9736" branch-rate="1" complexity="12">
+        <class name="UnitTestTajra.UnitTestTajra" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestTajra.cs" line-rate="0.9736" branch-rate="1" complexity="12">
           <methods>
             <method name="MockDbSet" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -171,7 +171,7 @@
                 <line number="205" hits="1" branch="False" />
               </lines>
             </method>
-            <method name="CheapestDrink_ReturnsCheapestDrinkUsingXMLData" signature="(System.Int32,System.String,System.Double,System.Collections.Generic.List`1&lt;SmartCafe.Models.Drink&gt;)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="CheapestDrink_XMLData_ReturnsCheapestDrink" signature="(System.Int32,System.String,System.Double,System.Collections.Generic.List`1&lt;SmartCafe.Models.Drink&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="253" hits="1" branch="False" />
                 <line number="255" hits="1" branch="False" />
@@ -456,7 +456,7 @@
             <line number="355" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestTajra.UnitTestTajra/&lt;CheapestDrinkXmlData&gt;d__10" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestTajra.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="UnitTestTajra.UnitTestTajra/&lt;CheapestDrinkXmlData&gt;d__10" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestTajra.cs" line-rate="1" branch-rate="1" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="4">
               <lines>
@@ -554,7 +554,7 @@
             <line number="248" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestHana.UnitTestHana" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestHana.cs" line-rate="0.9806999999999999" branch-rate="0.75" complexity="14">
+        <class name="UnitTestHana.UnitTestHana" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestHana.cs" line-rate="0.9806999999999999" branch-rate="0.75" complexity="14">
           <methods>
             <method name="MockDbSet" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1036,7 +1036,7 @@
             <line number="354" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestEmina.cs" line-rate="0.9687" branch-rate="1" complexity="11">
+        <class name="UnitTestEmina.UnitTestEmina" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="0.9687" branch-rate="1" complexity="11">
           <methods>
             <method name="MockDbSet" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1088,7 +1088,7 @@
                 <line number="75" hits="1" branch="False" />
               </lines>
             </method>
-            <method name="InsertionSort_ReturnsSortedIngredientsList" signature="(System.Collections.Generic.List`1&lt;SmartCafe.Models.Ingredient&gt;,System.Collections.Generic.List`1&lt;SmartCafe.Models.Ingredient&gt;)" line-rate="1" branch-rate="1" complexity="2">
+            <method name="InsertionSort_XmlData_ReturnsSortedIngredientsList" signature="(System.Collections.Generic.List`1&lt;SmartCafe.Models.Ingredient&gt;,System.Collections.Generic.List`1&lt;SmartCafe.Models.Ingredient&gt;)" line-rate="1" branch-rate="1" complexity="2">
               <lines>
                 <line number="116" hits="1" branch="False" />
                 <line number="118" hits="1" branch="False" />
@@ -1160,7 +1160,7 @@
                 <line number="364" hits="1" branch="False" />
               </lines>
             </method>
-            <method name="OptimalProfitMessage_ReturnsCorrectResult" signature="(System.Double,System.String)" line-rate="1" branch-rate="1" complexity="1">
+            <method name="OptimalProfitMessage_CsvData_ReturnsCorrectResult" signature="(System.Double,System.String)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="369" hits="3" branch="False" />
                 <line number="371" hits="3" branch="False" />
@@ -1350,7 +1350,7 @@
             <line number="422" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;&gt;c" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;&gt;c" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="&lt;IngredientListXmlData&gt;b__6_0" signature="(System.Xml.Linq.XElement)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1368,7 +1368,7 @@
             <line number="107" hits="6" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_DbUpdateException_DrinkDoesNotExist_ReturnsNotFound&gt;d__15" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_DbUpdateException_DrinkDoesNotExist_ReturnsNotFound&gt;d__15" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1430,7 +1430,7 @@
             <line number="338" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_DrinkNotFound_ReturnsNotFound&gt;d__14" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_DrinkNotFound_ReturnsNotFound&gt;d__14" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1454,7 +1454,7 @@
             <line number="300" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_IdMismatch_ReturnsNotFound&gt;d__10" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_IdMismatch_ReturnsNotFound&gt;d__10" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1486,7 +1486,7 @@
             <line number="192" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_InvalidModelState_ReturnsViewWithModel&gt;d__12" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_InvalidModelState_ReturnsViewWithModel&gt;d__12" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1528,7 +1528,7 @@
             <line number="259" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_ValidModelStateBelowPriceRange_ReturnsRedirectToAction&gt;d__13" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_ValidModelStateBelowPriceRange_ReturnsRedirectToAction&gt;d__13" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1568,7 +1568,7 @@
             <line number="284" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_ValidModelState_ReturnsRedirectToAction&gt;d__11" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_ValidModelState_ReturnsRedirectToAction&gt;d__11" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1626,7 +1626,7 @@
             <line number="232" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;IngredientListXmlData&gt;d__6" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;IngredientListXmlData&gt;d__6" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
@@ -1702,7 +1702,7 @@
             <line number="112" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestAmina.UnitTestAmina" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestAmina.cs" line-rate="0.9489" branch-rate="1" complexity="14">
+        <class name="UnitTestAmina.UnitTestAmina" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestAmina.cs" line-rate="0.9489" branch-rate="1" complexity="14">
           <methods>
             <method name="MockDbSet" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -2042,7 +2042,7 @@
             <line number="290" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestAmina.UnitTestAmina/&lt;MostExpensiveDrinkXmlData&gt;d__14" filename="Desktop\VVS-PROJEKAT\VVS\UnitTests\UnitTestAmina.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="UnitTestAmina.UnitTestAmina/&lt;MostExpensiveDrinkXmlData&gt;d__14" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestAmina.cs" line-rate="1" branch-rate="1" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="4">
               <lines>
@@ -2146,7 +2146,7 @@
     </package>
     <package name="VVSProject" line-rate="0.7214" branch-rate="0.8085" complexity="139">
       <classes>
-        <class name="SmartCafe.Program" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Program.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="SmartCafe.Program" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Program.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
             <method name="Main" signature="(System.String[])" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -2176,7 +2176,7 @@
             <line number="24" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Startup" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Startup.cs" line-rate="0" branch-rate="0" complexity="5">
+        <class name="SmartCafe.Startup" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Startup.cs" line-rate="0" branch-rate="0" complexity="5">
           <methods>
             <method name="get_Configuration" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -2298,7 +2298,7 @@
             <line number="26" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.Drink" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Models\Drink.cs" line-rate="1" branch-rate="1" complexity="5">
+        <class name="SmartCafe.Models.Drink" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\Drink.cs" line-rate="1" branch-rate="1" complexity="5">
           <methods>
             <method name="get_id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -2344,7 +2344,7 @@
             <line number="20" hits="68" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.DrinkIngredient" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Models\DrinkIngredient.cs" line-rate="1" branch-rate="1" complexity="7">
+        <class name="SmartCafe.Models.DrinkIngredient" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\DrinkIngredient.cs" line-rate="1" branch-rate="1" complexity="7">
           <methods>
             <method name="get_id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -2402,7 +2402,7 @@
             <line number="25" hits="17" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.ErrorViewModel" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Models\ErrorViewModel.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="SmartCafe.Models.ErrorViewModel" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\ErrorViewModel.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
             <method name="get_RequestId" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -2420,7 +2420,7 @@
             <line number="9" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.Ingredient" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Models\Ingredient.cs" line-rate="1" branch-rate="1" complexity="5">
+        <class name="SmartCafe.Models.Ingredient" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\Ingredient.cs" line-rate="1" branch-rate="1" complexity="5">
           <methods>
             <method name="get_id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -2466,7 +2466,7 @@
             <line number="18" hits="16" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.Statistic" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Models\Statistic.cs" line-rate="0" branch-rate="1" complexity="7">
+        <class name="SmartCafe.Models.Statistic" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\Statistic.cs" line-rate="0" branch-rate="1" complexity="7">
           <methods>
             <method name="get_id" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -2514,7 +2514,7 @@
             <line number="19" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Data.ApplicationDbContext" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Data\ApplicationDbContext.cs" line-rate="0" branch-rate="1" complexity="7">
+        <class name="SmartCafe.Data.ApplicationDbContext" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Data\ApplicationDbContext.cs" line-rate="0" branch-rate="1" complexity="7">
           <methods>
             <method name="get_Drinks" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -2582,7 +2582,7 @@
             <line number="18" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Controllers.AdminPanelController" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="0.9253" branch-rate="0.8048000000000001" complexity="87">
+        <class name="SmartCafe.Controllers.AdminPanelController" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="0.9253" branch-rate="0.8048000000000001" complexity="87">
           <methods>
             <method name="BubbleSort" signature="(System.Collections.Generic.List`1&lt;SmartCafe.Models.Drink&gt;)" line-rate="1" branch-rate="1" complexity="10">
               <lines>
@@ -3360,7 +3360,7 @@
             <line number="24" hits="67" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Controllers.AdminPanelController/DrinkQuantityPair" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="SmartCafe.Controllers.AdminPanelController/DrinkQuantityPair" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="get_DrinkId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -3378,7 +3378,7 @@
             <line number="289" hits="20" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Controllers.AdminPanelController/&lt;Edit&gt;d__11" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="1" branch-rate="1" complexity="10">
+        <class name="SmartCafe.Controllers.AdminPanelController/&lt;Edit&gt;d__11" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="1" branch-rate="1" complexity="10">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="10">
               <lines>
@@ -3478,7 +3478,7 @@
     </package>
     <package name="VVSProject.Views" line-rate="0" branch-rate="0" complexity="132">
       <classes>
-        <class name="AspNetCore.Areas_Identity_Pages__ViewStart/&lt;ExecuteAsync&gt;d__0" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Areas\Identity\Pages\_ViewStart.cshtml" line-rate="0" branch-rate="1" complexity="1">
+        <class name="AspNetCore.Areas_Identity_Pages__ViewStart/&lt;ExecuteAsync&gt;d__0" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Areas\Identity\Pages\_ViewStart.cshtml" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -3490,7 +3490,7 @@
             <line number="2" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_AdminPanel_Index" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="6">
+        <class name="AspNetCore.Views_AdminPanel_Index" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="6">
           <methods>
             <method name="GetColor" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="6">
               <lines>
@@ -3538,7 +3538,7 @@
             <line number="555" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_AdminPanel_Index/&lt;&lt;ExecuteAsync&gt;b__15_1&gt;d" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="84">
+        <class name="AspNetCore.Views_AdminPanel_Index/&lt;&lt;ExecuteAsync&gt;b__15_1&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="84">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="84">
               <lines>
@@ -3810,7 +3810,7 @@
             <line number="941" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_AdminPanel_Index/&lt;&gt;c__DisplayClass15_0/&lt;&lt;ExecuteAsync&gt;b__3&gt;d" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="1" complexity="1">
+        <class name="AspNetCore.Views_AdminPanel_Index/&lt;&gt;c__DisplayClass15_0/&lt;&lt;ExecuteAsync&gt;b__3&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -3826,7 +3826,7 @@
             <line number="721" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_AdminPanel_Index/&lt;ExecuteAsync&gt;d__15" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="4">
+        <class name="AspNetCore.Views_AdminPanel_Index/&lt;ExecuteAsync&gt;d__15" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -3850,7 +3850,7 @@
             </line>
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared_Error/&lt;ExecuteAsync&gt;d__0" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\Shared\Error.cshtml" line-rate="0" branch-rate="0" complexity="2">
+        <class name="AspNetCore.Views_Shared_Error/&lt;ExecuteAsync&gt;d__0" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\Error.cshtml" line-rate="0" branch-rate="0" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
@@ -3878,7 +3878,7 @@
             <line number="14" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared__Layout/&lt;&lt;ExecuteAsync&gt;b__25_0&gt;d" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\Shared\_Layout.cshtml" line-rate="0" branch-rate="0" complexity="4">
+        <class name="AspNetCore.Views_Shared__Layout/&lt;&lt;ExecuteAsync&gt;b__25_0&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\_Layout.cshtml" line-rate="0" branch-rate="0" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -3900,7 +3900,7 @@
             </line>
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared__Layout/&lt;&lt;ExecuteAsync&gt;b__25_1&gt;d" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\Shared\_Layout.cshtml" line-rate="0" branch-rate="0" complexity="16">
+        <class name="AspNetCore.Views_Shared__Layout/&lt;&lt;ExecuteAsync&gt;b__25_1&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\_Layout.cshtml" line-rate="0" branch-rate="0" complexity="16">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="16">
               <lines>
@@ -3944,7 +3944,7 @@
             <line number="47" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared__LoginPartial/&lt;&lt;ExecuteAsync&gt;b__17_0&gt;d" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\Shared\_LoginPartial.cshtml" line-rate="0" branch-rate="1" complexity="1">
+        <class name="AspNetCore.Views_Shared__LoginPartial/&lt;&lt;ExecuteAsync&gt;b__17_0&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\_LoginPartial.cshtml" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -3956,7 +3956,7 @@
             <line number="9" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared__LoginPartial/&lt;ExecuteAsync&gt;d__17" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\Shared\_LoginPartial.cshtml" line-rate="0" branch-rate="0" complexity="12">
+        <class name="AspNetCore.Views_Shared__LoginPartial/&lt;ExecuteAsync&gt;d__17" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\_LoginPartial.cshtml" line-rate="0" branch-rate="0" complexity="12">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="12">
               <lines>
@@ -4014,7 +4014,7 @@
             <line number="25" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views__ViewStart/&lt;ExecuteAsync&gt;d__0" filename="Desktop\VVS-PROJEKAT\VVS\VVSProject\Views\_ViewStart.cshtml" line-rate="0" branch-rate="1" complexity="1">
+        <class name="AspNetCore.Views__ViewStart/&lt;ExecuteAsync&gt;d__0" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\_ViewStart.cshtml" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>

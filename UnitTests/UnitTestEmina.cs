@@ -112,7 +112,7 @@ namespace UnitTestEmina
         }
         [TestMethod]
         [DynamicData(nameof(IngredientListXmlData), DynamicDataSourceType.Method)]
-        public void InsertionSort_ReturnsSortedIngredientsList(List<Ingredient> expectedIngredients, List<Ingredient> ingredients)
+        public void InsertionSort_XmlData_ReturnsSortedIngredientsList(List<Ingredient> expectedIngredients, List<Ingredient> ingredients)
         {
             // Act
             var sortedIngredients = controller.insertionSort(ingredients);
@@ -365,7 +365,7 @@ namespace UnitTestEmina
 
         [TestMethod]
         [DynamicData(nameof(GetOptimalProfitMessageCsvTestData), DynamicDataSourceType.Method)]
-        public void OptimalProfitMessage_ReturnsCorrectResult(double realProfit, string expectedMessage)
+        public void OptimalProfitMessage_CsvData_ReturnsCorrectResult(double realProfit, string expectedMessage)
         {
             // Arrange
             var mockDrinks = new List<Drink>
