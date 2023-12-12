@@ -388,7 +388,7 @@ namespace UnitTestEmina
 
         public static List<object[]> GetOptimalProfitMessageCsvTestData()
         {
-            var csvTestData = @"33.0,Your profit is optimal,35.0,Your profit is above average,25.0,You are below optimal profit";
+            var csvTestData = @"33,Your profit is optimal,35,Your profit is above average,25,You are below optimal profit";
 
             var lines = csvTestData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             var testDataList = new List<object[]>();

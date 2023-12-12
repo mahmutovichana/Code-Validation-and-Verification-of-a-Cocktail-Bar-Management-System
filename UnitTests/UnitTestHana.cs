@@ -319,7 +319,7 @@ namespace UnitTestHana
 
         public static List<object[]> GetCalculateProfitCsvTestData()
         {
-            var csvTestData = @"2,3,1,73.0,Your profit is above average,1,-2,3,0.0,";
+            var csvTestData = @"2,3,1,73,Your profit is above average,1,-2,3,0,";
 
 
             var lines = csvTestData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
