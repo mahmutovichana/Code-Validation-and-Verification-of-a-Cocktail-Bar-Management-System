@@ -196,7 +196,7 @@ namespace UnitTestAmina
                         <Price>7.99</Price>
                     </ExpectedDrink>
                 </TestEntry>
-                <!-- Dodajte dodatne TestEntry elemente prema potrebi -->
+
             </TestData>";
 
             var xmlDoc = XDocument.Parse(xmlTestData);
@@ -222,9 +222,74 @@ namespace UnitTestAmina
                 yield return new object[] { drinks, expectedId, expectedName, expectedPrice };
             }
         }
+       
+        /////////////////
+        public static List<object[]> GetMostExpensiveDrinkCsvTestData()
+        {
+            var csvTestData = @"1,Watermelon Wave,3.99,2,Minty Glacier,5.99,3,Rosy Chill,7.99,";
 
+            var lines = csvTestData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var testDataList = new List<object[]>();
+
+            foreach (var line in lines)
+            {
+                try
+                {
+                    var values = line.Split(',');
+                    int drink1Id = int.Parse(values[0]);
+                    string drink1Name = values[1];
+                    double drink1Price = double.Parse(values[2]);
+                    int drink2Id = int.Parse(values[3]);
+                    string drink2Name = values[4];
+                    double drink2Price = double.Parse(values[5]);
+                    int drink3Id = int.Parse(values[6]);
+                    string drink3Name = values[7];
+                    double drink3Price = double.Parse(values[8]);
+
+                    testDataList.Add(new object[] {
+            drink1Id, drink1Name, drink1Price,
+            drink2Id, drink2Name, drink2Price,
+            drink3Id, drink3Name, drink3Price
+        });
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error parsing line: {line}. Error details: {ex.Message}");
+                    throw;
+                }
+            }
+
+            return testDataList;
+        }
+
+        /////////////////
+        [TestMethod]
+        [DynamicData(nameof(GetMostExpensiveDrinkCsvTestData), DynamicDataSourceType.Method)]
+        public void MostExpensiveDrink_CsvData_ReturnsMostExpensiveDrink(
+            int drink1Id, string drink1Name, double drink1Price,
+            int drink2Id, string drink2Name, double drink2Price,
+            int drink3Id, string drink3Name, double drink3Price)
+        {
+            var mockDrinks = new List<Drink>
+        {
+            new Drink { id = drink1Id, name = drink1Name, price = drink1Price },
+            new Drink { id = drink2Id, name = drink2Name, price = drink2Price },
+            new Drink { id = drink3Id, name = drink3Name, price = drink3Price }
+        };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            // injecting the mockDbContext into the controller
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            var result = controller.MostExpensiveDrink(mockDrinks);
+
+            Assert.AreEqual("Rosy Chill", result.name);
+        }
     }
 
-
-
 }
+
+
+
