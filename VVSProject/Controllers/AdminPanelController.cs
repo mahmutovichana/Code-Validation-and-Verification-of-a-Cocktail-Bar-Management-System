@@ -327,14 +327,11 @@ namespace SmartCafe.Controllers
         {
             foreach (var drink in drinks)
             {
-                Console.WriteLine("drink 1");
                 if (!isAlcoholic(drink))
                 {
-                    Console.WriteLine("nije ok");
                     return false;
                 }
             }
-            Console.WriteLine("ok");
             return true;
         }
     }

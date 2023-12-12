@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Xml.Linq;
 using Microsoft.EntityFrameworkCore.Update;
+using static SmartCafe.Controllers.AdminPanelController;
 
 namespace UnitTestEmina
 {
@@ -123,10 +124,6 @@ namespace UnitTestEmina
                 Assert.AreEqual(expectedIngredients[i].quantity, sortedIngredients[i].quantity);
             }
         }
-
-
-
-
 
 
         [TestMethod]
@@ -365,6 +362,65 @@ namespace UnitTestEmina
 
             Assert.IsTrue(result);
         }
+
+        [TestMethod]
+        [DynamicData(nameof(GetOptimalProfitMessageCsvTestData), DynamicDataSourceType.Method)]
+        public void OptimalProfitMessage_ReturnsCorrectResult(double realProfit, string expectedMessage)
+        {
+            // Arrange
+            var mockDrinks = new List<Drink>
+        {
+            new Drink { id = 1, name = "Drink1", price = 10 },
+            new Drink { id = 2, name = "Drink2", price = 15 },
+            new Drink { id = 3, name = "Drink3", price = 8 }
+        };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            // injecting the mockDbContext into the controller
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.optimalProfitMessage(realProfit);
+            // Assert
+            Assert.AreEqual(expectedMessage, result);
+        }
+
+        public static List<object[]> GetOptimalProfitMessageCsvTestData()
+        {
+            var csvTestData = @"33.0,Your profit is optimal,35.0,Your profit is above average,25.0,You are below optimal profit";
+
+            var lines = csvTestData.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var testDataList = new List<object[]>();
+            Console.WriteLine($"{lines[0]}: {csvTestData}");
+            foreach (var line in lines)
+            {
+                try
+                {
+                    var values = line.Split(',');
+
+                    double realProfit = double.Parse(values[0]);
+                    string expectedMessage = values[1];
+                    testDataList.Add(new object[] { realProfit, expectedMessage });
+
+                    realProfit = double.Parse(values[2]);
+                    expectedMessage = values[3];
+                    testDataList.Add(new object[] { realProfit, expectedMessage });
+
+                    realProfit = double.Parse(values[4]);
+                    expectedMessage = values[5];
+                    testDataList.Add(new object[] { realProfit, expectedMessage });
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error parsing line: {line}. Error details: {ex.Message}");
+                    throw; // Rethrow the exception for test failure
+                }
+            }
+
+            return testDataList;
+        }
+
 
 
     }
