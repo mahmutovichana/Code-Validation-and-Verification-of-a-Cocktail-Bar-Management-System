@@ -170,6 +170,31 @@ namespace UnitTestEmina
             // Assert
             Assert.AreEqual("Your profit is optimal", result);
         }
+
+        [TestMethod]
+        public void OptimalProfitMessage_RealProfitAboveOptimal_ReturnsAboveOptimalMessage()
+        {
+            // Arrange
+            var drinks = new List<Drink>
+            {
+                new Drink(1, "Berrylicious", 5.99),
+                new Drink(2, "Cherry Bomb", 7.99),
+                new Drink(3, "Watermelon Wave", 3.99),
+            };
+
+            var mockDbContext = new Mock<IApplicationDbContext>();
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(drinks));
+
+            controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.optimalProfitMessage(31.7); // Postavite stvarni profit iznad optimalnog
+
+            // Assert
+            Assert.AreEqual("Your profit is above average", result);
+        }
+
+
         [TestMethod]
         public async Task Edit_IdMismatch_ReturnsNotFound()
         {
@@ -334,8 +359,8 @@ namespace UnitTestEmina
 
             // Assert
             Assert.IsInstanceOfType(result, typeof(RedirectToActionResult));
-            
-         }
+
+        }
         [TestMethod]
         public void AreAllDrinksAlcoholic_AllDrinksAlcoholic_ReturnsTrue()
         {
@@ -369,11 +394,11 @@ namespace UnitTestEmina
         {
             // Arrange
             var mockDrinks = new List<Drink>
-        {
-            new Drink { id = 1, name = "Drink1", price = 10 },
-            new Drink { id = 2, name = "Drink2", price = 15 },
-            new Drink { id = 3, name = "Drink3", price = 8 }
-        };
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 },
+                new Drink { id = 2, name = "Drink2", price = 15 },
+                new Drink { id = 3, name = "Drink3", price = 8 }
+            };
 
             mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
 
@@ -422,6 +447,121 @@ namespace UnitTestEmina
         }
 
 
+
+        [TestMethod]
+        public void OptimalProfitMessage_EmptyList_ReturnsAverageMessage()
+        {
+            var mockDrinks = new List<Drink> { };
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+            controller = new AdminPanelController(mockDbContext.Object);
+            var result = controller.optimalProfitMessage(0);
+            Assert.AreEqual("Your profit is optimal", result);
+        }
+
+        [TestMethod]
+        public void OptimalProfitMessage_SingleDrink_ReturnsBelowOptimalMessage()
+        {
+            var mockDrinks = new List<Drink>
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 }
+            };
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+            controller = new AdminPanelController(mockDbContext.Object);
+            var result = controller.optimalProfitMessage(0);
+            Assert.AreEqual("You are below optimal profit", result);
+        }
+
+        [TestMethod]
+        public void OptimalProfitMessage_TwoDrinks_ReturnsBelowOptimalMessage()
+        {
+            var mockDrinks = new List<Drink>
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 },
+                new Drink { id = 2, name = "Drink2", price = 15 }
+            };
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+            controller = new AdminPanelController(mockDbContext.Object);
+            var result = controller.optimalProfitMessage(0);
+            Assert.AreEqual("You are below optimal profit", result);
+        }
+
+
+        [TestMethod]
+        public void OptimalProfitMessage_FiveDrinks_ReturnsBelowOptimalMessage()
+        {
+            var mockDrinks = new List<Drink>
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 },
+                new Drink { id = 2, name = "Drink2", price = 15 },
+                new Drink { id = 3, name = "Drink1", price = 10 },
+                new Drink { id = 4, name = "Drink2", price = 15 },
+                new Drink { id = 5, name = "Drink2", price = 15 }
+            };
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+            controller = new AdminPanelController(mockDbContext.Object);
+            var result = controller.optimalProfitMessage(0);
+            Assert.AreEqual("You are below optimal profit", result);
+        }
+
+        [TestMethod]
+        public void OptimalProfitMessage_SevenDrinks_ReturnsBelowOptimalMessage()
+        {
+            var mockDrinks = new List<Drink>
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 },
+                new Drink { id = 2, name = "Drink2", price = 15 },
+                new Drink { id = 3, name = "Drink1", price = 10 },
+                new Drink { id = 4, name = "Drink2", price = 15 },
+                new Drink { id = 5, name = "Drink2", price = 15 },
+                new Drink { id = 6, name = "Drink1", price = 10 },
+                new Drink { id = 7, name = "Drink2", price = 15 }
+            };
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+            controller = new AdminPanelController(mockDbContext.Object);
+            var result = controller.optimalProfitMessage(0);
+            Assert.AreEqual("You are below optimal profit", result);
+        }
+
+        [TestMethod]
+        public void OptimalProfitMessage_EightDrinks_ReturnsBelowOptimalMessage()
+        {
+            var mockDrinks = new List<Drink>
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 },
+                new Drink { id = 2, name = "Drink2", price = 15 },
+                new Drink { id = 3, name = "Drink1", price = 10 },
+                new Drink { id = 4, name = "Drink2", price = 15 },
+                new Drink { id = 5, name = "Drink2", price = 15 },
+                new Drink { id = 6, name = "Drink1", price = 10 },
+                new Drink { id = 7, name = "Drink2", price = 15 },
+                new Drink { id = 8, name = "Drink2", price = 15 }
+            };
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+            controller = new AdminPanelController(mockDbContext.Object);
+            var result = controller.optimalProfitMessage(0);
+            Assert.AreEqual("You are below optimal profit", result);
+        }
+
+
+        [TestMethod]
+        public void OptimalProfitMessage_EmptyList_ReturnsBelowAverageMessage()
+        {
+            var mockDrinks = new List<Drink> { };
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+            controller = new AdminPanelController(mockDbContext.Object);
+            var result = controller.optimalProfitMessage(-10.1);
+            Assert.AreEqual("You are below optimal profit", result);
+        }
+
+        [TestMethod]
+        public void OptimalProfitMessage_EmptyList_ReturnsAboveAverageMessage()
+        {
+            var mockDrinks = new List<Drink> { };
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+            controller = new AdminPanelController(mockDbContext.Object);
+            var result = controller.optimalProfitMessage(10.1);
+            Assert.AreEqual("Your profit is above average", result);
+        }
 
     }
 

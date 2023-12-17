@@ -87,12 +87,34 @@ namespace UnitTestTajra
         }
 
         [TestMethod]
+        public void CheapestDrink_SamePrice_ReturnsCheapestDrink()
+        {
+            // Arrange
+            var drinks = new List<Drink>
+            {
+                new Drink(1, "Watermelon Wave", 7.99),
+                new Drink(2, "Watermelon Wave", 7.99),
+                new Drink(3, "Watermelon Wave", 7.99)
+            };
+
+            // Mock DbSet using the utility method
+            var mockSet = MockDbSet(drinks);
+            mockDbContext.Setup(c => c.Drinks).Returns(mockSet);
+            controller = new AdminPanelController(mockDbContext.Object);
+            var result = controller.cheapestDrink(drinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(7.99, result.price);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void CheapestDrink_DrinkWithNegativePrice_ThrowsArgumentException()
         {
             var drinks = new List<Drink> {
-                new Drink(1, "Berrylicious", 7.99), 
-                new Drink(2, "Cherry Bomb", -9.99), 
+                new Drink(1, "Berrylicious", 7.99),
+                new Drink(2, "Cherry Bomb", -9.99),
                 new Drink(3, "Watermelon Wave", 11.99)
             };
             controller.cheapestDrink(drinks);
@@ -353,6 +375,119 @@ namespace UnitTestTajra
             // Assert
             Assert.IsFalse(result);
         }
+
+
+
+        [TestMethod]
+        public void CheapestDrink_EmptyList_ThrowsArgumentOutOfRangeException()
+        {
+            var drinks = new List<Drink>();
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => controller.cheapestDrink(drinks));
+        }
+
+        [TestMethod]
+        public void CheapestDrink_SingleDrink_ReturnsDrink()
+        {
+            var drinks = new List<Drink> { new Drink(1, "Watermelon Wave", 11.99) };
+            var result = controller.cheapestDrink(drinks);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(11.99, result.price);
+        }
+
+        [TestMethod]
+        public void CheapestDrink_TwoDrinks_ReturnsCheaperDrink()
+        {
+            var drinks = new List<Drink>
+            {
+                new Drink(1, "Watermelon Wave", 11.99),
+                new Drink(2, "Watermelon Wave", 10.99)
+            };
+            var result = controller.cheapestDrink(drinks);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(10.99, result.price);
+        }
+
+        [TestMethod]
+        public void CheapestDrink_ThreeDrinks_ReturnsCheaperDrink()
+        {
+            var drinks = new List<Drink>
+            {
+                new Drink(1, "Watermelon Wave", 11.99),
+                new Drink(1, "Watermelon Wave", 7.99),
+                new Drink(2, "Watermelon Wave", 10.99)
+            };
+            var result = controller.cheapestDrink(drinks);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(7.99, result.price);
+        }
+
+        [TestMethod]
+        public void CheapestDrink_FourDrinks_ReturnsCheaperDrink()
+        {
+            var drinks = new List<Drink>
+            {
+                new Drink(1, "Watermelon Wave", 11.99),
+                new Drink(2, "Watermelon Wave", 5.99),
+                new Drink(1, "Watermelon Wave", 9.99),
+                new Drink(2, "Watermelon Wave", 10.99)
+            };
+            var result = controller.cheapestDrink(drinks);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(5.99, result.price);
+        }
+
+        [TestMethod]
+        public void CheapestDrink_FiveDrinks_ReturnsCheapestDrink()
+        {
+            var drinks = new List<Drink>
+            {
+                new Drink(1, "Watermelon Wave", 11.99),
+                new Drink(2, "Watermelon Wave", 10.99),
+                new Drink(3, "Watermelon Wave", 8.99),
+                new Drink(4, "Watermelon Wave", 5.99),
+                new Drink(5, "Watermelon Wave", 9.99)
+            };
+            var result = controller.cheapestDrink(drinks);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(5.99, result.price);
+        }
+
+        [TestMethod]
+        public void CheapestDrink_SixDrinks_ReturnsCheapestDrink()
+        {
+            var drinks = new List<Drink>
+            {
+                new Drink(1, "Watermelon Wave", 11.99),
+                new Drink(2, "Watermelon Wave", 10.99),
+                new Drink(3, "Watermelon Wave", 8.99),
+                new Drink(4, "Watermelon Wave", 5.99),
+                new Drink(5, "Watermelon Wave", 9.99),
+                new Drink(6, "Watermelon Wave", 9.99)
+            };
+            var result = controller.cheapestDrink(drinks);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(5.99, result.price);
+        }
+
+        [TestMethod]
+        public void CheapestDrink_SevenDrinks_ReturnsCheapestDrink()
+        {
+            var drinks = new List<Drink>
+            {
+                new Drink(1, "Watermelon Wave", 11.99),
+                new Drink(2, "Watermelon Wave", 10.99),
+                new Drink(3, "Watermelon Wave", 8.99),
+                new Drink(4, "Watermelon Wave", 5.99),
+                new Drink(5, "Watermelon Wave", 3.99),
+                new Drink(6, "Watermelon Wave", 9.99),
+                new Drink(6, "Watermelon Wave", 7.99)
+            };
+            var result = controller.cheapestDrink(drinks);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(3.99, result.price);
+        }
+
+
 
 
     }
