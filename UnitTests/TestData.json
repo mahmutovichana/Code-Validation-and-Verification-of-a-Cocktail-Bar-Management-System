@@ -1,0 +1,14 @@
+﻿[
+  {
+    "searchTerm": "Spritz",
+    "expectedCount": 1
+  },
+  {
+    "searchTerm": "Orange",
+    "expectedCount": 1
+  },
+  {
+    "searchTerm": "NonExistentIngredient",
+    "expectedCount": 0
+  }
+]

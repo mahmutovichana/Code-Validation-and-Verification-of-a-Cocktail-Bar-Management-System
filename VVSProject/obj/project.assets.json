@@ -6550,19 +6550,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Amina\\.nuget\\packages\\": {}
+    "C:\\Users\\mahmu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj",
+      "projectUniqueName": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj",
       "projectName": "VVSProject",
-      "projectPath": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\VVSProject.csproj",
-      "packagesPath": "C:\\Users\\Amina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amina\\Source\\Repos\\mahmutovichana\\VVS\\VVSProject\\obj\\",
+      "projectPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\VVSProject.csproj",
+      "packagesPath": "C:\\Users\\mahmu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mahmu\\OneDrive\\Desktop\\VVS\\VVS\\VVSProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Amina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mahmu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6624,24 +6624,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.17, 5.0.17]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -6650,7 +6632,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

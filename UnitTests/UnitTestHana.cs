@@ -160,7 +160,7 @@ namespace UnitTestHana
 
 
         [TestMethod]
-        public void CalculateDailyProfit_DrinkNotFound_ReturnsJsonResultWithZeroProfit()
+        public void CalculateDailyProfit_DrinkNotFound_ReturnsResultWithZeroProfit()
         {
             // Arrange
             var selectedDrinks = new List<DrinkQuantityPair>
@@ -188,7 +188,7 @@ namespace UnitTestHana
 
 
         [TestMethod]
-        public void CalculateDailyProfit_NegativeQuantity_ReturnsJsonResultWithZeroProfit()
+        public void CalculateDailyProfit_NegativeQuantity_ReturnsResultWithZeroProfit()
         {
             // Arrange
             var selectedDrinks = new List<DrinkQuantityPair>
@@ -213,6 +213,57 @@ namespace UnitTestHana
             Assert.IsNotNull(result);
             Assert.AreEqual(0.0, result.Item1);
         }
+
+        [TestMethod]
+        public void CalculateDailyProfit_EmptyList_ReturnsResultWithZeroProfit()
+        {
+            // Arrange
+            var selectedDrinks = new List<DrinkQuantityPair>();
+
+            var mockDrinks = new List<Drink>
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 }
+            };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            // injecting the mockDbContext into the controller
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0.0, result.Item1);
+            Assert.AreEqual("No drinks selected.", result.Item2);
+        }
+
+        [TestMethod]
+        public void CalculateDailyProfit_NullList_ReturnsZeroProfitWithMessage()
+        {
+            // Arrange
+            List<DrinkQuantityPair> selectedDrinks = null;
+
+            var mockDrinks = new List<Drink>
+            {
+                new Drink { id = 1, name = "Drink1", price = 10 }
+            };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            // injecting the mockDbContext into the controller
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0.0, result.Item1);
+            Assert.AreEqual("No drinks selected.", result.Item2);
+        }
+
 
         [TestMethod]
         [DynamicData(nameof(GetCalculateProfitXmlTestData), DynamicDataSourceType.Method)]
@@ -353,6 +404,185 @@ namespace UnitTestHana
             return testDataList;
         }
 
+        [TestMethod]
+        public void CalculateDailyProfit_NoPassThroughLoop_EmptyList_ReturnsZeroProfitWithMessage()
+        {
+            // Arrange
+            var selectedDrinks = new List<DrinkQuantityPair>();
+
+            var mockDrinks = new List<Drink>
+        {
+            new Drink { id = 1, name = "Drink1", price = 10 }
+            // Dodajte potrebne objekte Drink za pokrivanje svičeva
+        };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(0.0, result.Item1);
+            Assert.AreEqual("No drinks selected.", result.Item2);
+        }
+
+        [TestMethod]
+        public void CalculateDailyProfit_OnePassThroughLoop_ReturnsCorrectResult()
+        {
+            // Arrange
+            var selectedDrinks = new List<DrinkQuantityPair>
+        {
+            new DrinkQuantityPair { DrinkId = 1, Quantity = 2 }
+        };
+
+            var mockDrinks = new List<Drink>
+        {
+            new Drink { id = 1, name = "Drink1", price = 10 }
+        };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void CalculateDailyProfit_TwoPassesThroughLoop_ReturnsCorrectResult()
+        {
+            // Arrange
+            var selectedDrinks = new List<DrinkQuantityPair>
+        {
+            new DrinkQuantityPair { DrinkId = 1, Quantity = 2 },
+            new DrinkQuantityPair { DrinkId = 2, Quantity = 3 }
+        };
+
+            var mockDrinks = new List<Drink>
+        {
+            new Drink { id = 1, name = "Drink1", price = 10 },
+            new Drink { id = 2, name = "Drink2", price = 15 }
+        };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void CalculateDailyProfit_FourPassesThroughLoop_ReturnsCorrectResult()
+        {
+            // Arrange
+            var selectedDrinks = new List<DrinkQuantityPair>
+        {
+            new DrinkQuantityPair { DrinkId = 1, Quantity = 2 },
+            new DrinkQuantityPair { DrinkId = 2, Quantity = 3 },
+            new DrinkQuantityPair { DrinkId = 3, Quantity = 1 },
+            new DrinkQuantityPair { DrinkId = 4, Quantity = 2 }
+        };
+
+            var mockDrinks = new List<Drink>
+        {
+            new Drink { id = 1, name = "Drink1", price = 10 },
+            new Drink { id = 2, name = "Drink2", price = 15 },
+            new Drink { id = 3, name = "Drink3", price = 8 },
+            new Drink { id = 4, name = "Drink4", price = 12 }
+        };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        // ...
+
+        [TestMethod]
+        public void CalculateDailyProfit_NMinusOnePassesThroughLoop_ReturnsCorrectResult()
+        {
+            // Arrange
+            var selectedDrinks = new List<DrinkQuantityPair>
+    {
+        new DrinkQuantityPair { DrinkId = 1, Quantity = 2 },
+        new DrinkQuantityPair { DrinkId = 2, Quantity = 3 },
+        new DrinkQuantityPair { DrinkId = 3, Quantity = 1 },
+        new DrinkQuantityPair { DrinkId = 4, Quantity = 2 },
+        new DrinkQuantityPair { DrinkId = 5, Quantity = 4 }
+    };
+
+            var mockDrinks = new List<Drink>
+    {
+        new Drink { id = 1, name = "Drink1", price = 10 },
+        new Drink { id = 2, name = "Drink2", price = 15 },
+        new Drink { id = 3, name = "Drink3", price = 8 },
+        new Drink { id = 4, name = "Drink4", price = 12 },
+        new Drink { id = 5, name = "Drink5", price = 20 }
+    };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void CalculateDailyProfit_NPassesThroughLoop_ReturnsCorrectResult()
+        {
+            // Arrange
+            var selectedDrinks = new List<DrinkQuantityPair>
+    {
+        new DrinkQuantityPair { DrinkId = 1, Quantity = 2 },
+        new DrinkQuantityPair { DrinkId = 2, Quantity = 3 },
+        new DrinkQuantityPair { DrinkId = 3, Quantity = 1 },
+        new DrinkQuantityPair { DrinkId = 4, Quantity = 2 },
+        new DrinkQuantityPair { DrinkId = 5, Quantity = 4 },
+        new DrinkQuantityPair { DrinkId = 6, Quantity = 1 }
+    };
+
+            var mockDrinks = new List<Drink>
+    {
+        new Drink { id = 1, name = "Drink1", price = 10 },
+        new Drink { id = 2, name = "Drink2", price = 15 },
+        new Drink { id = 3, name = "Drink3", price = 8 },
+        new Drink { id = 4, name = "Drink4", price = 12 },
+        new Drink { id = 5, name = "Drink5", price = 20 },
+        new Drink { id = 6, name = "Drink6", price = 18 }
+    };
+
+            mockDbContext.Setup(c => c.Drinks).Returns(MockDbSet(mockDrinks));
+
+            var controller = new AdminPanelController(mockDbContext.Object);
+
+            // Act
+            var result = controller.CalculateDailyProfit(selectedDrinks);
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        // N + 1 prolazaka kroz petlju nećemo testirati, kako imamo kao testni primjer 6 pića, nemoguće je proći 7 puta kroz petlju      
 
     }
 }

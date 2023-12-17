@@ -298,6 +298,18 @@ namespace SmartCafe.Controllers
         [HttpPost]
         public Tuple<double, string> CalculateDailyProfit([FromBody] List<DrinkQuantityPair> selectedDrinks)
         {
+            // Provjera prazne liste
+            if (selectedDrinks == null || selectedDrinks.Count == 0)
+            {
+                return Tuple.Create(0.0, "No drinks selected.");
+            }
+
+            // Validacija negativnih količina
+            if (selectedDrinks.Any(dq => dq.Quantity < 0))
+            {
+                return Tuple.Create(0.0, "Invalid quantity entered.");
+            }
+
             ViewBag.SelectedDrinks = selectedDrinks;
             Console.WriteLine(selectedDrinks.ToArray());
             var drinkIds = selectedDrinks.Select(dq => dq.DrinkId).ToList();
@@ -318,6 +330,8 @@ namespace SmartCafe.Controllers
             Console.WriteLine(Tuple.Create(dailyProfit, message));
             return Tuple.Create(dailyProfit, message);
         }
+
+
         //////////////////
 
         public bool CheckHappyHourStatus(DateTime dateTime)
