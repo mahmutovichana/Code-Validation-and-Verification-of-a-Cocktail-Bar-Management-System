@@ -23,16 +23,17 @@ namespace SmartCafe.Controllers
             _context = context;
         }
 
-        //sort method (newly added)
+        //sort method
 
         public List<Drink> BubbleSort(List<Drink> drinks)
         {
-            foreach (Drink drink in drinks)
-            {
-                if (drink.price <= 0) throw new ArgumentException("Price of a drink must be greater than zero!");
+            int n = drinks.Count;
+            for (int i = 0; i < n; i++) 
+            { 
+                if (drinks[i].price <= 0) throw new ArgumentException("Price of a drink must be greater than zero!");
             }
             // Bubble sort 
-            int n = drinks.Count;
+           
             for (int i = 0; i < n - 1; i++)
             {
                 for (int j = 0; j < n - i - 1; j++)
@@ -45,9 +46,7 @@ namespace SmartCafe.Controllers
                     }
                 }
             }
-
             return drinks;
-
         }
         public List<Ingredient> insertionSort(List<Ingredient> ingredients)
         {

@@ -75,14 +75,7 @@ namespace UnitTestAmina
             new Drink(4, "Kiwi Kiss", 6.99)
             };
             var drinksOrdered = controller.BubbleSort(drinks);
-            /*
-            var drinksExpected = new List<Drink> {
-            new Drink(2, "Cucumber Cooler", 2.99),
-            new Drink(3, "Orange Blossom", 2.99),
-            new Drink(1, "Grapefruit Spritz", 4.99),
-            new Drink(4, "Kiwi Kiss", 6.99)
-            };*/
-            //CollectionAssert.AreEquivalent(drinksExpected, drinksOrdered);
+           
             Assert.AreEqual("Cucumber Cooler", drinksOrdered[0].name);
             Assert.AreEqual("Orange Blossom", drinksOrdered[1].name);
             Assert.AreEqual("Grapefruit Spritz", drinksOrdered[2].name);
@@ -289,8 +282,101 @@ namespace UnitTestAmina
             Assert.AreEqual("Rosy Chill", result.name);
         }
 
+        ////////Test Driven Development///////////
+        [TestMethod]
+        public void CheckHappyHourStatus_StartOfHappyHour_True()
+        {
+            DateTime dateTime = new DateTime(2023, 12, 31, 20, 0, 0); //31.12.2023. u 20:00
+            var result = controller.CheckHappyHourStatus(dateTime);
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void CheckHappyHourStatus_MiddleOfHappyHour_True()
+        {
+            DateTime dateTime = new DateTime(2023, 12, 31, 21, 30, 0); //31.12.2023. u 21:30
+            var result = controller.CheckHappyHourStatus(dateTime);
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void CheckHappyHourStatus_EndOfHappyHour_True()
+        {
+            DateTime dateTime = new DateTime(2023, 12, 31, 22, 0, 0); //31.12.2023. u 22:00
+            var result = controller.CheckHappyHourStatus(dateTime);
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void CheckHappyHourStatus_BeforeHappyHour_False()
+        {
+            DateTime dateTime = new DateTime(2023, 12, 31, 19, 0, 0); //31.12.2023. u 19:00
+            var result = controller.CheckHappyHourStatus(dateTime);
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void CheckHappyHourStatus_AfterHappyHour_False()
+        {
+            DateTime dateTime = new DateTime(2023, 12, 31, 23, 0, 0); //31.12.2023. u 19:00
+            var result = controller.CheckHappyHourStatus(dateTime);
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void ApplyHappyHourDiscount_HappyHour_ReturnsDiscountedDrinks()
+        {
+            DateTime dateTime = new DateTime(2023, 12, 31, 21, 0, 0); //31.12.2023. u 21:00
+            var drinks = new List<Drink>{ new Drink(1, "Grapefruit Spritz", 4.99),
+            new Drink(2, "Orange Blossom", 2.99), new Drink(3, "Kiwi Kiss", 6.99)};
+            var drinksExpected = new List<Drink>{ new Drink(1, "Grapefruit Spritz", Math.Round(4.99 * 0.8, 1)),
+            new Drink(2, "Orange Blossom", Math.Round(2.99 * 0.8, 1)), new Drink(3, "Kiwi Kiss", Math.Round(6.99 * 0.8, 1))};
+            var result = controller.ApplyHappyHourDiscount(drinks, dateTime);
+
+            Assert.AreEqual(drinksExpected[0].price, result[0].price);
+            Assert.AreEqual(drinksExpected[1].price, result[1].price);
+            Assert.AreEqual(drinksExpected[2].price, result[2].price);
+
+        }
+
+        [TestMethod]
+        public void ApplyHappyHourDiscount_HappyHour_ReturnsFullPriceDrinks()
+        {
+            DateTime dateTime = new DateTime(2023, 12, 31, 10, 0, 0); //31.12.2023. u 10:00
+            var drinks = new List<Drink>{ new Drink(1, "Grapefruit Spritz", 4.99),
+            new Drink(2, "Orange Blossom", 2.99), new Drink(3, "Kiwi Kiss", 6.99)};
+            var result = controller.ApplyHappyHourDiscount(drinks, dateTime);
+
+            Assert.AreEqual(drinks[0].price, result[0].price);
+            Assert.AreEqual(drinks[1].price, result[1].price);
+            Assert.AreEqual(drinks[2].price, result[2].price);
+        }
+
+        //////////dodatni testovi za pokrivenost////////////////
+        [TestMethod]
+        public void BubbleSort_EmptyList_ReturnsEmptyList()
+        {
+            var drinks = new List<Drink> { };
+            var drinksOrdered = controller.BubbleSort(drinks);
+            CollectionAssert.AreEquivalent(drinks, drinksOrdered);
+        }
+        ////
+        [TestMethod]
+        public void BubbleSort_TwoElementsList_ReturnsOrderedList()
+        {
+            var drinks = new List<Drink> { new Drink(1, "Kiwi Kiss", 2.99), new Drink(2, "Orange Blossom", 3.99) };
+            var drinksOrdered = controller.BubbleSort(drinks);
+            CollectionAssert.AreEquivalent(drinks, drinksOrdered);
+        }
+
+        [TestMethod]
+        public void BubbleSort_ThreeElementsList_ReturnsOrderedList()
+        {
+            var drinks = new List<Drink> { new Drink(1, "Kiwi Kiss", 2.99), new Drink(2, "Orange Blossom", 3.99), 
+            new Drink(3, "Cucumber Cooler", 4.99)};
+            var drinksOrdered = controller.BubbleSort(drinks);
+            CollectionAssert.AreEquivalent(drinks, drinksOrdered);
+        }
+
     }
-
-
-
 }
