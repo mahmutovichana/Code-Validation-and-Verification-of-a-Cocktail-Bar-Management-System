@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.8753" branch-rate="0.3992" version="1.9" timestamp="1702819611" lines-covered="1369" lines-valid="1564" branches-covered="103" branches-valid="258">
+<coverage line-rate="0.8753" branch-rate="0.3992" version="1.9" timestamp="1702828145" lines-covered="1369" lines-valid="1564" branches-covered="103" branches-valid="258">
   <sources>
-    <source>C:\Users\Korisnik\</source>
+    <source>C:\Users\Amina\</source>
   </sources>
   <packages>
     <package name="UnitTests" line-rate="0.9813" branch-rate="0.9545" complexity="98">
@@ -18,7 +18,7 @@
             <line number="4" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestTajra.UnitTestTajra" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestTajra.cs" line-rate="0.9826" branch-rate="1" complexity="21">
+        <class name="UnitTestTajra.UnitTestTajra" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestTajra.cs" line-rate="0.9826" branch-rate="1" complexity="21">
           <methods>
             <method name="MockDbSet" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -690,7 +690,7 @@
             <line number="488" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestTajra.UnitTestTajra/&lt;CheapestDrinkXmlData&gt;d__11" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestTajra.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="UnitTestTajra.UnitTestTajra/&lt;CheapestDrinkXmlData&gt;d__11" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestTajra.cs" line-rate="1" branch-rate="1" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="4">
               <lines>
@@ -788,7 +788,7 @@
             <line number="270" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestHana.UnitTestHana" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestHana.cs" line-rate="0.9806999999999999" branch-rate="0.75" complexity="14">
+        <class name="UnitTestHana.UnitTestHana" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestHana.cs" line-rate="0.9806999999999999" branch-rate="0.75" complexity="14">
           <methods>
             <method name="MockDbSet" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1270,7 +1270,7 @@
             <line number="354" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="0.9826" branch-rate="1" complexity="20">
+        <class name="UnitTestEmina.UnitTestEmina" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestEmina.cs" line-rate="0.9826" branch-rate="1" complexity="20">
           <methods>
             <method name="MockDbSet" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1824,7 +1824,7 @@
             <line number="564" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;&gt;c" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;&gt;c" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="&lt;IngredientListXmlData&gt;b__6_0" signature="(System.Xml.Linq.XElement)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1842,7 +1842,7 @@
             <line number="107" hits="6" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_DbUpdateException_DrinkDoesNotExist_ReturnsNotFound&gt;d__16" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_DbUpdateException_DrinkDoesNotExist_ReturnsNotFound&gt;d__16" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1904,7 +1904,7 @@
             <line number="363" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_DrinkNotFound_ReturnsNotFound&gt;d__15" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_DrinkNotFound_ReturnsNotFound&gt;d__15" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1928,7 +1928,7 @@
             <line number="325" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_IdMismatch_ReturnsNotFound&gt;d__11" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_IdMismatch_ReturnsNotFound&gt;d__11" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -1960,7 +1960,7 @@
             <line number="217" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_InvalidModelState_ReturnsViewWithModel&gt;d__13" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_InvalidModelState_ReturnsViewWithModel&gt;d__13" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -2002,7 +2002,7 @@
             <line number="284" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_ValidModelStateBelowPriceRange_ReturnsRedirectToAction&gt;d__14" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_ValidModelStateBelowPriceRange_ReturnsRedirectToAction&gt;d__14" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -2042,7 +2042,7 @@
             <line number="309" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_ValidModelState_ReturnsRedirectToAction&gt;d__12" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;Edit_ValidModelState_ReturnsRedirectToAction&gt;d__12" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -2100,7 +2100,7 @@
             <line number="257" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestEmina.UnitTestEmina/&lt;IngredientListXmlData&gt;d__6" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="UnitTestEmina.UnitTestEmina/&lt;IngredientListXmlData&gt;d__6" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestEmina.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
@@ -2176,7 +2176,7 @@
             <line number="112" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestAmina.UnitTestAmina" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestAmina.cs" line-rate="0.9645999999999999" branch-rate="1" complexity="24">
+        <class name="UnitTestAmina.UnitTestAmina" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestAmina.cs" line-rate="0.9645999999999999" branch-rate="1" complexity="24">
           <methods>
             <method name="MockDbSet" signature="(System.Collections.Generic.List`1&lt;T&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -2678,7 +2678,7 @@
             <line number="379" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="UnitTestAmina.UnitTestAmina/&lt;MostExpensiveDrinkXmlData&gt;d__14" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\UnitTests\UnitTestAmina.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="UnitTestAmina.UnitTestAmina/&lt;MostExpensiveDrinkXmlData&gt;d__14" filename="Source\Repos\mahmutovichana\VVS\UnitTests\UnitTestAmina.cs" line-rate="1" branch-rate="1" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="4">
               <lines>
@@ -2782,7 +2782,7 @@
     </package>
     <package name="VVSProject" line-rate="0.727" branch-rate="0.8039000000000001" complexity="147">
       <classes>
-        <class name="SmartCafe.Program" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Program.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="SmartCafe.Program" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Program.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
             <method name="Main" signature="(System.String[])" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -2812,7 +2812,7 @@
             <line number="24" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Startup" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Startup.cs" line-rate="0" branch-rate="0" complexity="5">
+        <class name="SmartCafe.Startup" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Startup.cs" line-rate="0" branch-rate="0" complexity="5">
           <methods>
             <method name="get_Configuration" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -2934,7 +2934,7 @@
             <line number="26" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.Drink" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\Drink.cs" line-rate="1" branch-rate="1" complexity="5">
+        <class name="SmartCafe.Models.Drink" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Models\Drink.cs" line-rate="1" branch-rate="1" complexity="5">
           <methods>
             <method name="get_id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -2980,7 +2980,7 @@
             <line number="20" hits="116" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.DrinkIngredient" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\DrinkIngredient.cs" line-rate="1" branch-rate="1" complexity="7">
+        <class name="SmartCafe.Models.DrinkIngredient" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Models\DrinkIngredient.cs" line-rate="1" branch-rate="1" complexity="7">
           <methods>
             <method name="get_id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -3038,7 +3038,7 @@
             <line number="25" hits="17" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.ErrorViewModel" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\ErrorViewModel.cs" line-rate="0" branch-rate="1" complexity="2">
+        <class name="SmartCafe.Models.ErrorViewModel" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Models\ErrorViewModel.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
             <method name="get_RequestId" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -3056,7 +3056,7 @@
             <line number="9" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.Ingredient" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\Ingredient.cs" line-rate="1" branch-rate="1" complexity="5">
+        <class name="SmartCafe.Models.Ingredient" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Models\Ingredient.cs" line-rate="1" branch-rate="1" complexity="5">
           <methods>
             <method name="get_id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -3102,7 +3102,7 @@
             <line number="18" hits="16" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Models.Statistic" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Models\Statistic.cs" line-rate="0" branch-rate="1" complexity="7">
+        <class name="SmartCafe.Models.Statistic" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Models\Statistic.cs" line-rate="0" branch-rate="1" complexity="7">
           <methods>
             <method name="get_id" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -3150,7 +3150,7 @@
             <line number="19" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Data.ApplicationDbContext" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Data\ApplicationDbContext.cs" line-rate="0" branch-rate="1" complexity="7">
+        <class name="SmartCafe.Data.ApplicationDbContext" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Data\ApplicationDbContext.cs" line-rate="0" branch-rate="1" complexity="7">
           <methods>
             <method name="get_Drinks" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -3218,7 +3218,7 @@
             <line number="18" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Controllers.AdminPanelController" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="0.9178000000000001" branch-rate="0.8" complexity="95">
+        <class name="SmartCafe.Controllers.AdminPanelController" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="0.9178000000000001" branch-rate="0.8" complexity="95">
           <methods>
             <method name="BubbleSort" signature="(System.Collections.Generic.List`1&lt;SmartCafe.Models.Drink&gt;)" line-rate="1" branch-rate="1" complexity="10">
               <lines>
@@ -4072,7 +4072,7 @@
             <line number="24" hits="105" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Controllers.AdminPanelController/DrinkQuantityPair" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="SmartCafe.Controllers.AdminPanelController/DrinkQuantityPair" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="get_DrinkId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -4090,7 +4090,7 @@
             <line number="296" hits="20" branch="False" />
           </lines>
         </class>
-        <class name="SmartCafe.Controllers.AdminPanelController/&lt;Edit&gt;d__11" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="1" branch-rate="1" complexity="10">
+        <class name="SmartCafe.Controllers.AdminPanelController/&lt;Edit&gt;d__11" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Controllers\AdminPanelController.cs" line-rate="1" branch-rate="1" complexity="10">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="10">
               <lines>
@@ -4190,7 +4190,7 @@
     </package>
     <package name="VVSProject.Views" line-rate="0" branch-rate="0" complexity="138">
       <classes>
-        <class name="AspNetCore.Areas_Identity_Pages__ViewStart/&lt;ExecuteAsync&gt;d__0" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Areas\Identity\Pages\_ViewStart.cshtml" line-rate="0" branch-rate="1" complexity="1">
+        <class name="AspNetCore.Areas_Identity_Pages__ViewStart/&lt;ExecuteAsync&gt;d__0" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Areas\Identity\Pages\_ViewStart.cshtml" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -4202,73 +4202,73 @@
             <line number="2" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_AdminPanel_Index" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="6">
+        <class name="AspNetCore.Views_AdminPanel_Index" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="6">
           <methods>
             <method name="GetColor" signature="(System.Int32)" line-rate="0" branch-rate="0" complexity="6">
               <lines>
-                <line number="568" hits="0" branch="False" />
-                <line number="569" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="569" hits="0" branch="False" />
+                <line number="570" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="7" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="570" hits="0" branch="False" />
                 <line number="571" hits="0" branch="False" />
-                <line number="573" hits="0" branch="True" condition-coverage="0% (0/4)">
+                <line number="572" hits="0" branch="False" />
+                <line number="574" hits="0" branch="True" condition-coverage="0% (0/4)">
                   <conditions>
                     <condition number="20" type="jump" coverage="0%" />
                     <condition number="35" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="574" hits="0" branch="False" />
                 <line number="575" hits="0" branch="False" />
-                <line number="578" hits="0" branch="False" />
+                <line number="576" hits="0" branch="False" />
                 <line number="579" hits="0" branch="False" />
-                <line number="581" hits="0" branch="False" />
+                <line number="580" hits="0" branch="False" />
+                <line number="582" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="568" hits="0" branch="False" />
-            <line number="569" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="569" hits="0" branch="False" />
+            <line number="570" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="7" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="570" hits="0" branch="False" />
             <line number="571" hits="0" branch="False" />
-            <line number="573" hits="0" branch="True" condition-coverage="0% (0/4)">
+            <line number="572" hits="0" branch="False" />
+            <line number="574" hits="0" branch="True" condition-coverage="0% (0/4)">
               <conditions>
                 <condition number="20" type="jump" coverage="0%" />
                 <condition number="35" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="574" hits="0" branch="False" />
             <line number="575" hits="0" branch="False" />
-            <line number="578" hits="0" branch="False" />
+            <line number="576" hits="0" branch="False" />
             <line number="579" hits="0" branch="False" />
-            <line number="581" hits="0" branch="False" />
+            <line number="580" hits="0" branch="False" />
+            <line number="582" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_AdminPanel_Index/&lt;&lt;ExecuteAsync&gt;b__15_1&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="90">
+        <class name="AspNetCore.Views_AdminPanel_Index/&lt;&lt;ExecuteAsync&gt;b__15_1&gt;d" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="90">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="90">
               <lines>
-                <line number="459" hits="0" branch="True" condition-coverage="0% (0/6)">
+                <line number="461" hits="0" branch="True" condition-coverage="0% (0/6)">
                   <conditions>
                     <condition number="370" type="jump" coverage="0%" />
                     <condition number="560" type="jump" coverage="0%" />
                     <condition number="652" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="470" hits="0" branch="True" condition-coverage="0% (0/6)">
+                <line number="469" hits="0" branch="True" condition-coverage="0% (0/6)">
                   <conditions>
                     <condition number="762" type="jump" coverage="0%" />
                     <condition number="854" type="jump" coverage="0%" />
                     <condition number="925" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="474" hits="0" branch="True" condition-coverage="0% (0/6)">
+                <line number="473" hits="0" branch="True" condition-coverage="0% (0/6)">
                   <conditions>
                     <condition number="1040" type="jump" coverage="0%" />
                     <condition number="1132" type="jump" coverage="0%" />
@@ -4286,48 +4286,48 @@
                 <line number="484" hits="0" branch="False" />
                 <line number="486" hits="0" branch="False" />
                 <line number="488" hits="0" branch="False" />
-                <line number="556" hits="0" branch="True" condition-coverage="0% (0/6)">
+                <line number="557" hits="0" branch="True" condition-coverage="0% (0/6)">
                   <conditions>
                     <condition number="1560" type="jump" coverage="0%" />
                     <condition number="1620" type="jump" coverage="0%" />
                     <condition number="2818" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="557" hits="0" branch="False" />
-                <line number="558" hits="0" branch="True" condition-coverage="0% (0/6)">
+                <line number="558" hits="0" branch="False" />
+                <line number="559" hits="0" branch="True" condition-coverage="0% (0/6)">
                   <conditions>
                     <condition number="1835" type="jump" coverage="0%" />
                     <condition number="1987" type="jump" coverage="0%" />
                     <condition number="2075" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="559" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="560" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="2275" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="560" hits="0" branch="True" condition-coverage="0% (0/4)">
+                <line number="561" hits="0" branch="True" condition-coverage="0% (0/4)">
                   <conditions>
                     <condition number="2410" type="jump" coverage="0%" />
                     <condition number="2502" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="561" hits="0" branch="True" condition-coverage="0% (0/4)">
+                <line number="562" hits="0" branch="True" condition-coverage="0% (0/4)">
                   <conditions>
                     <condition number="2607" type="jump" coverage="0%" />
                     <condition number="2699" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="563" hits="0" branch="False" />
-                <line number="607" hits="0" branch="True" condition-coverage="0% (0/6)">
+                <line number="564" hits="0" branch="False" />
+                <line number="608" hits="0" branch="True" condition-coverage="0% (0/6)">
                   <conditions>
                     <condition number="2903" type="jump" coverage="0%" />
                     <condition number="2963" type="jump" coverage="0%" />
                     <condition number="4201" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="608" hits="0" branch="False" />
-                <line number="611" hits="0" branch="True" condition-coverage="0% (0/14)">
+                <line number="609" hits="0" branch="False" />
+                <line number="612" hits="0" branch="True" condition-coverage="0% (0/14)">
                   <conditions>
                     <condition number="3143" type="jump" coverage="0%" />
                     <condition number="3295" type="jump" coverage="0%" />
@@ -4338,83 +4338,83 @@
                     <condition number="3865" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="613" hits="0" branch="True" condition-coverage="0% (0/4)">
+                <line number="614" hits="0" branch="True" condition-coverage="0% (0/4)">
                   <conditions>
                     <condition number="3990" type="jump" coverage="0%" />
                     <condition number="4082" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="615" hits="0" branch="False" />
-                <line number="639" hits="0" branch="True" condition-coverage="0% (0/4)">
+                <line number="616" hits="0" branch="False" />
+                <line number="640" hits="0" branch="True" condition-coverage="0% (0/4)">
                   <conditions>
                     <condition number="4267" type="jump" coverage="0%" />
                     <condition number="4359" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="683" hits="0" branch="False" />
-                <line number="727" hits="0" branch="False" />
-                <line number="728" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="684" hits="0" branch="False" />
+                <line number="728" hits="0" branch="False" />
+                <line number="729" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="6418" type="jump" coverage="0%" />
+                    <condition number="6401" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="729" hits="0" branch="False" />
-                <line number="732" hits="0" branch="False" />
-                <line number="735" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="730" hits="0" branch="False" />
+                <line number="733" hits="0" branch="False" />
+                <line number="736" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="5374" type="jump" coverage="0%" />
+                    <condition number="5357" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="738" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="739" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="5711" type="jump" coverage="0%" />
+                    <condition number="5694" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="755" hits="0" branch="False" />
                 <line number="756" hits="0" branch="False" />
-                <line number="757" hits="0" branch="True" condition-coverage="0% (0/6)">
+                <line number="757" hits="0" branch="False" />
+                <line number="758" hits="0" branch="True" condition-coverage="0% (0/6)">
                   <conditions>
-                    <condition number="5996" type="jump" coverage="0%" />
-                    <condition number="6088" type="jump" coverage="0%" />
-                    <condition number="6164" type="jump" coverage="0%" />
+                    <condition number="5979" type="jump" coverage="0%" />
+                    <condition number="6071" type="jump" coverage="0%" />
+                    <condition number="6147" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="760" hits="0" branch="False" />
-                <line number="763" hits="0" branch="False" />
-                <line number="766" hits="0" branch="False" />
+                <line number="761" hits="0" branch="False" />
+                <line number="764" hits="0" branch="False" />
                 <line number="767" hits="0" branch="False" />
-                <line number="801" hits="0" branch="False" />
-                <line number="879" hits="0" branch="False" />
-                <line number="943" hits="0" branch="False" />
-                <line number="950" hits="0" branch="True" condition-coverage="0% (0/4)">
+                <line number="768" hits="0" branch="False" />
+                <line number="802" hits="0" branch="False" />
+                <line number="880" hits="0" branch="False" />
+                <line number="944" hits="0" branch="False" />
+                <line number="951" hits="0" branch="True" condition-coverage="0% (0/4)">
                   <conditions>
-                    <condition number="6780" type="jump" coverage="0%" />
-                    <condition number="6872" type="jump" coverage="0%" />
+                    <condition number="6763" type="jump" coverage="0%" />
+                    <condition number="6855" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="955" hits="0" branch="False" />
-                <line number="959" hits="0" branch="False" />
-                <line number="963" hits="0" branch="False" />
-                <line number="967" hits="0" branch="False" />
+                <line number="956" hits="0" branch="False" />
+                <line number="960" hits="0" branch="False" />
+                <line number="964" hits="0" branch="False" />
+                <line number="968" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="459" hits="0" branch="True" condition-coverage="0% (0/6)">
+            <line number="461" hits="0" branch="True" condition-coverage="0% (0/6)">
               <conditions>
                 <condition number="370" type="jump" coverage="0%" />
                 <condition number="560" type="jump" coverage="0%" />
                 <condition number="652" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="470" hits="0" branch="True" condition-coverage="0% (0/6)">
+            <line number="469" hits="0" branch="True" condition-coverage="0% (0/6)">
               <conditions>
                 <condition number="762" type="jump" coverage="0%" />
                 <condition number="854" type="jump" coverage="0%" />
                 <condition number="925" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="474" hits="0" branch="True" condition-coverage="0% (0/6)">
+            <line number="473" hits="0" branch="True" condition-coverage="0% (0/6)">
               <conditions>
                 <condition number="1040" type="jump" coverage="0%" />
                 <condition number="1132" type="jump" coverage="0%" />
@@ -4432,48 +4432,48 @@
             <line number="484" hits="0" branch="False" />
             <line number="486" hits="0" branch="False" />
             <line number="488" hits="0" branch="False" />
-            <line number="556" hits="0" branch="True" condition-coverage="0% (0/6)">
+            <line number="557" hits="0" branch="True" condition-coverage="0% (0/6)">
               <conditions>
                 <condition number="1560" type="jump" coverage="0%" />
                 <condition number="1620" type="jump" coverage="0%" />
                 <condition number="2818" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="557" hits="0" branch="False" />
-            <line number="558" hits="0" branch="True" condition-coverage="0% (0/6)">
+            <line number="558" hits="0" branch="False" />
+            <line number="559" hits="0" branch="True" condition-coverage="0% (0/6)">
               <conditions>
                 <condition number="1835" type="jump" coverage="0%" />
                 <condition number="1987" type="jump" coverage="0%" />
                 <condition number="2075" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="559" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="560" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="2275" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="560" hits="0" branch="True" condition-coverage="0% (0/4)">
+            <line number="561" hits="0" branch="True" condition-coverage="0% (0/4)">
               <conditions>
                 <condition number="2410" type="jump" coverage="0%" />
                 <condition number="2502" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="561" hits="0" branch="True" condition-coverage="0% (0/4)">
+            <line number="562" hits="0" branch="True" condition-coverage="0% (0/4)">
               <conditions>
                 <condition number="2607" type="jump" coverage="0%" />
                 <condition number="2699" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="563" hits="0" branch="False" />
-            <line number="607" hits="0" branch="True" condition-coverage="0% (0/6)">
+            <line number="564" hits="0" branch="False" />
+            <line number="608" hits="0" branch="True" condition-coverage="0% (0/6)">
               <conditions>
                 <condition number="2903" type="jump" coverage="0%" />
                 <condition number="2963" type="jump" coverage="0%" />
                 <condition number="4201" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="608" hits="0" branch="False" />
-            <line number="611" hits="0" branch="True" condition-coverage="0% (0/14)">
+            <line number="609" hits="0" branch="False" />
+            <line number="612" hits="0" branch="True" condition-coverage="0% (0/14)">
               <conditions>
                 <condition number="3143" type="jump" coverage="0%" />
                 <condition number="3295" type="jump" coverage="0%" />
@@ -4484,83 +4484,83 @@
                 <condition number="3865" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="613" hits="0" branch="True" condition-coverage="0% (0/4)">
+            <line number="614" hits="0" branch="True" condition-coverage="0% (0/4)">
               <conditions>
                 <condition number="3990" type="jump" coverage="0%" />
                 <condition number="4082" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="615" hits="0" branch="False" />
-            <line number="639" hits="0" branch="True" condition-coverage="0% (0/4)">
+            <line number="616" hits="0" branch="False" />
+            <line number="640" hits="0" branch="True" condition-coverage="0% (0/4)">
               <conditions>
                 <condition number="4267" type="jump" coverage="0%" />
                 <condition number="4359" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="683" hits="0" branch="False" />
-            <line number="727" hits="0" branch="False" />
-            <line number="728" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="684" hits="0" branch="False" />
+            <line number="728" hits="0" branch="False" />
+            <line number="729" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="6418" type="jump" coverage="0%" />
+                <condition number="6401" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="729" hits="0" branch="False" />
-            <line number="732" hits="0" branch="False" />
-            <line number="735" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="730" hits="0" branch="False" />
+            <line number="733" hits="0" branch="False" />
+            <line number="736" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="5374" type="jump" coverage="0%" />
+                <condition number="5357" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="738" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="739" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="5711" type="jump" coverage="0%" />
+                <condition number="5694" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="755" hits="0" branch="False" />
             <line number="756" hits="0" branch="False" />
-            <line number="757" hits="0" branch="True" condition-coverage="0% (0/6)">
+            <line number="757" hits="0" branch="False" />
+            <line number="758" hits="0" branch="True" condition-coverage="0% (0/6)">
               <conditions>
-                <condition number="5996" type="jump" coverage="0%" />
-                <condition number="6088" type="jump" coverage="0%" />
-                <condition number="6164" type="jump" coverage="0%" />
+                <condition number="5979" type="jump" coverage="0%" />
+                <condition number="6071" type="jump" coverage="0%" />
+                <condition number="6147" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="760" hits="0" branch="False" />
-            <line number="763" hits="0" branch="False" />
-            <line number="766" hits="0" branch="False" />
+            <line number="761" hits="0" branch="False" />
+            <line number="764" hits="0" branch="False" />
             <line number="767" hits="0" branch="False" />
-            <line number="801" hits="0" branch="False" />
-            <line number="879" hits="0" branch="False" />
-            <line number="943" hits="0" branch="False" />
-            <line number="950" hits="0" branch="True" condition-coverage="0% (0/4)">
+            <line number="768" hits="0" branch="False" />
+            <line number="802" hits="0" branch="False" />
+            <line number="880" hits="0" branch="False" />
+            <line number="944" hits="0" branch="False" />
+            <line number="951" hits="0" branch="True" condition-coverage="0% (0/4)">
               <conditions>
-                <condition number="6780" type="jump" coverage="0%" />
-                <condition number="6872" type="jump" coverage="0%" />
+                <condition number="6763" type="jump" coverage="0%" />
+                <condition number="6855" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="955" hits="0" branch="False" />
-            <line number="959" hits="0" branch="False" />
-            <line number="963" hits="0" branch="False" />
-            <line number="967" hits="0" branch="False" />
+            <line number="956" hits="0" branch="False" />
+            <line number="960" hits="0" branch="False" />
+            <line number="964" hits="0" branch="False" />
+            <line number="968" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_AdminPanel_Index/&lt;&gt;c__DisplayClass15_0/&lt;&lt;ExecuteAsync&gt;b__3&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="1" complexity="1">
+        <class name="AspNetCore.Views_AdminPanel_Index/&lt;&gt;c__DisplayClass15_0/&lt;&lt;ExecuteAsync&gt;b__3&gt;d" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="739" hits="0" branch="False" />
-                <line number="742" hits="0" branch="False" />
-                <line number="747" hits="0" branch="False" />
+                <line number="740" hits="0" branch="False" />
+                <line number="743" hits="0" branch="False" />
+                <line number="748" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="739" hits="0" branch="False" />
-            <line number="742" hits="0" branch="False" />
-            <line number="747" hits="0" branch="False" />
+            <line number="740" hits="0" branch="False" />
+            <line number="743" hits="0" branch="False" />
+            <line number="748" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_AdminPanel_Index/&lt;ExecuteAsync&gt;d__15" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="4">
+        <class name="AspNetCore.Views_AdminPanel_Index/&lt;ExecuteAsync&gt;d__15" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\AdminPanel\Index.cshtml" line-rate="0" branch-rate="0" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -4584,7 +4584,7 @@
             </line>
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared_Error/&lt;ExecuteAsync&gt;d__0" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\Error.cshtml" line-rate="0" branch-rate="0" complexity="2">
+        <class name="AspNetCore.Views_Shared_Error/&lt;ExecuteAsync&gt;d__0" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\Shared\Error.cshtml" line-rate="0" branch-rate="0" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
@@ -4612,7 +4612,7 @@
             <line number="14" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared__Layout/&lt;&lt;ExecuteAsync&gt;b__25_0&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\_Layout.cshtml" line-rate="0" branch-rate="0" complexity="4">
+        <class name="AspNetCore.Views_Shared__Layout/&lt;&lt;ExecuteAsync&gt;b__25_0&gt;d" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\Shared\_Layout.cshtml" line-rate="0" branch-rate="0" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="4">
               <lines>
@@ -4634,7 +4634,7 @@
             </line>
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared__Layout/&lt;&lt;ExecuteAsync&gt;b__25_1&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\_Layout.cshtml" line-rate="0" branch-rate="0" complexity="16">
+        <class name="AspNetCore.Views_Shared__Layout/&lt;&lt;ExecuteAsync&gt;b__25_1&gt;d" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\Shared\_Layout.cshtml" line-rate="0" branch-rate="0" complexity="16">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="16">
               <lines>
@@ -4678,7 +4678,7 @@
             <line number="47" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared__LoginPartial/&lt;&lt;ExecuteAsync&gt;b__17_0&gt;d" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\_LoginPartial.cshtml" line-rate="0" branch-rate="1" complexity="1">
+        <class name="AspNetCore.Views_Shared__LoginPartial/&lt;&lt;ExecuteAsync&gt;b__17_0&gt;d" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\Shared\_LoginPartial.cshtml" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -4690,7 +4690,7 @@
             <line number="9" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views_Shared__LoginPartial/&lt;ExecuteAsync&gt;d__17" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\Shared\_LoginPartial.cshtml" line-rate="0" branch-rate="0" complexity="12">
+        <class name="AspNetCore.Views_Shared__LoginPartial/&lt;ExecuteAsync&gt;d__17" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\Shared\_LoginPartial.cshtml" line-rate="0" branch-rate="0" complexity="12">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="12">
               <lines>
@@ -4748,7 +4748,7 @@
             <line number="25" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="AspNetCore.Views__ViewStart/&lt;ExecuteAsync&gt;d__0" filename="Desktop\Tajra\VVS\VVS Projekat\VVS\VVSProject\Views\_ViewStart.cshtml" line-rate="0" branch-rate="1" complexity="1">
+        <class name="AspNetCore.Views__ViewStart/&lt;ExecuteAsync&gt;d__0" filename="Source\Repos\mahmutovichana\VVS\VVSProject\Views\_ViewStart.cshtml" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>

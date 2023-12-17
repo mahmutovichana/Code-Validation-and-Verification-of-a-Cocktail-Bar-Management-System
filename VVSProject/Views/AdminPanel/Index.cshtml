@@ -133,6 +133,7 @@
         grid-column-end: 2;
     }
 
+
     /* Stilovi za carousel */
     .carousel {
         display: grid;
@@ -449,6 +450,7 @@
             <h1 style="margin-right:2px;">Admin Panel</h1>
         </ul>
     </div>
+
     <div class="statistics">
         <div class="statistics-description">
             <h2>Lagoon Bar Stats</h2>
@@ -462,9 +464,6 @@
             <span class="statistics-label">Number of customers</span>
             <span class="statistics-value" id="numCustomersValue">4185</span>
         </div>
-    </div>
-
-    <div class="statistics">
         <div class="statistics-item">
             <span class="statistics-label">Most expensive drink</span>
             <span class="statistics-value" id="mostExpensiveDrinkValue">@ViewBag.MostExpensiveDrink.name</span>
@@ -474,6 +473,7 @@
             <span class="statistics-value" id="cheapestDrinkValue">@ViewBag.CheapestDrink.name</span>
         </div>
     </div>
+
     <div class="statistics" id="happyHour">
         <div class="statistics-item">
             <span class="statistics-label">Happy Hour Discount</span>
@@ -489,6 +489,7 @@
             </span>
         </div>
     </div>
+
 
     <style>
         .ingredient-grid {
@@ -618,21 +619,21 @@
 
     <script>
         function animateValue(element, start, end, duration) {
-            const range = end - start;
-            const increment = end > start ? 1 : -1;
-            const stepTime = Math.abs(Math.floor(duration / range));
-            const obj = element;
+          const range = end - start;
+          const increment = end > start ? 1 : -1;
+          const stepTime = Math.abs(Math.floor(duration / range));
+          const obj = element;
 
-            let current = start;
+          let current = start;
 
-            const timer = setInterval(() => {
-                current += increment;
-                obj.textContent = current;
-                if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
-                    clearInterval(timer);
-                    obj.textContent = end;
-                }
-            }, stepTime);
+          const timer = setInterval(() => {
+            current += increment;
+            obj.textContent = current;
+            if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+              clearInterval(timer);
+              obj.textContent = end;
+            }
+          }, stepTime);
         }
 
         const numDrinksValue = document.getElementById('numDrinksValue');
@@ -681,7 +682,7 @@
             drinkItems = carousel.getElementsByClassName('carousel-item');
 
             var url = '@Url.Action("SearchDrinksByIngredient", "AdminPanel")';
-            fetch(${ url } ? searchTerm = ${ filter })
+            fetch(`${url}?searchTerm=${filter}`)
                 .then(response => response.json())
                 .then(data => {
                     // Clear previous search results
@@ -895,7 +896,7 @@
                         const dailyProfit = parseFloat(data.item1);
                         const message = data.item2;
 
-                        dailyProfitLabel.innerText = ${ dailyProfit };
+                        dailyProfitLabel.innerText = `${dailyProfit}`;
                         optimalProfitMessageLabel.innerText = message; // Display the optimal profit message
                     } else {
                         dailyProfitLabel.innerText = "0";
