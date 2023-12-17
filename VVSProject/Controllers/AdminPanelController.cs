@@ -23,17 +23,16 @@ namespace SmartCafe.Controllers
             _context = context;
         }
 
-        //sort method
+        //sort method (newly added)
 
         public List<Drink> BubbleSort(List<Drink> drinks)
         {
-            int n = drinks.Count;
-            for (int i = 0; i < n; i++) 
-            { 
-                if (drinks[i].price <= 0) throw new ArgumentException("Price of a drink must be greater than zero!");
+            foreach (Drink drink in drinks)
+            {
+                if (drink.price <= 0) throw new ArgumentException("Price of a drink must be greater than zero!");
             }
             // Bubble sort 
-           
+            int n = drinks.Count;
             for (int i = 0; i < n - 1; i++)
             {
                 for (int j = 0; j < n - i - 1; j++)
@@ -46,7 +45,9 @@ namespace SmartCafe.Controllers
                     }
                 }
             }
+
             return drinks;
+
         }
         public List<Ingredient> insertionSort(List<Ingredient> ingredients)
         {
@@ -202,6 +203,12 @@ namespace SmartCafe.Controllers
             var drinks = _context.Drinks.ToList();
             //sortiranje
             BubbleSort(drinks);
+
+            DateTime dateTime = DateTime.Now;
+
+            drinks = ApplyHappyHourDiscount(drinks, dateTime);
+
+
             // number of drinks
             ViewBag.NumberOfDrinks = numberOfDrinks(drinks);
             // cheapest drink
@@ -210,7 +217,8 @@ namespace SmartCafe.Controllers
             ViewBag.MostExpensiveDrink = MostExpensiveDrink(drinks);
             //prices with PDV
             ViewBag.PricesWithPDV = PriceWithPDV();
-
+            //discount for happy hour
+            ViewBag.IsHappyHour = CheckHappyHourStatus(dateTime);
             return View(drinks);
         }
 
@@ -287,7 +295,6 @@ namespace SmartCafe.Controllers
             public int DrinkId { get; set; }
             public int Quantity { get; set; }
         }
-
         [HttpPost]
         public Tuple<double, string> CalculateDailyProfit([FromBody] List<DrinkQuantityPair> selectedDrinks)
         {
@@ -311,6 +318,31 @@ namespace SmartCafe.Controllers
             Console.WriteLine(Tuple.Create(dailyProfit, message));
             return Tuple.Create(dailyProfit, message);
         }
+        //////////////////
+
+        public bool CheckHappyHourStatus(DateTime dateTime)
+        {
+            var happyHourStartTime = new TimeSpan(20, 0, 0); // 8 PM
+            var happyHourEndTime = new TimeSpan(22, 0, 0);   // 10 PM
+
+            return dateTime.TimeOfDay >= happyHourStartTime && dateTime.TimeOfDay <= happyHourEndTime;
+        }
+
+
+        public List<Drink> ApplyHappyHourDiscount(List<Drink> drinks, DateTime dateTime)
+        {
+            if (CheckHappyHourStatus(dateTime))
+            {
+                foreach (var drink in drinks)
+                {
+                    drink.price = Math.Round(drink.price * 0.8, 1); // 20% popusta
+                }
+            }
+
+            return drinks;
+        }
+
+        //////////////   Alcoholic drink   /////////////
         public bool isAlcoholic(Drink drink)
         {
             List<int> alcoholicIngredientId = new List<int> { 21, 27, 29, 33, 42, 54 };

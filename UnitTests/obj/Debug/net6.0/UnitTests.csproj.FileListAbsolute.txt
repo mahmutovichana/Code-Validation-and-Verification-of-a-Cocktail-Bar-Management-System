@@ -786,3 +786,9 @@ C:\Users\efend\Desktop\VVS-PROJEKAT\VVS\UnitTests\bin\Debug\net6.0\Microsoft.Vis
 C:\Users\efend\Desktop\VVS-PROJEKAT\VVS\UnitTests\obj\Debug\net6.0\UnitTests.csproj.CopyComplete
 C:\Users\efend\Desktop\VVS-PROJEKAT\VVS\UnitTests\obj\Debug\net6.0\UnitTests.genruntimeconfig.cache
 C:\Users\efend\Desktop\VVS-PROJEKAT\VVS\UnitTests\obj\Debug\net6.0\ref\UnitTests.dll
+C:\Users\Amina\Source\Repos\mahmutovichana\VVS\UnitTests\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Amina\Source\Repos\mahmutovichana\VVS\UnitTests\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Amina\Source\Repos\mahmutovichana\VVS\UnitTests\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Amina\Source\Repos\mahmutovichana\VVS\UnitTests\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Amina\Source\Repos\mahmutovichana\VVS\UnitTests\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Amina\Source\Repos\mahmutovichana\VVS\UnitTests\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
